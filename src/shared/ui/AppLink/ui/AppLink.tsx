@@ -1,0 +1,37 @@
+import { Link, LinkProps } from "react-router-dom";
+
+import styles from "./AppLink.module.scss";
+
+import { classNames } from "shared/lib/classNames";
+
+export enum AppLinkTheme {
+  PRIMARY = "primary",
+  INVERTED = "inverted",
+  RED = "red"
+}
+
+interface AppLinkProps extends LinkProps {
+  className?: string;
+  theme: AppLinkTheme;
+}
+
+function AppLink(props: AppLinkProps) {
+  const {
+    to,
+    className,
+    children,
+    theme = AppLinkTheme.PRIMARY,
+    ...otherProps
+  } = props;
+  return (
+    <Link
+      to={to}
+      className={classNames(styles.AppLink, {}, [className, styles[theme]])}
+      {...otherProps}
+    >
+      {children}
+    </Link>
+  );
+}
+
+export default AppLink;
