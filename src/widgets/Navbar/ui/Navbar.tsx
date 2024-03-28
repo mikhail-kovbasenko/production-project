@@ -12,14 +12,14 @@ export function Navbar({ className }: NavbarProps) {
     <div className={classNames(styles.Navbar, {}, [className])}>
       <div className={styles.Links}>
         <AppLink
-          theme={AppLinkTheme.PRIMARY}
+          theme={AppLinkTheme.INVERTED}
           to={"/"}
           className={styles.MainLink}
         >
-          Главная
+          MAIN
         </AppLink>
-        <AppLink theme={AppLinkTheme.PRIMARY} to={"/about"}>
-          О нас
+        <AppLink theme={AppLinkTheme.INVERTED} to={"/about"}>
+          New Age
         </AppLink>
       </div>
     </div>

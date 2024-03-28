@@ -33,11 +33,31 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
       "sass-loader",
     ],
   };
+  const babelLoader = {
+    test: /\.(js|ts|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ["@babel/preset-env"],
+        plugins: [
+          [
+            "i18next-extract",
+            {
+              nsSeparator: "~",
+              locales: ["ru", "en"],
+              keyAsDefaultValue: true,
+            },
+          ],
+        ],
+      },
+    },
+  };
   const typeScriptLoader = {
     test: /\.tsx?$/,
     use: "ts-loader",
     exclude: /node_modules/,
   };
 
-  return [fileLoader, svgLoader, typeScriptLoader, cssLoader];
+  return [fileLoader, svgLoader, babelLoader, typeScriptLoader, cssLoader];
 }

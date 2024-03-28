@@ -1,5 +1,9 @@
+import { useTranslation } from "react-i18next";
+
 function AboutPage() {
-  return <div>ABOUT PAGE</div>;
+  const { t } = useTranslation("about");
+
+  return <div>{t("about page")}</div>;
 }
 
 export default AboutPage;
