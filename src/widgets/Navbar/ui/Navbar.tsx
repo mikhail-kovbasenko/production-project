@@ -1,7 +1,6 @@
-import styles from "./Navbar.module.scss";
-
-import { classNames } from "shared/lib/classNames";
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink";
+import { classNames } from 'shared/lib/classNames';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
+import styles from './Navbar.module.scss';
 
 interface NavbarProps {
   className?: string;
@@ -13,12 +12,12 @@ export function Navbar({ className }: NavbarProps) {
       <div className={styles.Links}>
         <AppLink
           theme={AppLinkTheme.INVERTED}
-          to={"/"}
+          to="/"
           className={styles.MainLink}
         >
           MAIN
         </AppLink>
-        <AppLink theme={AppLinkTheme.INVERTED} to={"/about"}>
+        <AppLink theme={AppLinkTheme.INVERTED} to="/about">
           New Age
         </AppLink>
       </div>

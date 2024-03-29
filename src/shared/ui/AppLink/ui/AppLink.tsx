@@ -1,13 +1,12 @@
-import { Link, LinkProps } from "react-router-dom";
+import { Link, LinkProps } from 'react-router-dom';
 
-import styles from "./AppLink.module.scss";
-
-import { classNames } from "shared/lib/classNames";
+import { classNames } from 'shared/lib/classNames';
+import styles from './AppLink.module.scss';
 
 export enum AppLinkTheme {
-  PRIMARY = "primary",
-  INVERTED = "inverted",
-  RED = "red"
+  PRIMARY = 'primary',
+  INVERTED = 'inverted',
+  RED = 'red'
 }
 
 interface AppLinkProps extends LinkProps {

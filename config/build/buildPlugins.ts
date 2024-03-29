@@ -1,8 +1,10 @@
-import HTMLWebpackPlugin from "html-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
-import { ProgressPlugin, WebpackPluginInstance, DefinePlugin, HotModuleReplacementPlugin } from "webpack";
-import { BuildOptions } from "./types/config";
+import HTMLWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import {
+  ProgressPlugin, WebpackPluginInstance, DefinePlugin, HotModuleReplacementPlugin,
+} from 'webpack';
+import { BuildOptions } from './types/config';
 
 export function buildPlugins({
   paths,
@@ -14,8 +16,8 @@ export function buildPlugins({
     }),
     new ProgressPlugin(),
     new MiniCssExtractPlugin({
-      filename: "css/[name].[contenthash:8].css",
-      chunkFilename: "css/[name].[contenthash:8].css",
+      filename: 'css/[name].[contenthash:8].css',
+      chunkFilename: 'css/[name].[contenthash:8].css',
     }),
     new DefinePlugin({
       IS_DEV: JSON.stringify(isDev),
@@ -23,8 +25,8 @@ export function buildPlugins({
   ];
 
   if (isDev) {
-    plugins.push(new ReactRefreshWebpackPlugin())
-    plugins.push(new HotModuleReplacementPlugin())
+    plugins.push(new ReactRefreshWebpackPlugin());
+    plugins.push(new HotModuleReplacementPlugin());
   }
 
   return plugins;
