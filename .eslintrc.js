@@ -37,7 +37,7 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'warn',
     'react/function-component-definition': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'i18next/no-literal-string': ['warn', { markupOnly: true }],
     'max-len': ['warn', { ignoreComments: true }],
   },
   globals: {
