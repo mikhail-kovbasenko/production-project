@@ -2,7 +2,8 @@
     "extends": "stylelint-config-standard-scss",
     "rules": {
         "indentation": [2],
-        "selector-class-pattern": null
+        "selector-class-pattern": null,
+        "no-duplicate-selectors": null
     }
     
 }
