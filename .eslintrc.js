@@ -36,10 +36,10 @@ module.exports = {
     'react/jsx-props-no-spreading': 'warn',
     'no-shadow': 'off',
     'import/extensions': 'off',
-    'import/no-extraneous-dependencies': 'warn',
+    'import/no-extraneous-dependencies': ['warn', { devDependencies: true }],
     'react/function-component-definition': 'off',
     'i18next/no-literal-string': ['warn', { markupOnly: true }],
-    'max-len': ['warn', { ignoreComments: true }],
+    'max-len': ['warn', { ignoreComments: true, code: 100 }],
     'react/destructuring-assignment': 'off',
   },
   globals: {
