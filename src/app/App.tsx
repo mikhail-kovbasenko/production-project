@@ -1,4 +1,4 @@
-import { Fragment, Suspense } from 'react';
+import { Fragment, Suspense, useEffect } from 'react';
 import 'app/styles/index.scss';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/router';
@@ -21,6 +21,12 @@ function Component() {
 
 function App() {
   const { theme } = useTheme();
+
+  useEffect(() => {
+    if (Math.random() < 0.5) {
+      throw new Error();
+    }
+  }, []);
 
   return (
     <div className={classNames('app', {}, [theme])}>
