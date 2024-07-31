@@ -38,7 +38,9 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': ['warn', { devDependencies: true }],
     'react/function-component-definition': 'off',
-    'i18next/no-literal-string': ['warn', { markupOnly: true }],
+    'i18next/no-literal-string': [
+      'warn', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] },
+    ],
     'max-len': ['warn', { ignoreComments: true, code: 100 }],
     'react/destructuring-assignment': 'off',
   },
@@ -46,4 +48,12 @@ module.exports = {
     IS_DEV: true,
     React: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*/test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
+  ],
 };

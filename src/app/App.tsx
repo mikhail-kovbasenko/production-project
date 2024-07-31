@@ -1,4 +1,4 @@
-import { Fragment, Suspense, useEffect } from 'react';
+import { Suspense } from 'react';
 import 'app/styles/index.scss';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/router';
