@@ -10,24 +10,21 @@ export default {
   },
 } as ComponentMeta<typeof Button>;
 
-
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: 'Text'
+  children: 'Text',
 };
 
 export const Clear = Template.bind({});
 Clear.args = {
   children: 'Text',
-  theme: ThemeButton.CLEAR
+  theme: ThemeButton.CLEAR,
 };
 
 export const Outlined = Template.bind({});
 Outlined.args = {
   children: 'Text',
-  theme: ThemeButton.OUTLINE
-}
-
-
+  theme: ThemeButton.OUTLINE,
+};
