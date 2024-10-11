@@ -14,6 +14,7 @@
     "unit": "jest --config ./config/jest/jest.config.ts",
     "loki": "npx loki test",
     "loki:ok": "npx loki approve",
+    "loki:ci": "npx loki --requireReference --reactUri file:./storybook-static",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "build-storybook": "build-storybook -c ./config/storybook"
   },
