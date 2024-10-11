@@ -23,10 +23,10 @@ export function buildPlugins({
     new DefinePlugin({
       IS_DEV: JSON.stringify(isDev),
     }),
-    new BundleAnalyzerPlugin({ openAnalyzer: false }),
   ];
 
   if (isDev) {
+    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
     plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
     plugins.push(new HotModuleReplacementPlugin());
   }
