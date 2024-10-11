@@ -6,7 +6,7 @@ on:
     branches: ['master']
 jobs:
   Pipeline-Production-Project:
-    runs-on: windows-10
+    runs-on: windows-2019
     strategy:
       matrix:
         node-version: [ 18.x ]
