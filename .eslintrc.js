@@ -2,16 +2,16 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true
+    jest: true,
   },
   extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
@@ -20,7 +20,7 @@ module.exports = {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
     'react/jsx-filename-extension': ['warn', {
-      extensions: ['.js', '.jsx', '.tsx', '.ts']
+      extensions: ['.js', '.jsx', '.tsx', '.ts'],
     }],
     'import/prefer-default-export': 'off',
     'no-unused-vars': 'warn',
@@ -31,27 +31,27 @@ module.exports = {
     'no-shadow': 'off',
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': ['warn', {
-      devDependencies: true
+      devDependencies: true,
     }],
     'react/function-component-definition': 'off',
     'i18next/no-literal-string': ['warn', {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to']
+      ignoreAttribute: ['data-testid', 'to'],
     }],
     'max-len': ['warn', {
       ignoreComments: true,
-      code: 100
+      code: 100,
     }],
-    'react/destructuring-assignment': 'off'
+    'react/destructuring-assignment': 'off',
   },
   globals: {
     IS_DEV: true,
-    React: true
+    React: true,
   },
   overrides: [{
     files: ['**/src/**/*/test.{ts,tsx}'],
     rules: {
-      'i18next/no-literal-string': 'off'
-    }
-  }]
+      'i18next/no-literal-string': 'off',
+    },
+  }],
 };

@@ -5,25 +5,46 @@ import styles from './Button.module.scss';
 
 import 'app/styles/index.scss';
 
-export enum ThemeButton {
+export enum ButtonTheme {
   CLEAR = 'clear',
-  OUTLINE = 'outline'
+  OUTLINE = 'outline',
+  BACKGROUND = 'background',
+  BACKGROUND_INVERTED = 'backgroundInverted'
+}
+
+export enum ButtonSize {
+  L = 'size_l',
+  M = 'size_m',
+  XL = 'size_xl'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  theme?: ThemeButton;
+  theme?: ButtonTheme;
+  square?: boolean;
+  size?: ButtonSize;
 }
 
 function Button(props: ButtonProps) {
   const {
-    className, theme, children, ...otherProps
+    className,
+    theme,
+    children,
+    square,
+    size,
+    ...otherProps
   } = props;
+
+  const mods: Record<string, boolean> = {
+    [styles[theme]]: true,
+    [styles.square]: square,
+    [styles[size]]: true,
+  };
 
   return (
     <button
       type="button"
-      className={classNames(styles.Button, {}, [className, styles[theme]])}
+      className={classNames(styles.Button, mods, [className])}
       {...otherProps}
     >
       {children}
