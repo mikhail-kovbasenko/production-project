@@ -6,10 +6,11 @@ import styles from './LanguageSwitcher.module.scss';
 
 interface LanguageSwitcherProps {
   className?: string;
+  short?: boolean;
 }
 
 function LanguageSwitcher(props: LanguageSwitcherProps) {
-  const { className } = props;
+  const { className, short } = props;
   const { t, i18n } = useTranslation();
 
   const toggle = async () => i18n.changeLanguage(i18n.language === 'en' ? 'ru' : 'en');
@@ -18,9 +19,11 @@ function LanguageSwitcher(props: LanguageSwitcherProps) {
     <Button
       onClick={toggle}
       theme={ButtonTheme.CLEAR}
-      className={classNames(styles.LangSwitcher, {}, [className])}
+      className={classNames(styles.LangSwitcher, {
+        [styles.collapsed]: short,
+      }, [className])}
     >
-      {t('language')}
+      {t(short ? 'Short' : 'language')}
     </Button>
   );
 }
