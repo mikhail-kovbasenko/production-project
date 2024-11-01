@@ -65,7 +65,6 @@ function Modal(props: ModalProps) {
   const mods: Record<string, boolean> = {
     [styles.opened]: isOpen,
     [styles.isClosing]: isClosing,
-    [styles[theme]]: true,
   };
 
   return (
