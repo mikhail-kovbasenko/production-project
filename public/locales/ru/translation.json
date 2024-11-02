@@ -9,5 +9,8 @@
   "Throw Error": "Выбросить ошибку",
   "Short": "Ру",
   "about page": "О нас",
-  "Login": "Войти"
+  "Login": "Войти",
+  "SignIn": "Войти",
+  "Enter password": "Введите пароль",
+  "Enter name": "Введите имя"
 }
