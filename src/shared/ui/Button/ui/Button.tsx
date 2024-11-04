@@ -24,6 +24,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: ButtonTheme;
   square?: boolean;
   size?: ButtonSize;
+  disabled?: boolean;
 }
 
 function Button(props: ButtonProps) {
@@ -32,6 +33,7 @@ function Button(props: ButtonProps) {
     theme,
     children,
     square,
+    disabled,
     size,
     ...otherProps
   } = props;
@@ -40,12 +42,14 @@ function Button(props: ButtonProps) {
     [styles[theme]]: true,
     [styles.square]: square,
     [styles[size]]: true,
+    [styles.disabled]: disabled,
   };
 
   return (
     <button
       type="button"
       className={classNames(styles.Button, mods, [className])}
+      disabled={disabled}
       {...otherProps}
     >
       {children}

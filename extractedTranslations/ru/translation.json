@@ -1,10 +1,15 @@
 {
   "": "",
   "About page": "About page",
+  "Authorization": "Authorization",
   "Enter name": "Enter name",
   "Enter password": "Enter password",
   "Error": "Error",
+  "Incorrect ": "Incorrect ",
+  "Incorrect login or password": "Incorrect login or password",
+  "Incorrect login or password!": "Incorrect login or password!",
   "Login": "Login",
+  "Logout": "Logout",
   "M": "M",
   "Main": "Main",
   "Page not found": "Page not found",
@@ -15,5 +20,6 @@
   "language": "language",
   "main page": "main page",
   "test translate": "test translate",
-  "translate": "translate"
+  "translate": "translate",
+  "Вы ввели неверный логин или пароль!": "Вы ввели неверный логин или пароль!"
 }

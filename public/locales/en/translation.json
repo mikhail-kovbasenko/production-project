@@ -12,5 +12,8 @@
   "Login": "Login",
   "SignIn": "SignIn",
   "Enter password": "Enter password",
-  "Enter name": "Enter name"
+  "Enter name": "Enter name",
+  "Authorization": "Authorization",
+  "Incorrect login or password": "Incorrect login or password!",
+  "Logout": "Logout"
 }

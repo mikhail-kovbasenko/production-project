@@ -20,5 +20,12 @@
       "title": "json-server 4",
       "author": "typicode"
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "111"
+    }
   ]
 }
