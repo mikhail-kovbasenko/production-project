@@ -48,7 +48,9 @@ export function Navbar({ className }: NavbarProps) {
       <Button className={styles.Links} theme={ButtonTheme.CLEAR_INVERTED} onClick={handleOpenModal}>
         {t('Login')}
       </Button>
-      <LoginModal isOpen={isAuthModal} onClose={handleCloseModal} />
+      {
+        isAuthModal && <LoginModal isOpen={isAuthModal} onClose={handleCloseModal} />
+      }
     </div>
   );
 }

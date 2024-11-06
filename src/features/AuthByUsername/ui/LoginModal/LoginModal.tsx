@@ -1,7 +1,9 @@
 import { classNames } from 'shared/lib/classNames';
 import { Modal } from 'shared/ui/Modal';
+import { Suspense } from 'react';
+import { Loader } from 'shared/ui/Loader';
 import styles from './LoginModal.module.scss';
-import LoginForm from '../LoginForm/LoginForm';
+import { LoginFormAsync as LoginForm } from '../LoginForm/LoginForm.async';
 
 interface LoginModalProps {
     className?: string;
@@ -23,7 +25,7 @@ function LoginModal(props: LoginModalProps) {
       onClose={onClose}
       lazy
     >
-      <LoginForm />
+      <Suspense fallback={<Loader />}><LoginForm /></Suspense>
     </Modal>
   );
 }
