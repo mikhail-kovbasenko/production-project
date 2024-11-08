@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, memo } from 'react';
 
 import { classNames } from 'shared/lib/classNames';
 import styles from './Button.module.scss';
@@ -57,4 +57,4 @@ function Button(props: ButtonProps) {
   );
 }
 
-export default Button;
+export default memo(Button);

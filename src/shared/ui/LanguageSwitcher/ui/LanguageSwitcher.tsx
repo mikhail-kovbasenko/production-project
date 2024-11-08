@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import { classNames } from 'shared/lib/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
+import { memo } from 'react';
 import styles from './LanguageSwitcher.module.scss';
 
 interface LanguageSwitcherProps {
@@ -28,4 +29,4 @@ function LanguageSwitcher(props: LanguageSwitcherProps) {
   );
 }
 
-export default LanguageSwitcher;
+export default memo(LanguageSwitcher);
