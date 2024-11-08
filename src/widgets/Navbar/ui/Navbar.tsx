@@ -1,5 +1,7 @@
 import { LoginModal } from 'features/AuthByUsername';
-import { useCallback, useState } from 'react';
+import {
+  memo, useCallback, useState,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
@@ -11,7 +13,7 @@ interface NavbarProps {
   className?: string;
 }
 
-export function Navbar({ className }: NavbarProps) {
+function Navbar({ className }: NavbarProps) {
   const { t } = useTranslation();
   const [isAuthModal, setAuthModal] = useState<boolean>(false);
   const authData = useSelector(getUserAuthData);
@@ -54,3 +56,5 @@ export function Navbar({ className }: NavbarProps) {
     </div>
   );
 }
+
+export default memo(Navbar);

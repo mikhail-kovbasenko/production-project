@@ -4,11 +4,13 @@ import {
 import { CounterSchema } from 'entities/Counter/model/types/counterSchema';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
+import { ProfileSchema } from 'entities/Profile';
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
-  loginForm?: LoginSchema
+  loginForm?: LoginSchema;
+  profile: ProfileSchema
 }
 
 export interface ReducerManager {

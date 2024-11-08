@@ -25,7 +25,7 @@ function LoginModal(props: LoginModalProps) {
       onClose={onClose}
       lazy
     >
-      <Suspense fallback={<Loader />}><LoginForm /></Suspense>
+      <Suspense fallback={<Loader />}><LoginForm onSuccess={onClose} /></Suspense>
     </Modal>
   );
 }

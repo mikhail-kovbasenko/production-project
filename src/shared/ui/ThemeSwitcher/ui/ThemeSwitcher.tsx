@@ -4,6 +4,7 @@ import { classNames } from 'shared/lib/classNames';
 import LightIcon from 'shared/assets/icons/theme-light.svg';
 import DarkIcon from 'shared/assets/icons/theme-dark.svg';
 import { Button, ButtonTheme } from 'shared/ui/Button';
+import { memo } from 'react';
 
 interface ThemeSwitcherProps {
   className?: string;
@@ -23,4 +24,4 @@ function ThemeSwitcher({ className }: ThemeSwitcherProps) {
   );
 }
 
-export default ThemeSwitcher;
+export default memo(ThemeSwitcher);

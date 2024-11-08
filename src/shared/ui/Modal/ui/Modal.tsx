@@ -82,7 +82,7 @@ function Modal(props: ModalProps) {
 
   return (
     <Portal>
-      <div className={classNames(styles.Modal, mods, [className])}>
+      <div className={classNames(styles.Modal, mods, [className, theme, 'app_modal'])}>
         <div className={styles.overlay} onClick={closeHandler}>
           <div className={styles.content} onClick={onContent}>{children}</div>
         </div>

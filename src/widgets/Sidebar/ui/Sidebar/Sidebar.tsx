@@ -1,14 +1,12 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 
-import { classNames } from 'shared/lib/classNames';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
-import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher';
-import Button, { ButtonSize, ButtonTheme } from 'shared/ui/Button/ui/Button';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/router/config';
-import AboutPageIcon from 'shared/assets/icons/about.svg';
-import MainPageIcon from 'shared/assets/icons/home.svg';
+import { classNames } from 'shared/lib/classNames';
+import Button, { ButtonSize, ButtonTheme } from 'shared/ui/Button/ui/Button';
+import { LanguageSwitcher } from 'shared/ui/LanguageSwitcher';
+import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
+import { SidebarItemsList } from '../../model/consts';
+import SidebarItem from '../SidebarItem/SidebarItem';
 import styles from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -41,21 +39,9 @@ function Sidebar(props: SidebarProps) {
         {collapsed ? '>' : '<'}
       </Button>
       <div className={styles.items}>
-
-        <AppLink
-          theme={AppLinkTheme.INVERTED}
-          to={RoutePath.main}
-          className={styles.item}
-        >
-          <MainPageIcon className={styles.icon} />
-          <span className={styles.link}>{t('main page')}</span>
-        </AppLink>
-
-        <AppLink theme={AppLinkTheme.INVERTED} to={RoutePath.about} className={styles.item}>
-          <AboutPageIcon className={styles.icon} />
-          <span className={styles.link}>{t('about page')}</span>
-        </AppLink>
-
+        {SidebarItemsList.map((item) => (
+          <SidebarItem item={item} collapsed={collapsed} key={item.path} />
+        ))}
       </div>
       <div className={styles.switchers}>
         <ThemeSwitcher />
@@ -65,4 +51,4 @@ function Sidebar(props: SidebarProps) {
   );
 }
 
-export default Sidebar;
+export default memo(Sidebar);

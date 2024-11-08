@@ -3,18 +3,14 @@
 @import "themes/light";
 @import "variables/globals";
 
-body {
+.app,
+.app_modal {
   font: var(--font-m);
-
-  // background: var(--bg-color);
   color: var(--primary-color);
 }
 
 .app {
-  // font: var(--font-m);
   background: var(--bg-color);
-
-  // color: var(--primary-color);
   min-height: 100vh;
 }
 
