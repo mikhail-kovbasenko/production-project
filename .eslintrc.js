@@ -55,10 +55,13 @@ module.exports = {
     'no-param-reassign': 'off',
     'react/jsx-no-useless-fragment': 'off',
     'react/jsx-fragments': 'off',
+    'no-underscore-dangle': 'off',
+    'no-undef': 'off',
   },
   globals: {
     IS_DEV: true,
     React: true,
+    __API__: true,
   },
   overrides: [{
     files: ['**/src/**/*.{test,stories}.{ts,tsx}'],

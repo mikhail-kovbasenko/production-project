@@ -12,7 +12,7 @@ function MainPage() {
     <div>
       <BugButton />
       {t('main page')}
-      <Input value={value} onChange={handleChange} placeholder="Введите текс" />
+      <Input value={value} onChange={handleChange} placeholder="Введите текст" />
       {/* <Counter /> */}
     </div>
   );

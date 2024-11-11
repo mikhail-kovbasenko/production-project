@@ -16,5 +16,6 @@
   "Authorization": "Authorization",
   "Incorrect login or password": "Incorrect login or password!",
   "Logout": "Logout",
-  "Profile": "PROFILE"
+  "Profile": "PROFILE",
+  "profile": "Profile"
 }

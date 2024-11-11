@@ -2,6 +2,7 @@
   "": "",
   "About page": "",
   "Authorization": "",
+  "Edit": "Edit",
   "Enter name": "Enter name",
   "Enter password": "Enter password",
   "Error": "Error",
@@ -21,7 +22,11 @@
   "about page": "about page",
   "language": "language",
   "main page": "main page",
+  "my profile": "my profile",
+  "profile": "profile",
   "test translate": "test translate",
   "translate": "translate",
+  "your firstname": "your firstname",
+  "your lastname": "your lastname",
   "Вы ввели неверный логин или пароль!": "Вы ввели неверный логин или пароль!"
 }
