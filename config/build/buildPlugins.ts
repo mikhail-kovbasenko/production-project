@@ -10,6 +10,7 @@ import { BuildOptions } from './types/config';
 export function buildPlugins({
   paths,
   isDev,
+  apiUrl,
 }: BuildOptions): WebpackPluginInstance[] {
   const plugins = [
     new HTMLWebpackPlugin({
@@ -22,6 +23,7 @@ export function buildPlugins({
     }),
     new DefinePlugin({
       IS_DEV: JSON.stringify(isDev),
+      __API__: JSON.stringify(apiUrl),
     }),
   ];
 

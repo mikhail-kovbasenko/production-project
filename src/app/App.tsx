@@ -9,6 +9,7 @@ import { classNames } from 'shared/lib/classNames';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import { userActions } from 'entities/User';
+import { useNavigate } from 'react-router-dom';
 
 function Component() {
   const { t, i18n } = useTranslation();
@@ -29,12 +30,13 @@ function Component() {
 
 function App() {
   const { theme } = useTheme();
+  const navigate = useNavigate();
 
   return (
     <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">
         <Navbar />
-        <Component />
+        {/* <Component /> */}
         <div className="content-page">
           <Sidebar />
           <AppRouter />

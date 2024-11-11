@@ -3,6 +3,7 @@ import { resolve } from 'path';
 export default {
   globals: {
     IS_DEV: true,
+    __API__: '',
   },
   clearMocks: true,
   testEnvironment: 'jsdom',

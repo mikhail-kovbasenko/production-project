@@ -1,6 +1,7 @@
-import { classNames } from 'shared/lib/classNames';
+import { classNames, Mods } from 'shared/lib/classNames';
 import {
   MouseEvent,
+  MutableRefObject,
   ReactNode,
   useCallback,
   useEffect,
@@ -32,7 +33,7 @@ function Modal(props: ModalProps) {
 
   const [isClosing, setClosing] = useState<boolean>(false);
   const [isMounted, setMounted] = useState<boolean>(false);
-  const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
   const { theme } = useTheme();
 
   const closeHandler = useCallback(() => {
@@ -71,7 +72,7 @@ function Modal(props: ModalProps) {
     }
   }, [isOpen]);
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [styles.opened]: isOpen,
     [styles.isClosing]: isClosing,
   };

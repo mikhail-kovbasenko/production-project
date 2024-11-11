@@ -22,7 +22,7 @@ function BugButton(props: BugButtonProps) {
   return (
     <Button
       onClick={onThrow}
-      className={classNames(null, {}, [props.className])}
+      className={classNames('', {}, [props.className])}
     >
       {t('Throw Error')}
     </Button>
