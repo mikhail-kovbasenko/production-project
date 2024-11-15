@@ -17,5 +17,7 @@
   "Incorrect login or password": "Incorrect login or password!",
   "Logout": "Logout",
   "Profile": "PROFILE",
-  "profile": "Profile"
+  "profile": "Profile",
+  "currency": "Currency",
+  "country": "Country"
 }

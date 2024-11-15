@@ -1,13 +1,14 @@
-import { classNames } from 'shared/lib/classNames';
+import { classNames, Mods } from 'shared/lib/classNames';
 import { InputHTMLAttributes, memo } from 'react';
 import styles from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 interface InputProps extends HTMLInputProps {
     className?: string;
-    value?: string;
+    value?: string | number;
     onChange?: (value: string) => void;
+    readonly?: boolean
 }
 
 function Input(props: InputProps) {
@@ -16,6 +17,7 @@ function Input(props: InputProps) {
     value,
     onChange,
     type = 'text',
+    readonly,
     ...otherProps
   } = props;
 
@@ -23,9 +25,19 @@ function Input(props: InputProps) {
     onChange?.(event.target.value);
   };
 
+  const mods: Mods = {
+    [styles.readonly]: readonly,
+  };
+
   return (
-    <div className={classNames(styles.Input, {}, [className])}>
-      <input type={type} value={value} onChange={handleChange} {...otherProps} />
+    <div className={classNames(styles.Input, mods, [className])}>
+      <input
+        type={type}
+        value={value}
+        onChange={handleChange}
+        readOnly={readonly}
+        {...otherProps}
+      />
     </div>
   );
 }

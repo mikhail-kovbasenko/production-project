@@ -2,5 +2,14 @@
   "my profile": "Мой профиль",
   "Edit": "Редактировать",
   "your firstname": "Ваше имя",
-  "your lastname": "Ваша фамилия"
+  "your lastname": "Ваша фамилия",
+  "profile error": "Произошла ошибка при загрузке профиля",
+  "try refersh page": "Попробуйте обновить страницу",
+  "cancel": "Отменить",
+  "save": "Сохранить",
+  "your age": "Ваш возраст",
+  "your city": "Ваш город",
+  "your username": "Ваш никнейм",
+  "your avatar": "Ваш аватар",
+  "currency": "Укажите валюту"
 }
