@@ -7,9 +7,14 @@
   "profile error": "There was an error loading profile",
   "cancel": "Cancel",
   "save": "Save",
-  "profile.your age": "Your age",
-  "profile.your city": "Your city",
-  "profile.your username": "Your username",
-  "profile.your avatar": "Your avatar",
-  "profile.currency": "Indicate currency"
+  "your age": "Your age",
+  "your city": "Your city",
+  "your username": "Your username",
+  "your avatar": "Your avatar",
+  "currency": "Indicate currency",
+  "server error": "Server Error",
+  "age error": "Incorrect age",
+  "contry error": "Incorrect country",
+  "data error": "No data",
+  "userdata error": "Incorrect firsname or lastname"
 }
