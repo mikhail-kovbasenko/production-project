@@ -6,7 +6,7 @@ export { updateProfileData } from './model/services/updateProfileData/updateProf
 
 export { profileActions, profileReducer } from './model/slice/profileSlice';
 
-export { Profile, ProfileSchema } from './model/types/types';
+export { Profile, ProfileSchema, ValidateProfileError } from './model/types/types';
 
 export { ProfileCard };
 
@@ -19,3 +19,6 @@ export { getProfileLoading } from './model/selectors/getProfileLoading/getProfil
 export { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly';
 
 export { getProfileForm } from './model/selectors/getProfileForm/getProfileForm';
+
+export { getProfileValidateErrors }
+  from './model/selectors/getProfileValidateErrors/getProfileValidateErrors';

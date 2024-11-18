@@ -11,5 +11,10 @@
   "your city": "Ваш город",
   "your username": "Ваш никнейм",
   "your avatar": "Ваш аватар",
-  "currency": "Укажите валюту"
+  "currency": "Укажите валюту",
+  "server error": "Ошибка сервера",
+  "age error": "Некорректный возраст",
+  "contry error": "Некорректная страна",
+  "data error": "Нет данных",
+  "userdata error": "Некорректные имя или фамилия"
 }

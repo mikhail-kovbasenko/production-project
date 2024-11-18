@@ -57,11 +57,13 @@ module.exports = {
     'react/jsx-fragments': 'off',
     'no-underscore-dangle': 'off',
     'no-undef': 'off',
+    'implicit-arrow-linebreak': 'warn',
   },
   globals: {
     IS_DEV: true,
     React: true,
     __API__: true,
+    __PROJECT__: true
   },
   overrides: [{
     files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
