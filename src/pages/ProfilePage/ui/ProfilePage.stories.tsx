@@ -16,6 +16,19 @@ export default {
 
 const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage />;
 
+const data = {
+  username: 'admin',
+  age: 24,
+  country: CountryType.Russia,
+  lastname: 'semenov',
+  first: 'oleg',
+  city: 'Moscow',
+  currency: CurrencyType.EUR,
+  avatar: __PROJECT__ !== 'storybook'
+    ? avatar
+    : 'https://sun9-9.userapi.com/impg/Fqdlfrwzee2yuRWLCjaH4aq25C88Er_fGLyRkA/kRYaaXS-LNg.jpg?size=1024x1280&quality=95&sign=1e13c17cd6867e41a10aafeb337409f8&type=album',
+};
+
 export const Normal = Template.bind({});
 Normal.args = {
 
@@ -23,18 +36,7 @@ Normal.args = {
 
 Normal.decorators = [StoreDecorator({
   profile: {
-    form: {
-      username: 'admin',
-      age: 24,
-      country: CountryType.Russia,
-      lastname: 'semenov',
-      first: 'oleg',
-      city: 'Moscow',
-      currency: CurrencyType.EUR,
-      avatar: __PROJECT__ !== 'storybook'
-        ? avatar
-        : 'https://sun9-9.userapi.com/impg/Fqdlfrwzee2yuRWLCjaH4aq25C88Er_fGLyRkA/kRYaaXS-LNg.jpg?size=1024x1280&quality=95&sign=1e13c17cd6867e41a10aafeb337409f8&type=album',
-    },
+    form: data,
   },
 })];
 
@@ -44,17 +46,6 @@ Dark.args = {
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
   profile: {
-    form: {
-      username: 'admin',
-      age: 24,
-      country: CountryType.Russia,
-      lastname: 'semenov',
-      first: 'oleg',
-      city: 'Moscow',
-      currency: CurrencyType.EUR,
-      avatar: __PROJECT__ !== 'storybook'
-        ? avatar
-        : 'https://sun9-9.userapi.com/impg/Fqdlfrwzee2yuRWLCjaH4aq25C88Er_fGLyRkA/kRYaaXS-LNg.jpg?size=1024x1280&quality=95&sign=1e13c17cd6867e41a10aafeb337409f8&type=album',
-    },
+    form: data,
   },
 })];
