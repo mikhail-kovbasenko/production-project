@@ -24,9 +24,9 @@ const data = {
   first: 'oleg',
   city: 'Moscow',
   currency: CurrencyType.EUR,
-  avatar: __PROJECT__ !== 'storybook'
-    ? avatar
-    : 'https://sun9-9.userapi.com/impg/Fqdlfrwzee2yuRWLCjaH4aq25C88Er_fGLyRkA/kRYaaXS-LNg.jpg?size=1024x1280&quality=95&sign=1e13c17cd6867e41a10aafeb337409f8&type=album',
+  // avatar: __PROJECT__ !== 'storybook'
+  //   ? avatar
+  //   : 'https://sun9-9.userapi.com/impg/Fqdlfrwzee2yuRWLCjaH4aq25C88Er_fGLyRkA/kRYaaXS-LNg.jpg?size=1024x1280&quality=95&sign=1e13c17cd6867e41a10aafeb337409f8&type=album',
 };
 
 export const Normal = Template.bind({});
