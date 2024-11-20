@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npx webpack serve --env port=5001",
     "start:server": "node ./json-server/index.js",
+    "start:dev": "npx concurrently \"npm start\" \"npm run start:dev\"",
     "build:prod": "npx webpack --env mode=production",
     "build:dev": "npx webpack --env mode=development",
     "lint": "npx eslint \"**/*.{ts,tsx}\"",
@@ -92,6 +93,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "1.8",
     "axios": "^0.26.1",
+    "concurrently": "^7.6.0",
     "i18next": "21.6",
     "i18next-browser-languagedetector": "6.1",
     "i18next-http-backend": "1.3",
