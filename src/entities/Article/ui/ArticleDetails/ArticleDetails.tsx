@@ -1,0 +1,141 @@
+import { Fragment, memo, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { classNames } from 'shared/lib/classNames';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components';
+import { useAppDispatch } from 'shared/lib/hooks';
+import { Skeleton } from 'shared/ui/Skeleton';
+import { TextAlign, TextSize, TextTheme } from 'shared/ui/Text/ui/Text';
+import { Avatar } from 'shared/ui/Avatar';
+import { Text } from 'shared/ui/Text';
+import EyeIcon from 'shared/assets/icons/eye.svg';
+import CalendarIcon from 'shared/assets/icons/calendar.svg';
+import {
+  getArticleDetailsData,
+  getArticleDetailsError,
+  getArticleDetailsLoading,
+} from '../../model/selectors/getArticleDetails';
+import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
+import styles from './ArticleDetails.module.scss';
+import { Icon } from '../../../../shared/ui/Icon';
+import { ArticleBlock, ArticleBlockType } from '../../model/types/types';
+import ArticleCodeBlockComponent from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import ArticleImageBlockComponent from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+
+interface ArticleDetailsProps {
+    className?: string;
+    id: string;
+}
+
+const renderBlock = (block: ArticleBlock) => {
+  switch (block.type) {
+    case ArticleBlockType.CODE:
+      return (
+        <ArticleCodeBlockComponent
+          block={block}
+          className={styles.block}
+          key={block.id}
+        />
+      );
+    case ArticleBlockType.IMAGE:
+      return (
+        <ArticleImageBlockComponent
+          block={block}
+          className={styles.block}
+          key={block.id}
+        />
+      );
+    case ArticleBlockType.TEXT:
+      return (
+        <ArticleTextBlockComponent
+          block={block}
+          className={styles.block}
+          key={block.id}
+        />
+      );
+    default: return null;
+  }
+};
+
+const reducers: ReducersList = {
+  articleDetails: articleDetailsReducer,
+};
+
+function ArticleDetails(props: ArticleDetailsProps) {
+  const {
+    className,
+    id,
+  } = props;
+
+  const isLoading = useSelector(getArticleDetailsLoading);
+  const error = useSelector(getArticleDetailsError);
+  const article = useSelector(getArticleDetailsData);
+
+  let content;
+
+  const dispatch = useAppDispatch();
+
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchArticleById(id));
+    }
+  }, [dispatch, id]);
+
+  if (isLoading) {
+    content = (
+      <Fragment>
+        <Skeleton width={200} height={200} border="50%" className={styles.avatar} />
+        <Skeleton width={300} height={59} className={styles.title} />
+        <Skeleton width={500} height={100} className={styles.skeleton} />
+        <Skeleton width={500} height={100} className={styles.skeleton} />
+      </Fragment>
+    );
+  } else if (error) {
+    content = (
+      <Text
+        title="ERROR"
+        align={TextAlign.CENTER}
+        theme={TextTheme.ERROR}
+      />
+    );
+  } else {
+    content = (
+      <Fragment>
+        <div className={styles.avatarWrapper}>
+          <Avatar size={200} src={article?.img} className={styles.avatar} />
+        </div>
+        <Text
+          title={article?.title}
+          text={article?.subtitle}
+          className={styles.title}
+          size={TextSize.L}
+        />
+        <div className={styles.articleInfo}>
+          <Icon Svg={EyeIcon} className={styles.icon} />
+          <Text text={String(article?.views)} />
+        </div>
+        <div className={styles.articleInfo}>
+          <Icon Svg={CalendarIcon} className={styles.icon} />
+          <Text text={article?.createdAt} />
+        </div>
+        {
+          article?.blocks.map(renderBlock)
+        }
+      </Fragment>
+    );
+  }
+
+  return (
+    <DynamicModuleLoader reducers={reducers} removeAfterOnMount>
+      <div className={classNames(styles.ArticleDetails, {}, [className])}>
+        {content}
+      </div>
+    </DynamicModuleLoader>
+  );
+}
+
+export default memo(ArticleDetails);
