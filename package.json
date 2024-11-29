@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx webpack serve --env port=5001",
     "start:server": "node ./json-server/index.js",
-    "start:dev": "npx concurrently \"npm start\" \"npm run start:dev\"",
+    "start:dev": "npx concurrently \"npm start\" \"npm run start:server\"",
     "build:prod": "npx webpack --env mode=production",
     "build:dev": "npx webpack --env mode=development",
     "lint": "npx eslint \"**/*.{ts,tsx}\"",

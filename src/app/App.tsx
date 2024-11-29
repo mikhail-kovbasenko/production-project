@@ -8,7 +8,7 @@ import { Sidebar } from 'widgets/Sidebar';
 
 import { getUserInited, userActions } from 'entities/User';
 import { useDispatch, useSelector } from 'react-redux';
-import { USER_LOCALSTORAGE_KEY } from '../shared/const/localStorage';
+import { USER_LOCALSTORAGE_KEY } from '../shared/const/localeStorage';
 
 // function Component() {
 //   const { t, i18n } = useTranslation();

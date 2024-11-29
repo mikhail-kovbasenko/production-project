@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { USER_LOCALSTORAGE_KEY } from '../const/localStorage';
+import { USER_LOCALSTORAGE_KEY } from '../const/localeStorage';
 
 // const baseURL = IS_DEV ? 'http://localhost:8000' : 'https://production.ru';
 

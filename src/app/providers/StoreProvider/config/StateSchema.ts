@@ -8,13 +8,15 @@ import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ArticleDetailsSchema } from 'entities/Article';
+import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
   loginForm?: LoginSchema;
   profile?: ProfileSchema,
-  articleDetails?: ArticleDetailsSchema
+  articleDetails?: ArticleDetailsSchema,
+  articleDetailsComments?: ArticleDetailsCommentSchema
 }
 
 export interface ReducerManager {

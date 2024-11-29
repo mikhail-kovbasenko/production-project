@@ -1,12 +1,7 @@
-import axios from 'axios';
-// import { Dispatch } from 'react';
-// import { StateSchema } from 'app/providers/StoreProvider';
-import { userActions } from 'entities/User';
-// import { AnyAction } from '@reduxjs/toolkit';
 import { TestAsyncThunk } from 'shared/config/tests';
-import { fetchProfileData } from './fetchProfileData';
 import { CountryType } from '../../../../Country';
 import { CurrencyType } from '../../../../Currency';
+import { fetchProfileData } from './fetchProfileData';
 
 const data = {
   username: 'admin',
