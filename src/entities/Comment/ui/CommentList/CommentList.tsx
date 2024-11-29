@@ -20,6 +20,16 @@ function CommentList(props: CommentListProps) {
 
   const { t } = useTranslation('article');
 
+  if (isLoading) {
+    return (
+      <div className={classNames('', {}, [className])}>
+        <CommentCard isLoading />
+        <CommentCard isLoading />
+        <CommentCard isLoading />
+      </div>
+    );
+  }
+
   return (
     <div className={classNames('', {}, [className])}>
       {

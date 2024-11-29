@@ -1,4 +1,6 @@
-import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
+import {
+  getProfileData, getProfileReadonly, profileActions, updateProfileData,
+} from 'entities/Profile';
 import { Fragment, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -7,6 +9,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Text } from 'shared/ui/Text';
 import { useAppDispatch } from 'shared/lib/hooks';
 import styles from './ProfilePageHeader.module.scss';
+import { getUserAuthData } from '../../../../entities/User';
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -16,6 +19,11 @@ function ProfilePageHeader(props: ProfilePageHeaderProps) {
   const { className } = props;
 
   const { t } = useTranslation('profile');
+
+  const authData = useSelector(getUserAuthData);
+  const profileData = useSelector(getProfileData);
+
+  const canEdit = authData?.id === profileData?.id;
 
   const readonly = useSelector(getProfileReadonly);
 
@@ -30,42 +38,50 @@ function ProfilePageHeader(props: ProfilePageHeaderProps) {
   }, [dispatch]);
 
   const handleSave = useCallback(() => {
-    dispatch(updateProfileData());
+    if (profileData?.id) {
+      dispatch(updateProfileData(profileData?.id));
+    }
     // dispatch(profileActions.setReadonly(true));
-  }, [dispatch]);
+  }, [dispatch, profileData]);
 
   return (
     <div className={classNames(styles.ProfilePageHeader, {}, [className])}>
       <Text title={t('my profile')} />
       {
-        readonly
-          ? (
-            <Button
-              theme={ButtonTheme.BACKGROUND_INVERTED}
-              className={styles.btn}
-              onClick={handleEdit}
-            >
-              {t('Edit')}
-            </Button>
-          )
-          : (
-            <Fragment>
-              <Button
-                theme={ButtonTheme.OUTLINE_RED}
-                className={styles.btn}
-                onClick={handleCancelEdit}
-              >
-                {t('cancel')}
-              </Button>
-              <Button
-                theme={ButtonTheme.OUTLINE}
-                className={styles.saveBtn}
-                onClick={handleSave}
-              >
-                {t('save')}
-              </Button>
-            </Fragment>
-          )
+        canEdit && (
+          <div className={styles.btnsWrapper}>
+            {
+            readonly
+              ? (
+                <Button
+                  theme={ButtonTheme.BACKGROUND_INVERTED}
+                  className={styles.btn}
+                  onClick={handleEdit}
+                >
+                  {t('Edit')}
+                </Button>
+              )
+              : (
+                <Fragment>
+                  <Button
+                    theme={ButtonTheme.OUTLINE_RED}
+                    className={styles.btn}
+                    onClick={handleCancelEdit}
+                  >
+                    {t('cancel')}
+                  </Button>
+                  <Button
+                    theme={ButtonTheme.OUTLINE}
+                    className={styles.saveBtn}
+                    onClick={handleSave}
+                  >
+                    {t('save')}
+                  </Button>
+                </Fragment>
+              )
+          }
+          </div>
+        )
       }
 
     </div>

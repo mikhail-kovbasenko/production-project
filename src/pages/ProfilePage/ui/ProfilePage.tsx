@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames';
 import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components';
-import { KeyboardEvent, useCallback, useEffect } from 'react';
+import { KeyboardEvent, useCallback } from 'react';
 
 import {
   fetchProfileData,
@@ -15,13 +15,14 @@ import {
   profileReducer,
   ValidateProfileError,
 } from 'entities/Profile';
-import { useAppDispatch } from 'shared/lib/hooks';
+import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
 import { useSelector } from 'react-redux';
 import { validKeyboardKeys } from 'shared/const/commons';
 import { CurrencyType } from 'entities/Currency';
 import { CountryType } from 'entities/Country';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
+import { useParams } from 'react-router-dom';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -46,6 +47,8 @@ function ProfilePage(props: ProfilePageProps) {
   const isLoading = useSelector(getProfileLoading);
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
+
+  const { id } = useParams<{ id: string }>();
 
   const validateErrorTranslates = {
     [ValidateProfileError.SERVER_ERROR]: t('server error'),
@@ -112,11 +115,11 @@ function ProfilePage(props: ProfilePageProps) {
     }));
   }, [dispatch]);
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData());
+  useInitialEffect(() => {
+    if (id) {
+      dispatch(fetchProfileData(id));
     }
-  }, [dispatch]);
+  });
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterOnMount>

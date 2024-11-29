@@ -19,7 +19,7 @@ function DynamicModuleLoader(props: DynamicModuleLoaderProps) {
   const {
     children,
     reducers,
-    removeAfterOnMount,
+    removeAfterOnMount = true,
   } = props;
   const dispatch = useDispatch();
   const store = useStore() as ReduxStoreWithManager;

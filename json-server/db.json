@@ -37,16 +37,30 @@
       "avatar": "https://sun9-56.userapi.com/s/v1/if2/g2Vp1KS5ElTWNARB7V58ZeIjgv5HxH_utCMgdGeTSkQopXlEOXoQPXSUR8Mid3l7VPYk4tahhOe8bI8niK1whB3L.jpg?quality=96&as=32x18,48x27,72x40,108x60,160x89,240x133,360x200,480x267,540x300,604x336&from=bu&u=otIwtHv8rc10DNAoH3hvD2YwSOejJ7BcwT4Klyr2cQQ&cs=320x213"
     }
   ],
-  "profile": {
-    "first": "Михаил",
-    "lastname": "Ковбасенко",
-    "age": 24,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://sun9-9.userapi.com/impg/Fqdlfrwzee2yuRWLCjaH4aq25C88Er_fGLyRkA/kRYaaXS-LNg.jpg?size=1024x1280&quality=95&sign=1e13c17cd6867e41a10aafeb337409f8&type=album"
-  },
+  "profile": [
+    {
+      "id": "1",
+      "first": "Михаил33",
+      "lastname": "Ковбасенко",
+      "age": 24,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://sun9-9.userapi.com/impg/Fqdlfrwzee2yuRWLCjaH4aq25C88Er_fGLyRkA/kRYaaXS-LNg.jpg?size=1024x1280&quality=95&sign=1e13c17cd6867e41a10aafeb337409f8&type=album"
+    },
+    {
+      "id": "2",
+      "first": "Иван",
+      "lastname": "Иванов",
+      "age": 33,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "user",
+      "avatar": "https://sun9-56.userapi.com/s/v1/if2/g2Vp1KS5ElTWNARB7V58ZeIjgv5HxH_utCMgdGeTSkQopXlEOXoQPXSUR8Mid3l7VPYk4tahhOe8bI8niK1whB3L.jpg?quality=96&as=32x18,48x27,72x40,108x60,160x89,240x133,360x200,480x267,540x300,604x336&from=bu&u=otIwtHv8rc10DNAoH3hvD2YwSOejJ7BcwT4Klyr2cQQ&cs=320x213"
+    }
+  ],
   "articles": [
     {
       "id": "1",
@@ -54,7 +68,9 @@
       "subtitle": "Something new in JS for 2022?",
       "views": 103,
       "createdAt": "22.01.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -136,6 +152,24 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "gfgfgfgfg",
+      "id": "51GRFDg"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "565656",
+      "id": "bLy7uDl"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "99999",
+      "id": "ikZ9uDf"
     }
   ]
 }

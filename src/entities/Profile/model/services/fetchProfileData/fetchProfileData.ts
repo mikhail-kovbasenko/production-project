@@ -1,25 +1,15 @@
-import { createAsyncThunk, Dispatch } from '@reduxjs/toolkit';
-import { ThunkExtraArg } from 'app/providers/StoreProvider';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Profile } from '../../types/types';
 
-interface LoginByUsernameProps {
-  username: string;
-  password: string;
-}
-
-interface LoginByUsernameConfig {
-  rejectValue: string;
-  extra: ThunkExtraArg;
-}
-
-export const fetchProfileData = createAsyncThunk<Profile, void, LoginByUsernameConfig>(
+export const fetchProfileData = createAsyncThunk<Profile, string, ThunkConfig<string>>(
   'profile/fetchProfileData',
-  async (_, {
+  async (profileId, {
     extra,
     rejectWithValue,
   }) => {
     try {
-      const response = await extra.api.get<Profile>('profile');
+      const response = await extra.api.get<Profile>(`profile/${profileId}`);
 
       if (!response.data) {
         throw new Error();

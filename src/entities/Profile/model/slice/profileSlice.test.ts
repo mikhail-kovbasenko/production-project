@@ -5,6 +5,7 @@ import { ProfileSchema, ValidateProfileError } from '../types/types';
 import { profileActions, profileReducer } from './profileSlice';
 
 const data = {
+  id: '1',
   username: 'admin',
   age: 24,
   country: CountryType.Russia,
@@ -76,7 +77,7 @@ describe('profileSlice', () => {
     expect(
       profileReducer(
         state as ProfileSchema,
-        updateProfileData.fulfilled(data, ''),
+        updateProfileData.fulfilled(data, '1', ''),
       ),
     ).toEqual({
       isLoading: false,
