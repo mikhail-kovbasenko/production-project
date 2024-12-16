@@ -4,7 +4,7 @@ import { StoreDecorator } from '../../../../shared/config/storybook';
 import { ArticleBlockType, ArticleType } from '../../model/types/types';
 
 export default {
-  title: 'entities/ArticleDetails',
+  title: 'entities/Article/ArticleDetails',
   component: ArticleDetails,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -24,6 +24,10 @@ Primary.decorators = [StoreDecorator({
       views: 103,
       createdAt: '22.01.2023',
       type: [ArticleType.IT],
+      user: {
+        id: '1',
+        username: 'olegSemenov',
+      },
       blocks: [
         {
           id: '1',
@@ -90,7 +94,8 @@ Primary.decorators = [StoreDecorator({
 })];
 
 export const Loading = Template.bind({});
-Loading.args = {};
+Loading.args = {
+};
 Loading.decorators = [StoreDecorator({
   articleDetails: {
     isLoading: true,

@@ -24,6 +24,10 @@ Primary.decorators = [StoreDecorator({
       views: 103,
       createdAt: '22.01.2023',
       type: [ArticleType.IT],
+      user: {
+        id: '1',
+        username: 'olegSemenov',
+      },
       blocks: [
         {
           id: '1',

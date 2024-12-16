@@ -2,13 +2,14 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames';
 import { ArticleDetails } from 'entities/Article';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/Text';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components';
 import { useDispatch, useSelector } from 'react-redux';
 import { CommentList } from 'entities/Comment';
 import { useInitialEffect } from 'shared/lib/hooks';
 import { AddCommentForm } from 'features/AddCommentForm';
+import { Button, ButtonTheme } from 'shared/ui/Button';
 import styles from './ArticleDetailsPage.module.scss';
 import {
   articleDetailCommentReducers,
@@ -18,6 +19,7 @@ import { getArticleCommentsError, getArticleCommentsLoading } from '../model/sel
 import { fetchCommentsArticleById }
   from '../model/services/fetchCommentByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
+import { RoutePath } from '../../../shared/config/router/config';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -42,10 +44,15 @@ function ArticleDetailsPage(props: ArticleDetailsPageProps) {
   const commentsError = useSelector(getArticleCommentsError);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSendComment = useCallback((text: string) => {
     dispatch(addCommentForArticle(text));
   }, [dispatch]);
+
+  const onBackToList = useCallback(() => {
+    navigate(RoutePath.articles);
+  }, [navigate]);
 
   useInitialEffect(() => {
     dispatch(fetchCommentsArticleById(id));
@@ -62,6 +69,7 @@ function ArticleDetailsPage(props: ArticleDetailsPageProps) {
   return (
     <DynamicModuleLoader removeAfterOnMount reducers={reducers}>
       <div className={classNames(styles.ArticleDetailsPage, {}, [className])}>
+        <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>{t('return to list')}</Button>
         <ArticleDetails id={id} />
         <Text title={t('Comments')} className={styles.commentTitle} />
         <AddCommentForm onSendComment={handleSendComment} />

@@ -1,11 +1,6 @@
-import { classNames } from 'shared/lib/classNames';
-import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
-import { Article, ArticleList, ArticleView } from 'entities/Article';
-
-interface ArticlesPageProps {
-  className?: string;
-}
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import ArticleListItem from './ArticleListItem';
+import { Article, ArticleView } from '../../model/types/types';
 
 const article = {
   id: '1',
@@ -82,20 +77,24 @@ const article = {
   img: 'https://sun9-17.userapi.com/impg/N29uhUg7rirCuolXqWYOASJmZcwTjuFvPM-Bbw/rORyk9zEwz8.jpg?size=1080x1350&quality=96&sign=f6104d9986476d462fed2bf38c1355a9&type=album',
 } as Article;
 
-function ArticlesPage(props: ArticlesPageProps) {
-  const { className } = props;
+export default {
+  title: 'entities/Article/ArticleListItem',
+  component: ArticleListItem,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof ArticleListItem>;
 
-  const { t } = useTranslation('article');
+const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
 
-  return (
-    <div className={classNames('', {}, [className])}>
-      <ArticleList
-        isLoading
-        view={ArticleView.BIG}
-        articles={[]}
-      />
-    </div>
-  );
-}
+export const Big = Template.bind({});
+Big.args = {
+  view: ArticleView.BIG,
+  article,
+};
 
-export default memo(ArticlesPage);
+export const Small = Template.bind({});
+Small.args = {
+  view: ArticleView.SMALL,
+  article,
+};

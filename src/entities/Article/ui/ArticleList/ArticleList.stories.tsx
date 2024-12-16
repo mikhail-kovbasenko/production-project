@@ -1,11 +1,6 @@
-import { classNames } from 'shared/lib/classNames';
-import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
-import { Article, ArticleList, ArticleView } from 'entities/Article';
-
-interface ArticlesPageProps {
-  className?: string;
-}
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import ArticleList from './ArticleList';
+import { Article, ArticleView } from '../../model/types/types';
 
 const article = {
   id: '1',
@@ -82,20 +77,50 @@ const article = {
   img: 'https://sun9-17.userapi.com/impg/N29uhUg7rirCuolXqWYOASJmZcwTjuFvPM-Bbw/rORyk9zEwz8.jpg?size=1080x1350&quality=96&sign=f6104d9986476d462fed2bf38c1355a9&type=album',
 } as Article;
 
-function ArticlesPage(props: ArticlesPageProps) {
-  const { className } = props;
+export default {
+  title: 'entities/Article/ArticleList',
+  component: ArticleList,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof ArticleList>;
 
-  const { t } = useTranslation('article');
+const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
 
-  return (
-    <div className={classNames('', {}, [className])}>
-      <ArticleList
-        isLoading
-        view={ArticleView.BIG}
-        articles={[]}
-      />
-    </div>
-  );
-}
+export const ListSmall = Template.bind({});
+ListSmall.args = {
+  articles: new Array(9).fill(null).map((_, index) => ({
+    ...article,
+    id: String(index),
+  })),
+  view: ArticleView.SMALL,
+};
 
-export default memo(ArticlesPage);
+export const ListBig = Template.bind({});
+ListBig.args = {
+  articles: new Array(3).fill(null).map((_, index) => ({
+    ...article,
+    id: String(index),
+  })),
+  view: ArticleView.BIG,
+};
+
+export const isLoadingBig = Template.bind({});
+isLoadingBig.args = {
+  isLoading: true,
+  articles: new Array(3).fill(null).map((_, index) => ({
+    ...article,
+    id: String(index),
+  })),
+  view: ArticleView.BIG,
+};
+
+export const isLoadingSmall = Template.bind({});
+isLoadingSmall.args = {
+  isLoading: true,
+  articles: new Array(9).fill(null).map((_, index) => ({
+    ...article,
+    id: String(index),
+  })),
+  view: ArticleView.SMALL,
+};

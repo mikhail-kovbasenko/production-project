@@ -1,3 +1,5 @@
+import { User } from '../../../User';
+
 export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
 
 export interface ArticleBlockBase {
@@ -42,5 +44,11 @@ export interface Article {
   views: number;
   createdAt: string;
   type: ArticleType[],
-  blocks: ArticleBlock[]
+  blocks: ArticleBlock[],
+  user: User
+}
+
+export enum ArticleView {
+  BIG = 'BIG',
+  SMALL = 'SMALL'
 }
