@@ -23,6 +23,7 @@ import { CountryType } from 'entities/Country';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
 import { useParams } from 'react-router-dom';
+import { Page } from 'shared/ui/Page';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -123,7 +124,7 @@ function ProfilePage(props: ProfilePageProps) {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterOnMount>
-      <div className={classNames('', {}, [className])}>
+      <Page className={classNames('', {}, [className])}>
         <ProfilePageHeader />
         {validateErrors?.length && validateErrors.map((error) => (
           <Text
@@ -147,7 +148,7 @@ function ProfilePage(props: ProfilePageProps) {
           onChangeCountry={handleChangeCountry}
           readonly={readonly}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 }

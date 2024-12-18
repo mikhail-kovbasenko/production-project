@@ -42,13 +42,7 @@ function ArticleList(props: ArticleListProps) {
 
   const { t } = useTranslation();
 
-  if (isLoading) {
-    return (
-      <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
-        {getSkeletons(view)}
-      </div>
-    );
-  }
+  console.log('articles', articles);
 
   return (
     <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
@@ -57,6 +51,7 @@ function ArticleList(props: ArticleListProps) {
           ? articles.map((article) => renderArticle(article, view))
           : null
       }
+      {isLoading && getSkeletons(view)}
     </div>
   );
 }

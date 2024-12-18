@@ -10,6 +10,8 @@ import { CommentList } from 'entities/Comment';
 import { useInitialEffect } from 'shared/lib/hooks';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { Button, ButtonTheme } from 'shared/ui/Button';
+import { RoutePath } from 'shared/config/router/config';
+import { Page } from 'shared/ui/Page';
 import styles from './ArticleDetailsPage.module.scss';
 import {
   articleDetailCommentReducers,
@@ -19,7 +21,6 @@ import { getArticleCommentsError, getArticleCommentsLoading } from '../model/sel
 import { fetchCommentsArticleById }
   from '../model/services/fetchCommentByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
-import { RoutePath } from '../../../shared/config/router/config';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -68,13 +69,13 @@ function ArticleDetailsPage(props: ArticleDetailsPageProps) {
 
   return (
     <DynamicModuleLoader removeAfterOnMount reducers={reducers}>
-      <div className={classNames(styles.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(styles.ArticleDetailsPage, {}, [className])}>
         <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>{t('return to list')}</Button>
         <ArticleDetails id={id} />
         <Text title={t('Comments')} className={styles.commentTitle} />
         <AddCommentForm onSendComment={handleSendComment} />
         <CommentList comments={comments} isLoading={commentsIsLoading} />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 }

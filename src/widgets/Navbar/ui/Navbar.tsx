@@ -33,7 +33,7 @@ function Navbar({ className }: NavbarProps) {
 
   if (authData) {
     return (
-      <div className={classNames(styles.Navbar, {}, [className])}>
+      <header className={classNames(styles.Navbar, {}, [className])}>
         <Button
           className={styles.Links}
           theme={ButtonTheme.CLEAR_INVERTED}
@@ -41,19 +41,19 @@ function Navbar({ className }: NavbarProps) {
         >
           {t('Logout')}
         </Button>
-      </div>
+      </header>
     );
   }
 
   return (
-    <div className={classNames(styles.Navbar, {}, [className])}>
+    <header className={classNames(styles.Navbar, {}, [className])}>
       <Button className={styles.Links} theme={ButtonTheme.CLEAR_INVERTED} onClick={handleOpenModal}>
         {t('Login')}
       </Button>
       {
         isAuthModal && <LoginModal isOpen={isAuthModal} onClose={handleCloseModal} />
       }
-    </div>
+    </header>
   );
 }
 

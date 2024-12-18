@@ -23,7 +23,7 @@ function Sidebar(props: SidebarProps) {
   const { t } = useTranslation();
 
   return (
-    <div
+    <menu
       data-testid="sidebar"
       className={classNames(styles.Sidebar, { [styles.collapsed]: collapsed }, [
         // eslint-disable-next-line react/destructuring-assignment
@@ -50,7 +50,7 @@ function Sidebar(props: SidebarProps) {
         <ThemeSwitcher />
         <LanguageSwitcher short={collapsed} />
       </div>
-    </div>
+    </menu>
   );
 }
 
