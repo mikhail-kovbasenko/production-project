@@ -1,18 +1,17 @@
+import { KeyboardEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames, Mods } from 'shared/lib/classNames';
+import { Avatar } from 'shared/ui/Avatar';
 import { Input } from 'shared/ui/Input';
 import { Loader } from 'shared/ui/Loader';
 import { Text } from 'shared/ui/Text';
-import { KeyboardEvent } from 'react';
-import { Avatar } from 'shared/ui/Avatar';
 
-import { Select } from 'shared/ui/Select';
 import { Country } from 'entities/Country/model/types/types';
-import { TextAlign, TextTheme } from '../../../../shared/ui/Text/ui/Text';
+import { TextAlign, TextTheme } from 'shared/ui/Text/ui/Text';
+import { CountrySelect } from '../../../Country';
+import { CurrencySelect, CurrencyType } from '../../../Currency';
 import { Profile } from '../../model/types/types';
 import styles from './ProfileCard.module.scss';
-import { CurrencySelect, CurrencyType } from '../../../Currency';
-import { CountrySelect } from '../../../Country';
 
 interface ProfileCardProps {
     className?: string;

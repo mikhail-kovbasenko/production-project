@@ -35,7 +35,6 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Logi
       dispatch(userActions.setAuthData(response.data));
 
       // extra.api.defaults.headers.common.Authorization = USER_LOCALSTORAGE_KEY;
-      extra.navigate?.('/about');
 
       return response.data;
     } catch (error) {

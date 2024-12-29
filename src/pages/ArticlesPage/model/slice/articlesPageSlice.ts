@@ -23,6 +23,7 @@ export const articlesPageSlice = createSlice({
     entities: {},
     page: 1,
     hasMore: true,
+    _inited: false,
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
@@ -37,6 +38,7 @@ export const articlesPageSlice = createSlice({
 
       state.view = view;
       state.limit = view === ArticleView.BIG ? 4 : 9;
+      state._inited = true;
     },
   },
   extraReducers: (builder) => {

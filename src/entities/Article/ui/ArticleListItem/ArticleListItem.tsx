@@ -1,18 +1,17 @@
-import { classNames } from 'shared/lib/classNames';
-import { useTranslation } from 'react-i18next';
 import { Fragment, memo, useCallback } from 'react';
-import { Text } from 'shared/ui/Text';
-import EyeIcon from 'shared/assets/icons/eye.svg';
-import { Icon } from 'shared/ui/Icon';
-import { Card } from 'shared/ui/Card';
-import { useHover } from 'shared/lib/hooks';
-import { Avatar } from 'shared/ui/Avatar';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { Button, ButtonTheme } from 'shared/ui/Button';
+import EyeIcon from 'shared/assets/icons/eye.svg';
 import { RoutePath } from 'shared/config/router/config';
-import styles from './ArticleListItem.module.scss';
+import { classNames } from 'shared/lib/classNames';
+import { Avatar } from 'shared/ui/Avatar';
+import { Button, ButtonTheme } from 'shared/ui/Button';
+import { Card } from 'shared/ui/Card';
+import { Icon } from 'shared/ui/Icon';
+import { Text } from 'shared/ui/Text';
 import { Article, ArticleBlockType, ArticleView } from '../../model/types/types';
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import styles from './ArticleListItem.module.scss';
 
 interface ArticleListItemProps {
   className?: string;
@@ -28,8 +27,6 @@ function ArticleListItem(props: ArticleListItemProps) {
   } = props;
   const { t } = useTranslation('article');
   const navigate = useNavigate();
-
-  // const [isHover, bindHover] = useHover();
 
   const onOpenArticle = useCallback(() => {
     navigate(RoutePath.article_details + article.id);

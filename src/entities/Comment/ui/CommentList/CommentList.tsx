@@ -39,6 +39,7 @@ function CommentList(props: CommentListProps) {
               isLoading={isLoading}
               comment={comment}
               className={styles.comment}
+              key={comment.id}
             />
           ))
           : <Text text={t('Comments not found')} />

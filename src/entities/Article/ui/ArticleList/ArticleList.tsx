@@ -1,10 +1,9 @@
-import { classNames } from 'shared/lib/classNames';
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import styles from './ArticleList.module.scss';
+import { classNames } from 'shared/lib/classNames';
 import { Article, ArticleView } from '../../model/types/types';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
 import ArticleListItemSkeleton from '../ArticleListItem/ArticleListItemSkeleton';
+import styles from './ArticleList.module.scss';
 
 interface ArticleListProps {
   className?: string;
@@ -39,10 +38,6 @@ function ArticleList(props: ArticleListProps) {
     isLoading,
     view = ArticleView.SMALL,
   } = props;
-
-  const { t } = useTranslation();
-
-  console.log('articles', articles);
 
   return (
     <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>

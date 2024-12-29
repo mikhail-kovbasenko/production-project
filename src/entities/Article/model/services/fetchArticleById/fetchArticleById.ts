@@ -1,18 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { User, userActions } from 'entities/User';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/localeStorage';
-import { ThunkConfig, ThunkExtraArg } from 'app/providers/StoreProvider';
+import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Article } from '../../types/types';
-
-interface LoginByUsernameProps {
-  username: string;
-  password: string;
-}
-
-interface LoginByUsernameConfig {
-  rejectValue: string;
-  extra: ThunkExtraArg
-}
 
 export const fetchArticleById = createAsyncThunk<Article, string, ThunkConfig<string>>(
   'articleDetails/fetchArticleById',

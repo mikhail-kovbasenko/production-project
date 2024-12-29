@@ -1,10 +1,8 @@
-import { classNames } from 'shared/lib/classNames';
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import styles from './ArticleCodeBlockComponent.module.scss';
+import { classNames } from 'shared/lib/classNames';
+import { Code } from 'shared/ui/Code';
 import { ArticleCodeBlock } from '../../model/types/types';
-import { Code } from '../../../../shared/ui/Code';
-import { Button } from '../../../../shared/ui/Button';
+import styles from './ArticleCodeBlockComponent.module.scss';
 
 interface ArticleCodeBlockComponentProps {
     className?: string;
@@ -16,8 +14,6 @@ function ArticleCodeBlockComponent(props: ArticleCodeBlockComponentProps) {
     className,
     block,
   } = props;
-
-  const { t } = useTranslation();
 
   return (
     <div className={classNames(styles.ArticleCodeBlockComponent, {}, [className])}>
