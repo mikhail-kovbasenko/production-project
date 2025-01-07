@@ -8,6 +8,7 @@ import { articleDetailCommentReducers }
   from 'pages/ArticleDetailsPage/model/slice/articleDetailsCommentSlice';
 import { ReducersList } from '../../../lib/components';
 import { articlesPageReducers } from '../../../../pages/ArticlesPage/model/slice/articlesPageSlice';
+import { scrollPositionSaveReducers } from '../../../../features/ScrollPositionSave';
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
@@ -16,6 +17,7 @@ const defaultAsyncReducers: ReducersList = {
   addCommentForm: addCommentFormReducer,
   articleDetailsComments: articleDetailCommentReducers,
   articlesPage: articlesPageReducers,
+  scroll: scrollPositionSaveReducers,
 };
 
 export const StoreDecorator = (
