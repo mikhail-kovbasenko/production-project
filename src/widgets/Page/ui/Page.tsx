@@ -7,10 +7,10 @@ import { scrollPositionSaveActions }
   from 'features/ScrollPositionSave/model/slice/scrollPositionSaveSlice';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { getScrollPositionByPath } from 'features/ScrollPositionSave';
+import { StateSchema } from 'app/providers/StoreProvider';
+import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
 import styles from './Page.module.scss';
-import { getScrollPositionByPath } from '../../../features/ScrollPositionSave';
-import { StateSchema } from '../../../app/providers/StoreProvider';
-import { useThrottle } from '../../../shared/lib/hooks/useThrottle/useThrottle';
 
 interface PageProps {
   className?: string;
