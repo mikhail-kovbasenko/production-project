@@ -10,6 +10,7 @@ import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { LoginSchema } from 'features/AuthByUsername';
 import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { ScrollPositionSaveSchema } from 'features/ScrollPositionSave';
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -19,7 +20,8 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema,
   articleDetailsComments?: ArticleDetailsCommentSchema,
   addCommentForm?: AddCommentFormSchema,
-  articlesPage?: ArticlesPageSchema
+  articlesPage?: ArticlesPageSchema,
+  scroll: ScrollPositionSaveSchema
 }
 
 export interface ReducerManager {

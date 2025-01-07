@@ -23,7 +23,7 @@ import { CountryType } from 'entities/Country';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
 import { useParams } from 'react-router-dom';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {

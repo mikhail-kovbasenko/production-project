@@ -11,7 +11,7 @@ import { useInitialEffect } from 'shared/lib/hooks';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { RoutePath } from 'shared/config/router/config';
-import { Page } from 'shared/ui/Page';
+import { Page } from 'widgets/Page';
 import styles from './ArticleDetailsPage.module.scss';
 import {
   articleDetailCommentReducers,
