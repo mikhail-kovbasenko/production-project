@@ -54,7 +54,9 @@ function Page(props: PageProps) {
       onScroll={handleScroll}
     >
       {children}
-      <div ref={triggerRef} />
+      {
+        onScrollEnd ? <div ref={triggerRef} className={styles.trigger} /> : null
+      }
     </section>
   );
 }

@@ -139,7 +139,7 @@
       "title": "Python News",
       "subtitle": "Something new in JS for 2022?",
       "views": 103,
-      "createdAt": "22.01.2023",
+      "createdAt": "21.01.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -211,7 +211,7 @@
       "title": "Ruby News",
       "subtitle": "Something new in JS for 2022?",
       "views": 103,
-      "createdAt": "22.01.2023",
+      "createdAt": "12.01.2013",
       "userId": "1",
       "type": [
         "IT"
@@ -283,7 +283,7 @@
       "title": "C# News",
       "subtitle": "Something new in JS for 2022?",
       "views": 103,
-      "createdAt": "22.01.2023",
+      "createdAt": "24.05.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -355,7 +355,7 @@
       "title": "Basic News",
       "subtitle": "Something new in JS for 2022?",
       "views": 103,
-      "createdAt": "22.01.2023",
+      "createdAt": "22.01.2027",
       "userId": "1",
       "type": [
         "IT"
@@ -642,8 +642,8 @@
       "id": "9",
       "title": "Assembler News",
       "subtitle": "Something new in JS for 2022?",
-      "views": 103,
-      "createdAt": "22.01.2023",
+      "views": 1203,
+      "createdAt": "09.01.2018",
       "userId": "1",
       "type": [
         "IT"
@@ -786,8 +786,8 @@
       "id": "11",
       "title": "Web News",
       "subtitle": "Something new in JS for 2022?",
-      "views": 103,
-      "createdAt": "22.01.2023",
+      "views": 1032,
+      "createdAt": "30.12.2018",
       "userId": "1",
       "type": [
         "IT"
@@ -858,7 +858,7 @@
       "id": "12",
       "title": "Backend News",
       "subtitle": "Something new in JS for 2022?",
-      "views": 103,
+      "views": 1031,
       "createdAt": "22.01.2023",
       "userId": "1",
       "type": [
@@ -1146,7 +1146,7 @@
       "id": "16",
       "title": "Frontend News",
       "subtitle": "Something new in JS for 2022?",
-      "views": 103,
+      "views": 13,
       "createdAt": "22.01.2023",
       "userId": "1",
       "type": [
@@ -1362,11 +1362,11 @@
       "id": "19",
       "title": "PHP News",
       "subtitle": "Something new in JS for 2022?",
-      "views": 103,
+      "views": 123,
       "createdAt": "22.01.2023",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -1506,11 +1506,12 @@
       "id": "21",
       "title": "Hello News",
       "subtitle": "Something new in JS for 2022?",
-      "views": 103,
+      "views": 1,
       "createdAt": "22.01.2023",
       "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "SCIENCE"
       ],
       "blocks": [
         {

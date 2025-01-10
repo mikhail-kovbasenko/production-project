@@ -1,5 +1,8 @@
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames';
+import { t } from 'i18next';
+import { Text } from 'shared/ui/Text';
+import { TextSize } from 'shared/ui/Text/ui/Text';
 import { Article, ArticleView } from '../../model/types/types';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
 import ArticleListItemSkeleton from '../ArticleListItem/ArticleListItemSkeleton';
@@ -38,6 +41,14 @@ function ArticleList(props: ArticleListProps) {
     isLoading,
     view = ArticleView.SMALL,
   } = props;
+
+  if (!isLoading && !articles.length) {
+    return (
+      <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
+        <Text title={t('articles not found')} size={TextSize.L} />
+      </div>
+    );
+  }
 
   return (
     <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>

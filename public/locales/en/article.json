@@ -5,5 +5,18 @@
   "Enter text": "Enter text",
   "Send": "Send",
   "read more": "Read more...",
-  "return to list": "Return to list"
+  "return to list": "Return to list",
+  "Sort": "Sort by",
+  "search": "Search...",
+  "by": "by",
+  "asc": "ascending",
+  "desc": "descending",
+  "created": "created",
+  "title": "title",
+  "views": "views",
+  "it": "IT",
+  "economics": "ECONOMICS",
+  "science": "SCIENCE",
+  "all": "ALL",
+  "articles not found": "Articles not found"
 }

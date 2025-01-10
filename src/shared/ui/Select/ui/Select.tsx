@@ -1,24 +1,25 @@
 import {
-  ChangeEvent, memo, useCallback, useMemo,
+  ChangeEvent,
+  useCallback, useMemo,
 } from 'react';
 import { classNames, Mods } from '../../../lib/classNames';
 import styles from './Select.module.scss';
 
-export interface SelectOption {
-  value: string;
+export interface SelectOption<T extends string> {
+  value: T;
   content: string;
 }
 
-interface SelectProps {
+interface SelectProps<T extends string> {
     className?: string;
     label?: string;
-    options?: SelectOption[];
-    value?: string;
-    onChange?: (value: string) => void;
+    options?: SelectOption<T>[];
+    value?: T;
+    onChange?: (value: T) => void;
     readonly?: boolean;
 }
 
-function Select(props: SelectProps) {
+function Select<T extends string>(props: SelectProps<T>) {
   const {
     className,
     label,
@@ -29,7 +30,7 @@ function Select(props: SelectProps) {
   } = props;
 
   const handleSelectChange = useCallback((e: ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(e.target.value);
+    onChange?.(e.target.value as T);
   }, [onChange]);
 
   const optionList = useMemo(() => options?.map((opt) => (
@@ -55,4 +56,4 @@ function Select(props: SelectProps) {
   );
 }
 
-export default memo(Select);
+export default Select;

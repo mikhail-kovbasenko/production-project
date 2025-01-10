@@ -2,6 +2,12 @@ import { User } from '../../../User';
 
 export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock;
 
+export enum ArticleSortField {
+  VIEWS = 'views',
+  TITLE = 'title',
+  CREATED = 'createdAt'
+}
+
 export interface ArticleBlockBase {
   id: string;
   type: ArticleBlockType;
@@ -33,7 +39,8 @@ export enum ArticleBlockType {
 export enum ArticleType {
   IT = 'IT',
   SCIENCE = 'SCIENCE',
-  ECONOMICS = 'ECONOMICS'
+  ECONOMICS = 'ECONOMICS',
+  ALL = 'ALL'
 }
 
 export interface Article {

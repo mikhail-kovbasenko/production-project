@@ -45,7 +45,7 @@ module.exports = {
     }],
     'max-len': ['warn', {
       ignoreComments: true,
-      code: 100,
+      code: 150,
     }],
     'react/destructuring-assignment': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
