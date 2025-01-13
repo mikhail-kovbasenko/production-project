@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import { t } from 'i18next';
 import { Text } from 'shared/ui/Text';
@@ -12,15 +12,17 @@ interface ArticleListProps {
   className?: string;
   articles: Article[];
   isLoading?: boolean;
-  view?: ArticleView
+  view?: ArticleView,
+  target?: HTMLAttributeAnchorTarget
 }
 
-const renderArticle = (article: Article, view: ArticleView) => (
+const renderArticle = (article: Article, view: ArticleView, target?: HTMLAttributeAnchorTarget) => (
   <ArticleListItem
     article={article}
     view={view}
     className={styles.card}
     key={article.id}
+    target={target}
   />
 );
 
@@ -40,6 +42,7 @@ function ArticleList(props: ArticleListProps) {
     articles,
     isLoading,
     view = ArticleView.SMALL,
+    target,
   } = props;
 
   if (!isLoading && !articles.length) {
@@ -54,7 +57,7 @@ function ArticleList(props: ArticleListProps) {
     <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
       {
         articles.length > 0
-          ? articles.map((article) => renderArticle(article, view))
+          ? articles.map((article) => renderArticle(article, view, target))
           : null
       }
       {isLoading && getSkeletons(view)}

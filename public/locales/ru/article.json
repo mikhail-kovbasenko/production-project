@@ -18,5 +18,6 @@
   "science": "НАУКА",
   "all": "ВСЕ",
   "economics": "ЭКОНОМИКА",
-  "articles not found": "Статьи не найдены"
+  "articles not found": "Статьи не найдены",
+  "article.recommendations": "Рекомендации"
 }

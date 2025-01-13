@@ -1,21 +1,20 @@
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
-import { loginReducer } from 'features/AuthByUsername';
-import { profileReducer } from 'entities/Profile';
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
+import { profileReducer } from 'entities/Profile';
 import { addCommentFormReducer } from 'features/AddCommentForm/model/slice/addCommentFormSlice';
-import { articleDetailCommentReducers }
-  from 'pages/ArticleDetailsPage/model/slice/articleDetailsCommentSlice';
-import { ReducersList } from '../../../lib/components';
-import { articlesPageReducers } from '../../../../pages/ArticlesPage/model/slice/articlesPageSlice';
+import { loginReducer } from 'features/AuthByUsername';
 import { scrollPositionSaveReducers } from '../../../../features/ScrollPositionSave';
+import { articleDetailsPageReducer } from '../../../../pages/ArticleDetailsPage/model/slice';
+import { articlesPageReducers } from '../../../../pages/ArticlesPage/model/slice/articlesPageSlice';
+import { ReducersList } from '../../../lib/components';
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
   addCommentForm: addCommentFormReducer,
-  articleDetailsComments: articleDetailCommentReducers,
+  articleDetailsPage: articleDetailsPageReducer,
   articlesPage: articlesPageReducers,
   scroll: scrollPositionSaveReducers,
 };

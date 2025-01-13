@@ -8,7 +8,7 @@ import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { AddCommentFormSchema } from 'features/AddCommentForm';
 import { LoginSchema } from 'features/AuthByUsername';
-import { ArticleDetailsCommentSchema } from 'pages/ArticleDetailsPage';
+import { ArticleDetailsCommentSchema, ArticleDetailsPageSchema, ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollPositionSaveSchema } from 'features/ScrollPositionSave';
 
@@ -18,10 +18,12 @@ export interface StateSchema {
   loginForm?: LoginSchema;
   profile?: ProfileSchema,
   articleDetails?: ArticleDetailsSchema,
-  articleDetailsComments?: ArticleDetailsCommentSchema,
+  // articleDetailsComments?: ArticleDetailsCommentSchema,
+  // articleDetailsRecommendations?: ArticleDetailsRecommendationsSchema,
   addCommentForm?: AddCommentFormSchema,
   articlesPage?: ArticlesPageSchema,
-  scroll: ScrollPositionSaveSchema
+  scroll: ScrollPositionSaveSchema,
+  articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export interface ReducerManager {

@@ -1069,7 +1069,7 @@
         }
       ],
       "img": "https://sun9-17.userapi.com/impg/c855124/v855124862/17f467/bh0q9ncT-AY.jpg?size=599x796&quality=96&sign=fa9e0d7e35b1f01c2f677b569e64e171&type=album"
-    },    
+    },
     {
       "id": "15",
       "title": "Figma News",
@@ -1141,7 +1141,7 @@
         }
       ],
       "img": "https://sun9-17.userapi.com/impg/c855124/v855124862/17f467/bh0q9ncT-AY.jpg?size=599x796&quality=96&sign=fa9e0d7e35b1f01c2f677b569e64e171&type=album"
-    },   
+    },
     {
       "id": "16",
       "title": "Frontend News",
@@ -1624,6 +1624,12 @@
       "userId": "1",
       "text": "джага-джага",
       "id": "Yf0egnL"
+    },
+    {
+      "articleId": "9",
+      "userId": "1",
+      "text": "соси",
+      "id": "O_cxXBU"
     }
   ]
 }
