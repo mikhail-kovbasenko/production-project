@@ -19,5 +19,6 @@
   "all": "ВСЕ",
   "economics": "ЭКОНОМИКА",
   "articles not found": "Статьи не найдены",
-  "article.recommendations": "Рекомендации"
+  "recommendations": "Рекомендации",
+  "edit articles": "Редактировать"
 }

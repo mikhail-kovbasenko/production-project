@@ -20,5 +20,7 @@
   "profile": "Profile",
   "currency": "Currency",
   "country": "Country",
-  "article": "Articles"
+  "article": "Articles",
+  "appName": "Mikhail Kovbasenko App",
+  "create article": "Create Article"
 }
