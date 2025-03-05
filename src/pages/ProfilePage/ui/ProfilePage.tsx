@@ -24,6 +24,7 @@ import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
 import { useParams } from 'react-router-dom';
 import { Page } from 'widgets/Page';
+import { VerticalStack } from 'shared/ui/Stack';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -125,29 +126,31 @@ function ProfilePage(props: ProfilePageProps) {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterOnMount>
       <Page className={classNames('', {}, [className])}>
-        <ProfilePageHeader />
-        {validateErrors?.length && validateErrors.map((error) => (
-          <Text
-            theme={TextTheme.ERROR}
-            text={validateErrorTranslates[error]}
-            key={error}
+        <VerticalStack gap="16" fullWidth>
+          <ProfilePageHeader />
+          {validateErrors?.length && validateErrors.map((error) => (
+            <Text
+              theme={TextTheme.ERROR}
+              text={validateErrorTranslates[error]}
+              key={error}
+            />
+          ))}
+          <ProfileCard
+            data={formData}
+            isLoading={isLoading}
+            error={error}
+            onChangeFirstname={handleChangeFirstname}
+            onChangeLastname={handleChangeLastname}
+            onChangeAge={handleChangeAge}
+            onChangeCity={handleChangeCity}
+            onKeyDownAge={handleKeyDownAge}
+            onChangeUsername={handleChangeUsername}
+            onChangeAvatar={handleChangeAvatar}
+            onChangeCurrency={handleChangeCurrency}
+            onChangeCountry={handleChangeCountry}
+            readonly={readonly}
           />
-        ))}
-        <ProfileCard
-          data={formData}
-          isLoading={isLoading}
-          error={error}
-          onChangeFirstname={handleChangeFirstname}
-          onChangeLastname={handleChangeLastname}
-          onChangeAge={handleChangeAge}
-          onChangeCity={handleChangeCity}
-          onKeyDownAge={handleKeyDownAge}
-          onChangeUsername={handleChangeUsername}
-          onChangeAvatar={handleChangeAvatar}
-          onChangeCurrency={handleChangeCurrency}
-          onChangeCountry={handleChangeCountry}
-          readonly={readonly}
-        />
+        </VerticalStack>
       </Page>
     </DynamicModuleLoader>
   );

@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames';
 import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text';
-import styles from './CommentList.module.scss';
+import { VerticalStack } from 'shared/ui/Stack';
 import { Comment } from '../../model/types/types';
 import CommentCard from '../CommentCard/CommentCard';
 
@@ -22,29 +22,28 @@ function CommentList(props: CommentListProps) {
 
   if (isLoading) {
     return (
-      <div className={classNames('', {}, [className])}>
+      <VerticalStack className={classNames('', {}, [className])} gap="16">
         <CommentCard isLoading />
         <CommentCard isLoading />
         <CommentCard isLoading />
-      </div>
+      </VerticalStack>
     );
   }
 
   return (
-    <div className={classNames('', {}, [className])}>
+    <VerticalStack gap="16" fullWidth className={classNames('', {}, [className])}>
       {
         comments?.length
           ? comments.map((comment) => (
             <CommentCard
               isLoading={isLoading}
               comment={comment}
-              className={styles.comment}
               key={comment.id}
             />
           ))
           : <Text text={t('Comments not found')} />
       }
-    </div>
+    </VerticalStack>
   );
 }
 

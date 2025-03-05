@@ -1,15 +1,15 @@
 import {
   getProfileData, getProfileReadonly, profileActions, updateProfileData,
 } from 'entities/Profile';
+import { getUserAuthData } from 'entities/User';
 import { Fragment, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames';
-import { Button, ButtonTheme } from 'shared/ui/Button';
-import { Text } from 'shared/ui/Text';
 import { useAppDispatch } from 'shared/lib/hooks';
-import styles from './ProfilePageHeader.module.scss';
-import { getUserAuthData } from '../../../../entities/User';
+import { Button, ButtonTheme } from 'shared/ui/Button';
+import { HorizontalStack } from 'shared/ui/Stack';
+import { Text } from 'shared/ui/Text';
 
 interface ProfilePageHeaderProps {
   className?: string;
@@ -45,46 +45,43 @@ function ProfilePageHeader(props: ProfilePageHeaderProps) {
   }, [dispatch, profileData]);
 
   return (
-    <div className={classNames(styles.ProfilePageHeader, {}, [className])}>
+    <HorizontalStack justify="between" className={classNames('', {}, [className])} fullWidth>
       <Text title={t('my profile')} />
       {
         canEdit && (
-          <div className={styles.btnsWrapper}>
+          <Fragment>
             {
             readonly
               ? (
                 <Button
                   theme={ButtonTheme.BACKGROUND_INVERTED}
-                  className={styles.btn}
                   onClick={handleEdit}
                 >
                   {t('Edit')}
                 </Button>
               )
               : (
-                <Fragment>
+                <HorizontalStack gap="8">
                   <Button
                     theme={ButtonTheme.OUTLINE_RED}
-                    className={styles.btn}
                     onClick={handleCancelEdit}
                   >
                     {t('cancel')}
                   </Button>
                   <Button
                     theme={ButtonTheme.OUTLINE}
-                    className={styles.saveBtn}
                     onClick={handleSave}
                   >
                     {t('save')}
                   </Button>
-                </Fragment>
+                </HorizontalStack>
               )
           }
-          </div>
+          </Fragment>
         )
       }
 
-    </div>
+    </HorizontalStack>
   );
 }
 

@@ -23,6 +23,7 @@ import {
 import { getArticleRecommendations } from '../model/slice/articleDetailsRecommendationsSlice';
 import styles from './ArticleDetailsPage.module.scss';
 import ArticleDetailsPageHeader from './ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { VerticalStack } from '../../../shared/ui/Stack';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -70,26 +71,28 @@ function ArticleDetailsPage(props: ArticleDetailsPageProps) {
   return (
     <DynamicModuleLoader removeAfterOnMount reducers={reducers}>
       <Page className={classNames(styles.ArticleDetailsPage, {}, [className])}>
-        <ArticleDetailsPageHeader />
-        <ArticleDetails id={id} />
-        <Text
-          size={TextSize.L}
-          title={t('recommendations')}
-          className={styles.commentTitle}
-        />
-        <ArticleList
-          articles={recommendations}
-          isLoading={recommendationsIsLoading}
-          className={styles.recommendations}
-          target="_blank"
-        />
-        <Text
-          size={TextSize.L}
-          title={t('Comments')}
-          className={styles.commentTitle}
-        />
-        <AddCommentForm onSendComment={handleSendComment} />
-        <CommentList comments={comments} isLoading={commentsIsLoading} />
+        <VerticalStack gap="16" fullWidth>
+          <ArticleDetailsPageHeader />
+          <ArticleDetails id={id} />
+          <Text
+            size={TextSize.L}
+            title={t('recommendations')}
+            className={styles.commentTitle}
+          />
+          <ArticleList
+            articles={recommendations}
+            isLoading={recommendationsIsLoading}
+            className={styles.recommendations}
+            target="_blank"
+          />
+          <Text
+            size={TextSize.L}
+            title={t('Comments')}
+            className={styles.commentTitle}
+          />
+          <AddCommentForm onSendComment={handleSendComment} />
+          <CommentList comments={comments} isLoading={commentsIsLoading} />
+        </VerticalStack>
       </Page>
     </DynamicModuleLoader>
   );

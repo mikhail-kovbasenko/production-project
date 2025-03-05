@@ -6,8 +6,8 @@ import { RoutePath } from 'shared/config/router/config';
 import { classNames } from 'shared/lib/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { getArticleDetailsData } from 'entities/Article';
+import { HorizontalStack } from 'shared/ui/Stack';
 import { getCanEditArticle } from '../../model/selectors/article';
-import styles from './ArticleDetailsPageHeader.module.scss';
 
 interface ArticleDetailsPageHeaderProps {
     className?: string;
@@ -33,10 +33,10 @@ function ArticleDetailsPageHeader(props: ArticleDetailsPageHeaderProps) {
   }, [navigate, article?.id]);
 
   return (
-    <div className={classNames(styles.ArticleDetailsPageHeader, {}, [className])}>
+    <HorizontalStack className={classNames('', {}, [className])} fullWidth justify="between">
       <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>{t('return to list')}</Button>
-      {canEdit && <Button theme={ButtonTheme.OUTLINE} onClick={onEditArticle} className={styles.editBtn}>{t('edit articles')}</Button>}
-    </div>
+      {canEdit && <Button theme={ButtonTheme.OUTLINE} onClick={onEditArticle}>{t('edit articles')}</Button>}
+    </HorizontalStack>
   );
 }
 

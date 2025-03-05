@@ -12,6 +12,7 @@ import {
 } from '../model/selectors/addCommentFormSelectors';
 import styles from './AddCommentForm.module.scss';
 import { addCommentFormActions, addCommentFormReducer } from '../model/slice/addCommentFormSlice';
+import { HorizontalStack } from '../../../shared/ui/Stack';
 
 interface AddCommentFormProps {
     className?: string;
@@ -45,7 +46,7 @@ function AddCommentForm(props: AddCommentFormProps) {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(styles.AddCommentForm, {}, [className])}>
+      <HorizontalStack className={classNames(styles.AddCommentForm, {}, [className])} justify="between" fullWidth>
         <Input
           placeholder={t('Enter text')}
           value={text}
@@ -53,7 +54,7 @@ function AddCommentForm(props: AddCommentFormProps) {
           className={styles.input}
         />
         <Button onClick={onSendHandler}>{t('Send')}</Button>
-      </div>
+      </HorizontalStack>
     </DynamicModuleLoader>
   );
 }

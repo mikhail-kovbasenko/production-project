@@ -10,6 +10,7 @@ import { Icon } from 'shared/ui/Icon';
 import { Skeleton } from 'shared/ui/Skeleton';
 import { Text } from 'shared/ui/Text';
 import { TextAlign, TextSize, TextTheme } from 'shared/ui/Text/ui/Text';
+import { HorizontalStack, VerticalStack } from 'shared/ui/Stack';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -102,23 +103,25 @@ function ArticleDetails(props: ArticleDetailsProps) {
   } else {
     content = (
       <Fragment>
-        <div className={styles.avatarWrapper}>
+        <HorizontalStack justify="center" fullWidth>
           <Avatar size={200} src={article?.img} className={styles.avatar} />
-        </div>
-        <Text
-          title={article?.title}
-          text={article?.subtitle}
-          className={styles.title}
-          size={TextSize.L}
-        />
-        <div className={styles.articleInfo}>
-          <Icon Svg={EyeIcon} className={styles.icon} />
-          <Text text={String(article?.views)} />
-        </div>
-        <div className={styles.articleInfo}>
-          <Icon Svg={CalendarIcon} className={styles.icon} />
-          <Text text={article?.createdAt} />
-        </div>
+        </HorizontalStack>
+        <VerticalStack gap="4" fullWidth>
+          <Text
+            title={article?.title}
+            text={article?.subtitle}
+            className={styles.title}
+            size={TextSize.L}
+          />
+          <HorizontalStack gap="8">
+            <Icon Svg={EyeIcon} className={styles.icon} />
+            <Text text={String(article?.views)} />
+          </HorizontalStack>
+          <HorizontalStack gap="8">
+            <Icon Svg={CalendarIcon} className={styles.icon} />
+            <Text text={article?.createdAt} />
+          </HorizontalStack>
+        </VerticalStack>
         {
           article?.blocks.map(renderBlock)
         }
@@ -128,9 +131,9 @@ function ArticleDetails(props: ArticleDetailsProps) {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterOnMount>
-      <div className={classNames(styles.ArticleDetails, {}, [className])}>
+      <VerticalStack className={classNames(styles.ArticleDetails, {}, [className])} gap="16">
         {content}
-      </div>
+      </VerticalStack>
     </DynamicModuleLoader>
   );
 }

@@ -41,7 +41,15 @@ module.exports = {
     'react/function-component-definition': 'off',
     'i18next/no-literal-string': ['warn', {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to', 'target'],
+      ignoreAttribute: [
+        'data-testid',
+        'to',
+        'target',
+        'justify',
+        'align',
+        'direction',
+        'gap',
+      ],
     }],
     'max-len': ['warn', {
       ignoreComments: true,
