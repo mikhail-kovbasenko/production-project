@@ -3,10 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useAppDispatch, useDebounce } from 'shared/lib/hooks';
 import { useSelector } from 'react-redux';
-import {
-  getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getArticlesPageType, getArticlesPageView,
-} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
-import { articlesPageActions } from 'pages/ArticlesPage/model/slice/articlesPageSlice';
 import { ArticleSortField, ArticleType, ArticleView } from 'entities/Article';
 import { ArticleViewSelector } from 'features/ArticleViewSelector';
 import { Card } from 'shared/ui/Card';
@@ -14,6 +10,10 @@ import { Input } from 'shared/ui/Input';
 import { ArticleSortSelector } from 'features/ArticleSortSelector';
 import { SortOrder } from 'shared/types/types';
 import { ArticleTypeTabs } from 'entities/Article/ui/ArticleTypeTabs';
+import { articlesPageActions } from '../../model/slice/articlesPageSlice';
+import {
+  getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getArticlesPageType, getArticlesPageView,
+} from '../../model/selectors/articlesPageSelectors';
 import styles from './ArticlesPageFilter.module.scss';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 

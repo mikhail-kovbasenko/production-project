@@ -67,6 +67,7 @@
     "eslint-plugin-react": "7.28",
     "eslint-plugin-react-hooks": "4.3",
     "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-ulbi-tv-plugin": "^0.0.10",
     "file-loader": "6.2",
     "html-webpack-plugin": "5.5.0",
     "husky": "^8.0.0",

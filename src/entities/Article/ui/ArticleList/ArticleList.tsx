@@ -49,7 +49,7 @@ function ArticleList(props: ArticleListProps) {
 
   const isBig = view === ArticleView.BIG;
 
-  const itemsPerRow = isBig ? 1 : 3;
+  const itemsPerRow = isBig ? 1 : 4;
   const rowCount = isBig ? articles.length : articles.length / itemsPerRow;
 
   const rowRenderer = ({
@@ -103,14 +103,6 @@ function ArticleList(props: ArticleListProps) {
       )}
 
     </WindowScroller>
-    // <div className={classNames(styles.ArticleList, {}, [className, styles[view]])}>
-    //   {
-    //     articles.length > 0
-    //       ? articles.map((article) => renderArticle(article, view, target))
-    //       : null
-    //   }
-    //   {isLoading && getSkeletons(view)}
-    // </div>
   );
 }
 

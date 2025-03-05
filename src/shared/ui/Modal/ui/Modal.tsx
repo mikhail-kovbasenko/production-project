@@ -8,8 +8,8 @@ import {
   useRef,
   useState,
 } from 'react';
-import { Portal } from 'shared/ui/Portal';
 import { useTheme } from 'app/providers/ThemeProvider';
+import { Portal } from '../../Portal';
 import styles from './Modal.module.scss';
 
 interface ModalProps {
