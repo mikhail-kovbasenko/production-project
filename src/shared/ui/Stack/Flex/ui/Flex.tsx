@@ -1,5 +1,7 @@
 import { classNames } from 'shared/lib/classNames';
-import { memo, ReactNode } from 'react';
+import {
+  DetailedHTMLProps, HTMLAttributes, memo, ReactNode,
+} from 'react';
 import styles from './Flex.module.scss';
 import {
   alignClasses,
@@ -12,7 +14,9 @@ import {
   gapClasses,
 } from '../model/types/types';
 
-export interface FlexProps {
+type DivProps = HTMLAttributes<HTMLDivElement>;
+
+export interface FlexProps extends DivProps {
   className?: string;
   children: ReactNode;
   justify?: FlexJustify;
@@ -31,6 +35,7 @@ function Flex(props: FlexProps) {
     direction = 'row',
     gap,
     fullWidth,
+    ...otherProps
   } = props;
 
   const classes = [
@@ -42,9 +47,11 @@ function Flex(props: FlexProps) {
   ];
 
   return (
-    <div className={classNames(styles.Flex, {
-      [styles.fullWidth]: fullWidth,
-    }, classes)}
+    <div
+      className={classNames(styles.Flex, {
+        [styles.fullWidth]: fullWidth,
+      }, classes)}
+      {...otherProps}
     >
       {children}
     </div>

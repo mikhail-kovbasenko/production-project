@@ -20,8 +20,8 @@ import { useSelector } from 'react-redux';
 import { validKeyboardKeys } from 'shared/const/commons';
 import { CurrencyType } from 'entities/Currency';
 import { CountryType } from 'entities/Country';
-import { Text } from 'shared/ui/Text';
-import { TextTheme } from 'shared/ui/Text/ui/Text';
+import { Text, TextTheme } from 'shared/ui/Text';
+
 import { useParams } from 'react-router-dom';
 import { Page } from 'widgets/Page';
 import { VerticalStack } from 'shared/ui/Stack';

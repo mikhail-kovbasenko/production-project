@@ -8,8 +8,9 @@ import { useAppDispatch } from 'shared/lib/hooks';
 import { Avatar } from 'shared/ui/Avatar';
 import { Icon } from 'shared/ui/Icon';
 import { Skeleton } from 'shared/ui/Skeleton';
-import { Text } from 'shared/ui/Text';
-import { TextAlign, TextSize, TextTheme } from 'shared/ui/Text/ui/Text';
+import {
+  Text, TextAlign, TextSize, TextTheme,
+} from 'shared/ui/Text';
 import { HorizontalStack, VerticalStack } from 'shared/ui/Stack';
 import {
   getArticleDetailsData,

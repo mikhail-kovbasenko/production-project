@@ -5,9 +5,9 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components';
 import { classNames } from 'shared/lib/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
-import { Text } from 'shared/ui/Text';
-import { TextTheme } from 'shared/ui/Text/ui/Text';
+import { Text, TextTheme } from 'shared/ui/Text';
 import { useAppDispatch } from 'shared/lib/hooks';
+
 import { loginByUsername } from
   '../../../AuthByUsername/model/services/loginByUsername/loginByUsername';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';

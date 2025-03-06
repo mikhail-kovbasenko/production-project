@@ -7,11 +7,11 @@ import { classNames } from 'shared/lib/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
+import { Text, TextTheme } from 'shared/ui/Text';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
+import { RoutePath } from 'shared/config/router/config';
+
 import styles from './Navbar.module.scss';
-import { Text } from '../../../shared/ui/Text';
-import { AppLink, AppLinkTheme } from '../../../shared/ui/AppLink';
-import { RoutePath } from '../../../shared/config/router/config';
-import { TextTheme } from '../../../shared/ui/Text/ui/Text';
 
 interface NavbarProps {
   className?: string;

@@ -1,8 +1,8 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import { t } from 'i18next';
-import { Text } from 'shared/ui/Text';
-import { TextSize } from 'shared/ui/Text/ui/Text';
+import { Text, TextSize } from 'shared/ui/Text';
+
 import {
   List, ListRowProps, WindowScroller,
 } from 'react-virtualized';

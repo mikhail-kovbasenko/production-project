@@ -8,8 +8,8 @@ import { useParams } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components';
 import { useInitialEffect } from 'shared/lib/hooks';
-import { Text } from 'shared/ui/Text';
-import { TextSize } from 'shared/ui/Text/ui/Text';
+import { Text, TextSize } from 'shared/ui/Text';
+
 import { Page } from 'widgets/Page';
 import { getArticleCommentsLoading } from '../model/selectors/comments';
 import { getArticleRecommendationsLoading } from '../model/selectors/recommendations';

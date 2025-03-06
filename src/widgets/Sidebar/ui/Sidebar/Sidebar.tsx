@@ -24,7 +24,7 @@ function Sidebar(props: SidebarProps) {
   const { t } = useTranslation();
 
   return (
-    <menu
+    <aside
       data-testid="sidebar"
       className={classNames(styles.Sidebar, { [styles.collapsed]: collapsed }, [
         // eslint-disable-next-line react/destructuring-assignment
@@ -42,7 +42,7 @@ function Sidebar(props: SidebarProps) {
       >
         {collapsed ? '>' : '<'}
       </Button>
-      <VerticalStack className={styles.items} gap="16">
+      <VerticalStack className={styles.items} gap="16" role="navigation">
         {sidebarItemList.map((item) => (
           <SidebarItem item={item} collapsed={collapsed} key={item.path} />
         ))}
@@ -51,7 +51,7 @@ function Sidebar(props: SidebarProps) {
         <ThemeSwitcher />
         <LanguageSwitcher short={collapsed} />
       </div>
-    </menu>
+    </aside>
   );
 }
 

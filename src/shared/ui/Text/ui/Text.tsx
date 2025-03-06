@@ -1,23 +1,9 @@
-import { classNames, Mods } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames';
 import { memo } from 'react';
 import styles from './Text.module.scss';
-
-export enum TextTheme {
-  PRIMARY = 'primary',
-  ERROR = 'error',
-  INVERTED = 'inverted'
-}
-
-export enum TextAlign {
-  RIGHT = 'right',
-  LEFT = 'left',
-  CENTER = 'center'
-}
-
-export enum TextSize {
-  M = 'size_m',
-  L = 'size_l'
-}
+import {
+  mapSizeToHeaderTag, TextAlign, TextSize, TextTheme,
+} from '../model/types/types';
 
 interface TextProps {
     className?: string;
@@ -38,6 +24,8 @@ function Text(props: TextProps) {
     size = TextSize.M,
   } = props;
 
+  const Header = mapSizeToHeaderTag[size];
+
   return (
     <div className={classNames(
       styles.Text,
@@ -45,7 +33,7 @@ function Text(props: TextProps) {
       [className, styles[theme], styles[align], styles[size]],
     )}
     >
-      {title && <p className={styles.title}>{title}</p>}
+      {title && <Header className={styles.title}>{title}</Header>}
       {text && <p className={styles.text}>{text}</p>}
     </div>
   );

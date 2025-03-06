@@ -50,7 +50,7 @@ function Page(props: PageProps) {
   }, 2500);
 
   return (
-    <section
+    <main
       ref={wrapperRef}
       className={classNames(styles.Page, {}, [className])}
       onScroll={handleScroll}
@@ -60,7 +60,7 @@ function Page(props: PageProps) {
       {
         onScrollEnd ? <div ref={triggerRef} className={styles.trigger} /> : null
       }
-    </section>
+    </main>
   );
 }
 
