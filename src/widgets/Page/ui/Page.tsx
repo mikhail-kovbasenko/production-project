@@ -1,14 +1,16 @@
-import { classNames } from 'shared/lib/classNames';
-import {
-  memo, MutableRefObject, ReactNode, useRef, UIEvent,
-} from 'react';
-import { useAppDispatch, useInfiniteScroll, useInitialEffect } from 'shared/lib/hooks';
-import { scrollPositionSaveActions }
-  from 'features/ScrollPositionSave/model/slice/scrollPositionSaveSlice';
-import { useLocation } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { getScrollPositionByPath } from 'features/ScrollPositionSave';
 import { StateSchema } from 'app/providers/StoreProvider';
+import { getScrollPositionByPath } from 'features/ScrollPositionSave';
+import { scrollPositionSaveActions } from 'features/ScrollPositionSave/model/slice/scrollPositionSaveSlice';
+import {
+  MutableRefObject,
+  ReactNode,
+  UIEvent,
+  useRef,
+} from 'react';
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import { classNames } from 'shared/lib/classNames';
+import { useAppDispatch, useInfiniteScroll, useInitialEffect } from 'shared/lib/hooks';
 import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
 import styles from './Page.module.scss';
 
