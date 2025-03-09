@@ -39,21 +39,10 @@ function CurrencySelect(props: CurrencySelectProps) {
       defaultValue={t('currency')}
       className={classNames('', {}, [className])}
       readonly={readonly}
-      direction="top"
+      direction="top right"
       label={t('currency')}
     />
   );
-
-  // return (
-  //   <Select
-  //     className={classNames('', {}, [className])}
-  //     label={t('currency')}
-  //     options={currencyOptions}
-  //     value={value}
-  //     onChange={handleChange}
-  //     readonly={readonly}
-  //   />
-  // );
 }
 
 export default memo(CurrencySelect);

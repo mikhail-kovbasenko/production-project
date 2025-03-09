@@ -11,6 +11,8 @@ import { Text, TextTheme } from 'shared/ui/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
 import { RoutePath } from 'shared/config/router/config';
 
+import { Dropdown } from 'shared/ui/Dropdown';
+import { Avatar } from 'shared/ui/Avatar';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -46,13 +48,21 @@ function Navbar({ className }: NavbarProps) {
         >
           {t('create article')}
         </AppLink>
-        <Button
-          className={styles.Links}
-          theme={ButtonTheme.CLEAR_INVERTED}
-          onClick={handleLogout}
-        >
-          {t('Logout')}
-        </Button>
+        <Dropdown
+          className={styles.dropdown}
+          direction="bottom left"
+          items={[
+            {
+              content: t('UserProfile'),
+              href: RoutePath.profile + authData.id,
+            },
+            {
+              content: t('Logout'),
+              onClick: handleLogout,
+            },
+          ]}
+          trigger={<Avatar size={30} src={authData.avatar} />}
+        />
       </header>
     );
   }

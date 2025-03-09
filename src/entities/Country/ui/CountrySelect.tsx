@@ -39,6 +39,7 @@ function CountrySelect(props: CountrySelectProps) {
       items={countryOptions}
       value={value}
       defaultValue={t('country')}
+      label={t('country')}
       readonly={readonly}
       onChange={handleChange}
     />

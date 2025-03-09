@@ -6,8 +6,7 @@ import { classNames } from '../../../lib/classNames';
 import { Button } from '../../Button';
 import { HorizontalStack } from '../../Stack';
 import styles from './ListBox.module.scss';
-
-type DropdownDirection = 'top' | 'bottom';
+import { DropdownDirection } from '../../../types/ui';
 
 interface ListBoxItem {
   value: string;
@@ -27,8 +26,10 @@ interface ListBoxProps {
 }
 
 const mapDirectionClass: Record<DropdownDirection, string> = {
-  bottom: styles.optionBottom,
-  top: styles.optionTop,
+  'bottom left': styles.optionBottomLeft,
+  'bottom right': styles.optionBottomRight,
+  'top right': styles.optionTopRight,
+  'top left': styles.optionTopLeft,
 };
 
 function ListBox(props: ListBoxProps) {
@@ -39,7 +40,7 @@ function ListBox(props: ListBoxProps) {
     defaultValue,
     onChange,
     readonly,
-    direction = 'bottom',
+    direction = 'bottom right',
     label,
   } = props;
   return (

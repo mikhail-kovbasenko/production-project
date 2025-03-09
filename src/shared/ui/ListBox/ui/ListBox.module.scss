@@ -31,6 +31,22 @@
   opacity: 0.3;
 }
 
-.optionTop {
+.optionBottomLeft {
+  top: 100%;
+  right: 0;
+}
+
+.optionBottomRight {
+  top: 100%;
+  left: 0;
+}
+
+.optionTopRight {
   bottom: 100%;
+  left: 0;
+}
+
+.optionTopLeft {
+  bottom: 100%;
+  right: 0;
 }
