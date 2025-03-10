@@ -1,24 +1,7 @@
 import ProfileCard from './ui/ProfileCard/ProfileCard';
 
-export { fetchProfileData } from './model/services/fetchProfileData/fetchProfileData';
+import { Profile } from './model/types/types';
 
-export { updateProfileData } from './model/services/updateProfileData/updateProfileData';
-
-export { profileActions, profileReducer } from './model/slice/profileSlice';
-
-export { Profile, ProfileSchema, ValidateProfileError } from './model/types/types';
-
-export { ProfileCard };
-
-export { getProfileData } from './model/selectors/getProfileData/getProfileData';
-
-export { getProfileError } from './model/selectors/getProfileError/getProfileError';
-
-export { getProfileLoading } from './model/selectors/getProfileLoading/getProfileLoading';
-
-export { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly';
-
-export { getProfileForm } from './model/selectors/getProfileForm/getProfileForm';
-
-export { getProfileValidateErrors }
-  from './model/selectors/getProfileValidateErrors/getProfileValidateErrors';
+export {
+  ProfileCard, Profile,
+};

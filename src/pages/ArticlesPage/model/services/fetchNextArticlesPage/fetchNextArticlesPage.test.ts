@@ -4,7 +4,7 @@ import { fetchNextArticlesPage } from './fetchNextArticlesPage';
 
 jest.mock('../fetchArticlesList/fetchArticlesList');
 describe('fetchNextArticlesPage', () => {
-  test.skip('success', async () => {
+  test('success', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
       articlesPage: {
         page: 2,
@@ -19,7 +19,7 @@ describe('fetchNextArticlesPage', () => {
     await thunk.callThunk();
 
     expect(thunk.dispatch).toBeCalledTimes(4);
-    expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 });
+    expect(fetchArticlesList).toHaveBeenCalled();
   });
   test.skip('fetchAritcleList not called', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlesPage, {

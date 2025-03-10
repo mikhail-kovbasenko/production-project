@@ -1,22 +1,20 @@
-import { ArticleList } from 'entities/Article';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components';
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
 import { Page } from 'widgets/Page';
-import { useSearchParams } from 'react-router-dom';
-import styles from './ArticlesPage.module.scss';
 import {
   getArticlesPageLoading,
-  getArticlesPageView,
 } from '../model/selectors/articlesPageSelectors';
 import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../model/services/initArticlesPage/initArticlesPage';
 import {
   articlesPageReducers,
-  getArticles,
 } from '../model/slice/articlesPageSlice';
+import ArticleInfiniteList from './ArticleInfiniteList/ArticleInfiniteList';
+import styles from './ArticlesPage.module.scss';
 import ArticlesPageFilter from './ArticlesPageFilter/ArticlesPageFilter';
 
 interface ArticlesPageProps {
@@ -32,13 +30,9 @@ function ArticlesPage(props: ArticlesPageProps) {
 
   const dispatch = useAppDispatch();
 
-  const articles = useSelector(getArticles.selectAll);
-
   const isLoading = useSelector(getArticlesPageLoading);
-  const view = useSelector(getArticlesPageView);
 
   const [searchParams] = useSearchParams();
-  const a = 2;
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
@@ -55,12 +49,7 @@ function ArticlesPage(props: ArticlesPageProps) {
         onScrollEnd={!isLoading ? onLoadNextPart : undefined}
       >
         <ArticlesPageFilter />
-        <ArticleList
-          isLoading={isLoading}
-          view={view}
-          articles={articles}
-          className={styles.list}
-        />
+        <ArticleInfiniteList className={styles.list} />
       </Page>
     </DynamicModuleLoader>
   );

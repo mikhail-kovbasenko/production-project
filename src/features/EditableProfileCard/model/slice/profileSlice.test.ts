@@ -1,5 +1,5 @@
-import { CountryType } from '../../../Country';
-import { CurrencyType } from '../../../Currency';
+import { CountryType } from 'entities/Country';
+import { CurrencyType } from 'entities/Currency';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 import { ProfileSchema, ValidateProfileError } from '../types/types';
 import { profileActions, profileReducer } from './profileSlice';

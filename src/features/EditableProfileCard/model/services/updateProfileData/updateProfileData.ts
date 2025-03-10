@@ -1,19 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
+import { Profile } from 'entities/Profile';
 import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm';
-import { Profile, ValidateProfileError } from '../../types/types';
+import { ValidateProfileError } from '../../types/types';
 import { validateProfileData } from '../validateProfileData/validateProfileData';
-
-// interface LoginByUsernameProps {
-//   username: string;
-//   password: string;
-// }
-
-// interface LoginByUsernameConfig {
-//   rejectValue: string;
-//   extra: ThunkExtraArg;
-//   state: StateSchema
-// }
 
 export const updateProfileData = createAsyncThunk<
   Profile,

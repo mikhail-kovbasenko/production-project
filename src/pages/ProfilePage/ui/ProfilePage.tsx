@@ -1,35 +1,11 @@
 import { classNames } from 'shared/lib/classNames';
+
+import { EditableProfileCard } from 'features/EditableProfileCard';
 import { useTranslation } from 'react-i18next';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components';
-import { KeyboardEvent, useCallback } from 'react';
-
-import {
-  fetchProfileData,
-  getProfileError,
-  getProfileForm,
-  getProfileLoading,
-  getProfileReadonly,
-  getProfileValidateErrors,
-  profileActions,
-  ProfileCard,
-  profileReducer,
-  ValidateProfileError,
-} from 'entities/Profile';
-import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
-import { useSelector } from 'react-redux';
-import { validKeyboardKeys } from 'shared/const/commons';
-import { CurrencyType } from 'entities/Currency';
-import { CountryType } from 'entities/Country';
-import { Text, TextTheme } from 'shared/ui/Text';
-
 import { useParams } from 'react-router-dom';
-import { Page } from 'widgets/Page';
 import { VerticalStack } from 'shared/ui/Stack';
-import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
-
-const reducers: ReducersList = {
-  profile: profileReducer,
-};
+import { Text } from 'shared/ui/Text';
+import { Page } from 'widgets/Page';
 
 interface ProfilePageProps {
     className?: string;
@@ -40,119 +16,21 @@ function ProfilePage(props: ProfilePageProps) {
     className,
   } = props;
 
-  const dispatch = useAppDispatch();
+  const { id } = useParams<{ id: string }>();
 
   const { t } = useTranslation('profile');
 
-  const formData = useSelector(getProfileForm);
-  const error = useSelector(getProfileError);
-  const isLoading = useSelector(getProfileLoading);
-  const readonly = useSelector(getProfileReadonly);
-  const validateErrors = useSelector(getProfileValidateErrors);
-
-  const { id } = useParams<{ id: string }>();
-
-  const validateErrorTranslates = {
-    [ValidateProfileError.SERVER_ERROR]: t('server error'),
-    [ValidateProfileError.INCORRECT_AGE]: t('age error'),
-    [ValidateProfileError.INCORRECT_COUNTRY]: t('contry error'),
-    [ValidateProfileError.NO_DATA]: t('data error'),
-    [ValidateProfileError.INCORRECT_USER_DATA]: t('userdata error'),
-  };
-
-  const handleChangeFirstname = useCallback((value: string) => {
-    dispatch(profileActions.updateProfile({
-      first: value,
-    }));
-  }, [dispatch]);
-
-  const handleChangeLastname = useCallback((value: string) => {
-    dispatch(profileActions.updateProfile({
-      lastname: value,
-    }));
-  }, [dispatch]);
-
-  const handleChangeAge = useCallback((value: string) => {
-    dispatch(profileActions.updateProfile({
-      age: Number(value),
-    }));
-  }, [dispatch]);
-
-  const handleKeyDownAge = useCallback((e: KeyboardEvent) => {
-    if (
-      !/[0-9]/.test(e.key)
-      && !(Object.values(validKeyboardKeys).some((v) => v === e.key))
-    ) {
-      e.preventDefault();
-    }
-  }, []);
-
-  const handleChangeCity = useCallback((value: string) => {
-    dispatch(profileActions.updateProfile({
-      city: value,
-    }));
-  }, [dispatch]);
-
-  const handleChangeUsername = useCallback((value: string) => {
-    dispatch(profileActions.updateProfile({
-      username: value,
-    }));
-  }, [dispatch]);
-
-  const handleChangeAvatar = useCallback((value: string) => {
-    dispatch(profileActions.updateProfile({
-      avatar: value,
-    }));
-  }, [dispatch]);
-
-  const handleChangeCurrency = useCallback((currency: CurrencyType) => {
-    dispatch(profileActions.updateProfile({
-      currency,
-    }));
-  }, [dispatch]);
-
-  const handleChangeCountry = useCallback((country: CountryType) => {
-    dispatch(profileActions.updateProfile({
-      country,
-    }));
-  }, [dispatch]);
-
-  useInitialEffect(() => {
-    if (id) {
-      dispatch(fetchProfileData(id));
-    }
-  });
+  if (!id) {
+    return <Text text={t('Error')} />;
+  }
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterOnMount>
-      <Page className={classNames('', {}, [className])}>
-        <VerticalStack gap="16" fullWidth>
-          <ProfilePageHeader />
-          {validateErrors?.length && validateErrors.map((error) => (
-            <Text
-              theme={TextTheme.ERROR}
-              text={validateErrorTranslates[error]}
-              key={error}
-            />
-          ))}
-          <ProfileCard
-            data={formData}
-            isLoading={isLoading}
-            error={error}
-            onChangeFirstname={handleChangeFirstname}
-            onChangeLastname={handleChangeLastname}
-            onChangeAge={handleChangeAge}
-            onChangeCity={handleChangeCity}
-            onKeyDownAge={handleKeyDownAge}
-            onChangeUsername={handleChangeUsername}
-            onChangeAvatar={handleChangeAvatar}
-            onChangeCurrency={handleChangeCurrency}
-            onChangeCountry={handleChangeCountry}
-            readonly={readonly}
-          />
-        </VerticalStack>
-      </Page>
-    </DynamicModuleLoader>
+    <Page className={classNames('', {}, [className])}>
+      <VerticalStack gap="16" fullWidth>
+        <EditableProfileCard id={id} />
+      </VerticalStack>
+    </Page>
+
   );
 }
 
