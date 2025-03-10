@@ -23,7 +23,7 @@ interface ProfileCardProps {
     onChangeFirstname?: (value: string) => void;
     onChangeLastname?: (value: string) => void;
     onChangeAge?: (value: string) => void;
-    onKeyDownAge?: (e: KeyboardEvent) => void;
+    onKeyDownAge?: (e: KeyboardEvent<HTMLInputElement>) => void;
     onChangeCity?: (value: string) => void;
     onChangeAvatar?: (value: string) => void;
     onChangeUsername?: (value: string) => void;

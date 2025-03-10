@@ -5,6 +5,7 @@
   "Comments": "Comments",
   "Comments not found": "Comments not found",
   "EC": "EC",
+  "ERROR": "",
   "Edit": "Edit",
   "Enter name": "Enter name",
   "Enter password": "Enter password",
@@ -53,6 +54,7 @@
   "economics": "economics",
   "edit articles": "edit articles",
   "error": "error",
+  "error loading": "",
   "incorr": "",
   "it": "it",
   "language": "language",
@@ -82,5 +84,6 @@
   "your firstname": "your firstname",
   "your lastname": "your lastname",
   "your username": "your username",
-  "Вы ввели неверный логин или пароль!": "Вы ввели неверный логин или пароль!"
+  "Вы ввели неверный логин или пароль!": "Вы ввели неверный логин или пароль!",
+  "Уккщк": ""
 }

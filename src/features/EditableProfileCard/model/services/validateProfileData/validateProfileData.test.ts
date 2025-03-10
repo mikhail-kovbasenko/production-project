@@ -1,5 +1,5 @@
-import { CountryType } from '../../../../Country';
-import { CurrencyType } from '../../../../Currency';
+import { CountryType } from 'entities/Country';
+import { CurrencyType } from 'entities/Currency';
 import { ValidateProfileError } from '../../types/types';
 import { validateProfileData } from './validateProfileData';
 
