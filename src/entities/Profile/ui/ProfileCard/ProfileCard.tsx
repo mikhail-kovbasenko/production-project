@@ -90,6 +90,7 @@ function ProfileCard(props: ProfileCardProps) {
         onChange={onChangeFirstname}
         readonly={readonly}
         disabled={readonly}
+        data-testid="ProfileCard.FirstName"
       />
       <Input
         value={data?.lastname}
@@ -98,6 +99,7 @@ function ProfileCard(props: ProfileCardProps) {
         onChange={onChangeLastname}
         readonly={readonly}
         disabled={readonly}
+        data-testid="ProfileCard.LastName"
       />
       <Input
         value={data?.age}

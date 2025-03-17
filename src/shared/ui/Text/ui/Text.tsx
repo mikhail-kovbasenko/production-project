@@ -11,7 +11,9 @@ interface TextProps {
     text?: string;
     theme?: TextTheme;
     align?: TextAlign
-    size?: TextSize
+    size?: TextSize;
+
+    'data-testid'?: string;
 }
 
 function Text(props: TextProps) {
@@ -22,6 +24,7 @@ function Text(props: TextProps) {
     theme = TextTheme.PRIMARY,
     align = TextAlign.LEFT,
     size = TextSize.M,
+    'data-testid': dataTestId = 'Text',
   } = props;
 
   const Header = mapSizeToHeaderTag[size];
@@ -33,8 +36,22 @@ function Text(props: TextProps) {
       [className, styles[theme], styles[align], styles[size]],
     )}
     >
-      {title && <Header className={styles.title}>{title}</Header>}
-      {text && <p className={styles.text}>{text}</p>}
+      {title && (
+      <Header
+        className={styles.title}
+        data-testid={`${dataTestId}.Header`}
+      >
+        {title}
+      </Header>
+      )}
+      {text && (
+      <p
+        className={styles.text}
+        data-testid={`${dataTestId}.Paragraph`}
+      >
+        {text}
+      </p>
+      )}
     </div>
   );
 }

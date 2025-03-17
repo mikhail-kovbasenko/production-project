@@ -19,7 +19,7 @@ function ArticleRecommendationsList(props: ArticleRecommendationsListProps) {
 
   const { isLoading, data: articles } = useGetArticleRecommendationsQuery(4);
 
-  if (isLoading) {
+  if (isLoading || !articles) {
     return null;
   }
 
@@ -35,6 +35,7 @@ function ArticleRecommendationsList(props: ArticleRecommendationsListProps) {
         target="_blank"
         className={styles.recommendations}
         isLoading={isLoading}
+        virtualized={false}
       />
     </VerticalStack>
   );

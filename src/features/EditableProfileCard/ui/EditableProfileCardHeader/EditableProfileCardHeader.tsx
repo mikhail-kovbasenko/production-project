@@ -57,6 +57,7 @@ function EditableProfileCardHeader(props: ProfilePageHeaderProps) {
                 <Button
                   theme={ButtonTheme.BACKGROUND_INVERTED}
                   onClick={handleEdit}
+                  data-testid="EditableProfileCardHeader.EditButton"
                 >
                   {t('Edit')}
                 </Button>
@@ -66,12 +67,14 @@ function EditableProfileCardHeader(props: ProfilePageHeaderProps) {
                   <Button
                     theme={ButtonTheme.OUTLINE_RED}
                     onClick={handleCancelEdit}
+                    data-testid="EditableProfileCardHeader.CancelButton"
                   >
                     {t('cancel')}
                   </Button>
                   <Button
                     theme={ButtonTheme.OUTLINE}
                     onClick={handleSave}
+                    data-testid="EditableProfileCardHeader.SaveButton"
                   >
                     {t('save')}
                   </Button>
