@@ -23,5 +23,7 @@
   "article": "Articles",
   "appName": "Mikhail Kovbasenko App",
   "create article": "Create Article",
-  "UserProfile": "User Profile"
+  "UserProfile": "User Profile",
+  "Admin": "Admin",
+  "Not available": "Not available"
 }

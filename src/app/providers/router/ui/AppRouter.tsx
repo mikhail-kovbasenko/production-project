@@ -5,6 +5,7 @@ import { PageLoader } from 'widgets/PageLoader';
 
 import { AppRoutesProps, routeConfig } from 'shared/config/router/config';
 import RequireAuth from './RequireAuth';
+import RequireRoles from './RequireRoles';
 
 const renderWithWrapper = (route: AppRoutesProps) => {
   const element = (
@@ -18,7 +19,13 @@ const renderWithWrapper = (route: AppRoutesProps) => {
       key={route.path}
       path={route.path}
       element={route.authOnly
-        ? <RequireAuth>{element}</RequireAuth>
+        ? (
+          <RequireAuth>
+            <RequireRoles roles={route.roles}>
+              {element}
+            </RequireRoles>
+          </RequireAuth>
+        )
         : element}
     />
   );
