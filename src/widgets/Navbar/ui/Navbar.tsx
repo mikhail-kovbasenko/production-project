@@ -6,7 +6,9 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+  getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entities/User';
 import { Text, TextTheme } from 'shared/ui/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
 import { RoutePath } from 'shared/config/router/config';
@@ -24,6 +26,10 @@ function Navbar({ className }: NavbarProps) {
   const [isAuthModal, setAuthModal] = useState<boolean>(false);
   const authData = useSelector(getUserAuthData);
   const dispatch = useDispatch();
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
+
+  const isAdminPanelAvailable = isAdmin || isManager;
 
   const handleCloseModal = useCallback(() => {
     setAuthModal(false);
@@ -38,6 +44,24 @@ function Navbar({ className }: NavbarProps) {
   }, [dispatch]);
 
   if (authData) {
+    const dropDownItems = [
+      {
+        content: t('UserProfile'),
+        href: RoutePath.profile + authData.id,
+      },
+      {
+        content: t('Logout'),
+        onClick: handleLogout,
+      },
+    ];
+
+    if (isAdminPanelAvailable) {
+      dropDownItems.unshift({
+        content: t('Admin'),
+        href: RoutePath.admin_panel,
+      });
+    }
+
     return (
       <header className={classNames(styles.Navbar, {}, [className])}>
         <Text className={styles.appName} title={t('appName')} theme={TextTheme.INVERTED} />
@@ -51,16 +75,7 @@ function Navbar({ className }: NavbarProps) {
         <Dropdown
           className={styles.dropdown}
           direction="bottom left"
-          items={[
-            {
-              content: t('UserProfile'),
-              href: RoutePath.profile + authData.id,
-            },
-            {
-              content: t('Logout'),
-              onClick: handleLogout,
-            },
-          ]}
+          items={dropDownItems}
           trigger={<Avatar size={30} src={authData.avatar} />}
         />
       </header>
