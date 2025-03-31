@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import ArticleDetailsComments from './ArticleDetailsComments';
+import { StoreDecorator } from '../../../../shared/config/storybook';
 
 export default {
   title: 'pages/ArticleDetailsComments',
@@ -15,3 +16,4 @@ export const Normal = Template.bind({});
 Normal.args = {
   id: '1',
 };
+Normal.decorators = [StoreDecorator({})];

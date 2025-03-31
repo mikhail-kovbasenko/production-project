@@ -1,7 +1,7 @@
 import { CountryType } from 'entities/Country';
 import { CurrencyType } from 'entities/Currency';
 import { ProfileCard } from 'entities/Profile';
-import { useCallback } from 'react';
+import { useCallback, KeyboardEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { validKeyboardKeys } from 'shared/const/commons';
@@ -69,7 +69,7 @@ function EditableProfileCard(props: EditableProfileCardProps) {
     }));
   }, [dispatch]);
 
-  const handleKeyDownAge = useCallback((e) => {
+  const handleKeyDownAge = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
     if (
       !/[0-9]/.test(e.key)
       && !(Object.values(validKeyboardKeys).some((v) => v === e.key))

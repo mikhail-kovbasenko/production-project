@@ -1,11 +1,10 @@
 import { BugButton } from 'app/providers/ErrorBoundary';
 import { useState } from 'react';
-// import { Counter } from 'entities/Counter';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input';
 import { Page } from 'widgets/Page';
-import { HorizontalStack } from '../../../shared/ui/Stack';
-import { ListBox } from '../../../shared/ui/ListBox';
+import { HorizontalStack } from 'shared/ui/Stack';
+import { ListBox } from 'shared/ui/ListBox';
 
 function MainPage() {
   const { t } = useTranslation();

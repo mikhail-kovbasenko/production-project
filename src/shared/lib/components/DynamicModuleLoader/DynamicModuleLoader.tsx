@@ -1,4 +1,6 @@
-import { Fragment, ReactNode, useEffect } from 'react';
+import {
+  Fragment, PropsWithChildren, ReactNode, useEffect,
+} from 'react';
 import { useDispatch, useStore } from 'react-redux';
 import { ReduxStoreWithManager, StateSchema, StateSchemaKey } from 'app/providers/StoreProvider';
 import { Reducer } from '@reduxjs/toolkit';
@@ -11,11 +13,10 @@ type ReducersListEntry = [StateSchemaKey, Reducer]
 
 interface DynamicModuleLoaderProps {
   reducers: ReducersList,
-  children: ReactNode,
   removeAfterOnMount?: boolean;
 }
 
-function DynamicModuleLoader(props: DynamicModuleLoaderProps) {
+function DynamicModuleLoader(props: PropsWithChildren<DynamicModuleLoaderProps>) {
   const {
     children,
     reducers,
