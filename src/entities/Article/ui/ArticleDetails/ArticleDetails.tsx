@@ -132,7 +132,7 @@ function ArticleDetails(props: ArticleDetailsProps) {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterOnMount>
-      <VerticalStack className={classNames(styles.ArticleDetails, {}, [className])} gap="16">
+      <VerticalStack fullWidth className={classNames(styles.ArticleDetails, {}, [className])} gap="16">
         {content}
       </VerticalStack>
     </DynamicModuleLoader>

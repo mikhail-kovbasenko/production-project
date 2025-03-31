@@ -22,7 +22,7 @@ function CommentList(props: CommentListProps) {
 
   if (isLoading) {
     return (
-      <VerticalStack className={classNames('', {}, [className])} gap="16">
+      <VerticalStack className={classNames('', {}, [className])} gap="16" fullWidth>
         <CommentCard isLoading />
         <CommentCard isLoading />
         <CommentCard isLoading />

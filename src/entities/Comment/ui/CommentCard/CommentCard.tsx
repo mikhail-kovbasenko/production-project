@@ -23,16 +23,19 @@ function CommentCard(props: CommentCardProps) {
 
   if (isLoading) {
     return (
-      <div className={classNames(styles.CommentCard, {}, [className,
-        styles.loading,
-      ])}
+      <VerticalStack
+        fullWidth
+        gap="8"
+        className={classNames(styles.CommentCard, {}, [className,
+          styles.loading,
+        ])}
       >
         <div className={styles.header}>
           <Skeleton width={30} height={30} border="50%" />
           <Skeleton height={16} width={100} className={styles.username} />
         </div>
         <Skeleton width="100%" height={50} className={styles.text} />
-      </div>
+      </VerticalStack>
     );
   }
 
