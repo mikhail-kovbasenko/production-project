@@ -6,6 +6,7 @@ import {
   ProgressPlugin, WebpackPluginInstance, DefinePlugin, HotModuleReplacementPlugin,
 } from 'webpack';
 import CopyPlugin from 'copy-webpack-plugin';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
 import { BuildOptions } from './types/config';
 
 export function buildPlugins({
@@ -32,6 +33,10 @@ export function buildPlugins({
       patterns: [
         { from: paths.locales, to: paths.buildLocales },
       ],
+    }),
+    new CircularDependencyPlugin({
+      exclude: /node_modules/,
+      failOnError: true,
     }),
   ];
 
