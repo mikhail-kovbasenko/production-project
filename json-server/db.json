@@ -1638,5 +1638,26 @@
       "text": "соси",
       "id": "O_cxXBU"
     }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Note 1",
+      "description": "Something event...",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Note 2",
+      "description": "Again again...",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "3",
+      "title": "Note 3",
+      "description": "Fuck you!",
+      "userId": "2"
+    }
   ]
 }

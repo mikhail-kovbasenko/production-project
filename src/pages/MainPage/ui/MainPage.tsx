@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input';
 import { Page } from 'widgets/Page';
 import { HorizontalStack } from 'shared/ui/Stack';
-import { ListBox } from 'shared/ui/ListBox';
+import { ListBox } from 'shared/ui/Popups';
 
 function MainPage() {
   const { t } = useTranslation();

@@ -6,6 +6,7 @@ interface IconProps {
   className?: string;
   Svg: VFC<SVGProps<SVGSVGElement>>;
   clearFill?: boolean;
+  inverted?: boolean;
 }
 
 function Icon(props: IconProps) {
@@ -13,11 +14,13 @@ function Icon(props: IconProps) {
     className,
     Svg,
     clearFill,
+    inverted,
   } = props;
 
   return (
     <Svg className={classNames(styles.Icon, {
       [styles.clearFill]: clearFill,
+      [styles.inverted]: inverted,
     }, [className])}
     />
   );

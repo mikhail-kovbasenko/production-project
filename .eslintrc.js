@@ -51,6 +51,7 @@ module.exports = {
         'direction',
         'gap',
         'role',
+        'border',
       ],
     }],
     'max-len': ['warn', {
