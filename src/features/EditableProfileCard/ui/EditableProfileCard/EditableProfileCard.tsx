@@ -8,6 +8,7 @@ import { validKeyboardKeys } from 'shared/const/commons';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components';
 import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
 import { Text, TextTheme } from 'shared/ui/Text';
+import { ValidateProfileError } from '../../model/consts/consts';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileLoading } from '../../model/selectors/getProfileLoading/getProfileLoading';
@@ -15,7 +16,6 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
-import { ValidateProfileError } from '../../model/types/types';
 import EditableProfileCardHeader from '../EditableProfileCardHeader/EditableProfileCardHeader';
 
 interface EditableProfileCardProps {
