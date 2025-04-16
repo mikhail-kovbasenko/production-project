@@ -4,7 +4,10 @@ import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Icon } from 'shared/ui/Icon';
 import { NotificationList } from 'entities/Notification';
 import { classNames } from 'shared/lib/classNames';
+import { Fragment, useState } from 'react';
 import styles from './NotificationButton.module.scss';
+import { Drawer } from '../../../shared/ui/Drawer';
+import { useDevice } from '../../../shared/lib/hooks';
 
 interface NotificationButtonProps {
     className?: string;
@@ -15,14 +18,34 @@ function NotificationButton(props: NotificationButtonProps) {
     className,
   } = props;
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onOpenDrawer = () => setIsOpen(true);
+  const onCloseDrawer = () => setIsOpen(false);
+
+  const trigger = (
+    <Button theme={ButtonTheme.CLEAR} onClick={onOpenDrawer}>
+      <Icon Svg={NotificationIcon} inverted />
+    </Button>
+  );
+
+  const isMobile = useDevice();
+
+  if (isMobile) {
+    return (
+      <Fragment>
+        {trigger}
+        <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+          <NotificationList />
+        </Drawer>
+      </Fragment>
+    );
+  }
+
   return (
     <Popover
       className={classNames(styles.NotificationButton, {}, [className])}
-      trigger={(
-        <Button theme={ButtonTheme.CLEAR}>
-          <Icon Svg={NotificationIcon} inverted />
-        </Button>
-                  )}
+      trigger={trigger}
       direction="bottom left"
     >
       <NotificationList className={styles.notifications} />

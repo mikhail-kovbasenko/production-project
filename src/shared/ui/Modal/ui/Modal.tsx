@@ -11,6 +11,7 @@ import {
 import { useTheme } from 'app/providers/ThemeProvider';
 import { Portal } from '../../Portal';
 import styles from './Modal.module.scss';
+import { Overlay } from '../../Overlay';
 
 interface ModalProps {
     className?: string;
@@ -46,10 +47,6 @@ function Modal(props: ModalProps) {
     }
   }, [onClose]);
 
-  const onContent = (e: MouseEvent) => {
-    e.stopPropagation();
-  };
-
   const onKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') {
       closeHandler();
@@ -84,9 +81,10 @@ function Modal(props: ModalProps) {
   return (
     <Portal>
       <div className={classNames(styles.Modal, mods, [className, theme, 'app_modal'])}>
-        <div className={styles.overlay} onClick={closeHandler}>
-          <div className={styles.content} onClick={onContent}>{children}</div>
-        </div>
+        {/* <div className={styles.overlay} onClick={closeHandler}> */}
+        <Overlay onClick={closeHandler} />
+        <div className={styles.content}>{children}</div>
+        {/* </div> */}
       </div>
     </Portal>
   );

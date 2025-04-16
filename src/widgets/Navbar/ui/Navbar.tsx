@@ -17,6 +17,8 @@ import { NotificationButton } from 'features/NotificationButton';
 import { HorizontalStack } from 'shared/ui/Stack';
 import { AvatarDropdown } from '../../../features/AvatarDropdown';
 import styles from './Navbar.module.scss';
+import { Drawer } from '../../../shared/ui/Drawer';
+import { NotificationList } from '../../../entities/Notification';
 
 interface NavbarProps {
   className?: string;

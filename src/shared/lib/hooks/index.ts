@@ -3,6 +3,7 @@ import { useInitialEffect } from './useInitialEffect/useInitialEffect';
 import { useHover } from './useHover/useHover';
 import { useInfiniteScroll } from './useInfiniteScroll/useInfiniteScroll';
 import { useDebounce } from './useDebounce/useDebounce';
+import { useDevice } from './useDevice/useDevice';
 
 export {
   useAppDispatch,
@@ -10,4 +11,5 @@ export {
   useHover,
   useInfiniteScroll,
   useDebounce,
+  useDevice,
 };
