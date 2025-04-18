@@ -1,10 +1,13 @@
-import { classNames, Mods } from 'shared/lib/classNames';
-import { memo, ReactNode } from 'react';
+import { classNames } from 'shared/lib/classNames';
+import {
+  memo, ReactNode, useCallback, useEffect,
+} from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
 import styles from './Drawer.module.scss';
 import { Portal } from '../../Portal';
 import { Overlay } from '../../Overlay';
-import { useModal } from '../../../lib/hooks';
+import { AnimationContextPayload, useAnimationLibs } from '../../../lib/components/AnimationProvider/AnimationProvider';
+// import { useModal } from '../../../lib/hooks';
 
 interface DrawerProps {
   className?: string;
@@ -14,7 +17,9 @@ interface DrawerProps {
   lazy?: boolean;
 }
 
-function Drawer(props: DrawerProps) {
+const height = window.innerHeight - 100;
+
+function DrawerContent(props: DrawerProps) {
   const {
     className,
     children,
@@ -22,38 +27,112 @@ function Drawer(props: DrawerProps) {
     onClose,
     lazy,
   } = props;
+  const { Spring, Gesture } = useAnimationLibs() as Required<AnimationContextPayload>;
 
   const { theme } = useTheme();
+  const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
 
-  const {
-    close,
-    isClosing,
-    isMounted,
-  } = useModal({
-    animationDelay: 300,
-    onClose,
-    isOpen,
-  });
+  const openDrawer = useCallback(() => {
+    api.start({ y: 0, immediate: false });
+  }, [api]);
 
-  const mods: Mods = {
-    [styles.opened]: isOpen,
-    [styles.isClosing]: isClosing,
+  useEffect(() => {
+    if (isOpen) {
+      openDrawer();
+    }
+  }, [api, isOpen, openDrawer]);
+
+  const close = (velocity = 0) => {
+    api.start({
+      y: height,
+      immediate: false,
+      config: { ...Spring.config.stiff, velocity },
+      onResolve: onClose,
+    });
   };
 
-  if (lazy && !isMounted) {
+  const bind = Gesture.useDrag(({
+    last,
+    velocity: [, vy],
+    direction: [, dy],
+    movement: [, my],
+    cancel,
+  }) => {
+    if (my < -70) cancel();
+
+    if (last) {
+      if (my > height * 0.5 || (vy > 0.5 && dy > 0)) {
+        close();
+      } else {
+        openDrawer();
+      }
+    } else {
+      api.start({ y: my, immediate: true });
+    }
+  }, {
+    from: () => [0, y.get()],
+    filterTaps: true,
+    bounds: { top: 0 },
+    rubberband: true,
+  });
+
+  if (!isOpen) {
     return null;
   }
 
+  const display = y.to((py) => (py < height ? 'block' : 'none'));
+
+  // const {
+  //   close,
+  //   isClosing,
+  //   isMounted,
+  // } = useModal({
+  //   animationDelay: 300,
+  //   onClose,
+  //   isOpen,
+  // });
+
+  // const mods: Mods = {
+  //   [styles.opened]: isOpen,
+  //   [styles.isClosing]: isClosing,
+  // };
+
+  // if (lazy && !isMounted) {
+  //   return null;
+  // }
+
   return (
     <Portal>
-      <div className={classNames(styles.Drawer, mods, [className, theme, 'app_drawer'])}>
+      <div className={classNames(styles.Drawer, {}, [className, theme, 'app_drawer'])}>
         <Overlay onClick={close} />
-        <div className={styles.content}>
+        <Spring.a.div
+          className={styles.sheet}
+          style={{
+            display,
+            bottom: `calc(-100vh + ${height - 100}px)`,
+            y,
+          }}
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          {...bind()}
+        >
           {children}
-        </div>
+        </Spring.a.div>
+        {/* <div className={styles.content}>
+          {children}
+        </div> */}
       </div>
     </Portal>
   );
 }
+
+const Drawer = (props: DrawerProps) => {
+  const { isLoaded } = useAnimationLibs();
+
+  if (!isLoaded) {
+    return null;
+  }
+
+  return <DrawerContent {...props} />;
+};
 
 export default memo(Drawer);

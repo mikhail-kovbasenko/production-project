@@ -8,6 +8,7 @@ import { Fragment, useState } from 'react';
 import styles from './NotificationButton.module.scss';
 import { Drawer } from '../../../shared/ui/Drawer';
 import { useDevice } from '../../../shared/lib/hooks';
+import AnimationProvider from '../../../shared/lib/components/AnimationProvider/AnimationProvider';
 
 interface NotificationButtonProps {
     className?: string;
@@ -35,9 +36,11 @@ function NotificationButton(props: NotificationButtonProps) {
     return (
       <Fragment>
         {trigger}
-        <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-          <NotificationList />
-        </Drawer>
+        <AnimationProvider>
+          <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+            <NotificationList />
+          </Drawer>
+        </AnimationProvider>
       </Fragment>
     );
   }
