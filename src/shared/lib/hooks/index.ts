@@ -4,6 +4,7 @@ import { useHover } from './useHover/useHover';
 import { useInfiniteScroll } from './useInfiniteScroll/useInfiniteScroll';
 import { useDebounce } from './useDebounce/useDebounce';
 import { useDevice } from './useDevice/useDevice';
+import { useModal } from './useModal/useModal';
 
 export {
   useAppDispatch,
@@ -12,4 +13,5 @@ export {
   useInfiniteScroll,
   useDebounce,
   useDevice,
+  useModal,
 };
