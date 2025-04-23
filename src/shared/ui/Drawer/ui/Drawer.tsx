@@ -6,7 +6,7 @@ import { useTheme } from '@/app/providers/ThemeProvider';
 import styles from './Drawer.module.scss';
 import { Portal } from '../../Portal';
 import { Overlay } from '../../Overlay';
-import { AnimationContextPayload, useAnimationLibs } from '../../../lib/components/AnimationProvider/AnimationProvider';
+import AnimationProvider, { AnimationContextPayload, useAnimationLibs } from '../../../lib/components/AnimationProvider/AnimationProvider';
 // import { useModal } from '../../../lib/hooks';
 
 interface DrawerProps {
@@ -124,7 +124,7 @@ function DrawerContent(props: DrawerProps) {
   );
 }
 
-const Drawer = (props: DrawerProps) => {
+const DrawerAsync = (props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs();
 
   if (!isLoaded) {
@@ -134,4 +134,10 @@ const Drawer = (props: DrawerProps) => {
   return <DrawerContent {...props} />;
 };
 
-export default memo(Drawer);
+const Drawer = (props: DrawerProps) => (
+  <AnimationProvider>
+    <DrawerAsync {...props} />
+  </AnimationProvider>
+);
+
+export default Drawer;

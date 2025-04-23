@@ -36,11 +36,10 @@ function NotificationButton(props: NotificationButtonProps) {
     return (
       <Fragment>
         {trigger}
-        <AnimationProvider>
-          <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-            <NotificationList />
-          </Drawer>
-        </AnimationProvider>
+        <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+          <NotificationList />
+        </Drawer>
+
       </Fragment>
     );
   }
