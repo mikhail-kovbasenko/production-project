@@ -1,6 +1,3 @@
-import { StateSchema } from 'app/providers/StoreProvider';
-import { getScrollPositionByPath } from 'features/ScrollPositionSave';
-import { scrollPositionSaveActions } from 'features/ScrollPositionSave/model/slice/scrollPositionSaveSlice';
 import {
   MutableRefObject,
   ReactNode,
@@ -9,9 +6,12 @@ import {
 } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { classNames } from 'shared/lib/classNames';
-import { useAppDispatch, useInfiniteScroll, useInitialEffect } from 'shared/lib/hooks';
-import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { getScrollPositionByPath } from '@/features/ScrollPositionSave';
+import { scrollPositionSaveActions } from '@/features/ScrollPositionSave/model/slice/scrollPositionSaveSlice';
+import { classNames } from '@/shared/lib/classNames';
+import { useAppDispatch, useInfiniteScroll, useInitialEffect } from '@/shared/lib/hooks';
+import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import styles from './Page.module.scss';
 
 interface PageProps {

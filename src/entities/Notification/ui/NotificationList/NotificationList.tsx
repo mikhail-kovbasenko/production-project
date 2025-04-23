@@ -1,7 +1,7 @@
-import { classNames } from 'shared/lib/classNames';
 import { useTranslation } from 'react-i18next';
-import { VerticalStack } from 'shared/ui/Stack';
-import { Skeleton } from 'shared/ui/Skeleton';
+import { classNames } from '@/shared/lib/classNames';
+import { VerticalStack } from '@/shared/ui/Stack';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { useGetNotificationsQuery } from '../../api/notificationApi';
 import NotificationItem from '../NotificationItem/NotificationItem';
 

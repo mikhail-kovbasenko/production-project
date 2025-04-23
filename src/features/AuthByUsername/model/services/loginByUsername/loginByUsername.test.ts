@@ -1,8 +1,8 @@
 // import { Dispatch } from 'react';
 // import { StateSchema } from 'app/providers/StoreProvider';
-import { userActions } from 'entities/User';
+import { userActions } from '@/entities/User';
 // import { AnyAction } from '@reduxjs/toolkit';
-import { TestAsyncThunk } from 'shared/config/tests';
+import { TestAsyncThunk } from '@/shared/config/tests';
 import { loginByUsername } from './loginByUsername';
 
 describe('loginByUsername', () => {

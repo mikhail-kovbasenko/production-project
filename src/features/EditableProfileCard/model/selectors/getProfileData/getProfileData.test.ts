@@ -1,6 +1,6 @@
-import { StateSchema } from 'app/providers/StoreProvider';
-import { CountryType } from 'entities/Country';
-import { CurrencyType } from 'entities/Currency';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { CountryType } from '@/entities/Country';
+import { CurrencyType } from '@/entities/Currency';
 import { getProfileData } from './getProfileData';
 
 describe('getProfileData', () => {

@@ -1,4 +1,4 @@
-import { Profile } from 'entities/Profile/model/types/types';
+import { Profile } from '@/entities/Profile/model/types/types';
 import { ValidateProfileError } from '../consts/consts';
 
 export interface ProfileSchema {

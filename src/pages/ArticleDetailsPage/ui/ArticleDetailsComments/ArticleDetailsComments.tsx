@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { Fragment, memo, useCallback } from 'react';
-import { TextSize, Text } from 'shared/ui/Text';
-import { AddCommentForm } from 'features/AddCommentForm';
-import { CommentList } from 'entities/Comment';
-import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks';
 import { useSelector } from 'react-redux';
+import { TextSize, Text } from '@/shared/ui/Text';
+import { AddCommentForm } from '@/features/AddCommentForm';
+import { CommentList } from '@/entities/Comment';
+import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks';
 import styles from '../ArticleDetailsPage.module.scss';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { getArticleComments } from '../../model/slice/articleDetailsCommentSlice';

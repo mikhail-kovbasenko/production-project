@@ -1,20 +1,20 @@
 import {
-  getUserAuthData,
-} from 'entities/User';
-import { LoginModal } from 'features/AuthByUsername';
-import {
   memo, useCallback, useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { RoutePath } from 'shared/config/router/config';
-import { classNames } from 'shared/lib/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
-import { Button, ButtonTheme } from 'shared/ui/Button';
-import { Text, TextTheme } from 'shared/ui/Text';
+import { LoginModal } from '@/features/AuthByUsername';
+import {
+  getUserAuthData,
+} from '@/entities/User';
+import { RoutePath } from '@/shared/config/router/config';
+import { classNames } from '@/shared/lib/classNames';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Text, TextTheme } from '@/shared/ui/Text';
 
-import { NotificationButton } from 'features/NotificationButton';
-import { HorizontalStack } from 'shared/ui/Stack';
+import { NotificationButton } from '@/features/NotificationButton';
+import { HorizontalStack } from '@/shared/ui/Stack';
 import { AvatarDropdown } from '../../../features/AvatarDropdown';
 import styles from './Navbar.module.scss';
 import { Drawer } from '../../../shared/ui/Drawer';

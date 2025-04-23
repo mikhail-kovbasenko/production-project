@@ -1,10 +1,10 @@
-import { classNames } from 'shared/lib/classNames';
 import { memo } from 'react';
-import { ArticleView } from 'entities/Article';
-import ListIcon from 'shared/assets/icons/list.svg';
-import TileIcon from 'shared/assets/icons/tile.svg';
-import { Button, ButtonTheme } from 'shared/ui/Button';
-import { Icon } from 'shared/ui/Icon';
+import { classNames } from '@/shared/lib/classNames';
+import { ArticleView } from '@/entities/Article';
+import ListIcon from '@/shared/assets/icons/list.svg';
+import TileIcon from '@/shared/assets/icons/tile.svg';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
 import styles from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {

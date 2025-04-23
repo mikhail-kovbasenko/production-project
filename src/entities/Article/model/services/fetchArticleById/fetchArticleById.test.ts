@@ -1,4 +1,4 @@
-import { TestAsyncThunk } from 'shared/config/tests';
+import { TestAsyncThunk } from '@/shared/config/tests';
 import { fetchArticleById } from './fetchArticleById';
 
 describe('fetchArticleById', () => {

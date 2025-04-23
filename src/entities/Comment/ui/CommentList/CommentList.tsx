@@ -1,7 +1,7 @@
-import { classNames } from 'shared/lib/classNames';
 import { useTranslation } from 'react-i18next';
-import { Text } from 'shared/ui/Text';
-import { VerticalStack } from 'shared/ui/Stack';
+import { classNames } from '@/shared/lib/classNames';
+import { Text } from '@/shared/ui/Text';
+import { VerticalStack } from '@/shared/ui/Stack';
 import { Comment } from '../../model/types/types';
 import CommentCard from '../CommentCard/CommentCard';
 

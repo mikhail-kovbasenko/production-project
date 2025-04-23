@@ -1,13 +1,13 @@
-import { useTheme } from 'app/providers/ThemeProvider';
-import { AppRouter } from 'app/providers/router';
-import 'app/styles/index.scss';
 import { Suspense, useEffect } from 'react';
-import { classNames } from 'shared/lib/classNames';
-import { Navbar } from 'widgets/Navbar';
-import { Sidebar } from 'widgets/Sidebar';
-
-import { getUserInited, userActions } from 'entities/User';
 import { useDispatch, useSelector } from 'react-redux';
+import { useTheme } from '@/app/providers/ThemeProvider';
+import { AppRouter } from '@/app/providers/router';
+import '@/app/styles/index.scss';
+import { classNames } from '@/shared/lib/classNames';
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
+
+import { getUserInited, userActions } from '@/entities/User';
 
 // function Component() {
 //   const { t, i18n } = useTranslation();

@@ -1,7 +1,7 @@
 import { Fragment, ReactNode, useEffect } from 'react';
-import { ReduxStoreWithManager, StateSchemaKey } from 'app/providers/StoreProvider';
 import { Reducer } from '@reduxjs/toolkit';
 import { useDispatch, useStore } from 'react-redux';
+import { ReduxStoreWithManager, StateSchemaKey } from '@/app/providers/StoreProvider';
 
 interface withDynamicModuleLoaderProps {
     name: StateSchemaKey,

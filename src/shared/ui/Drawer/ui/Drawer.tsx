@@ -1,8 +1,8 @@
-import { classNames } from 'shared/lib/classNames';
 import {
   memo, ReactNode, useCallback, useEffect,
 } from 'react';
-import { useTheme } from 'app/providers/ThemeProvider';
+import { classNames } from '@/shared/lib/classNames';
+import { useTheme } from '@/app/providers/ThemeProvider';
 import styles from './Drawer.module.scss';
 import { Portal } from '../../Portal';
 import { Overlay } from '../../Overlay';
@@ -25,7 +25,6 @@ function DrawerContent(props: DrawerProps) {
     children,
     isOpen,
     onClose,
-    lazy,
   } = props;
   const { Spring, Gesture } = useAnimationLibs() as Required<AnimationContextPayload>;
 

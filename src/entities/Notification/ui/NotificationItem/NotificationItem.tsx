@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames';
 import styles from './NotificationItem.module.scss';
 import { Notification } from '../../model/types/types';
 import { Card, CardTheme } from '../../../../shared/ui/Card';

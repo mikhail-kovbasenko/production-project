@@ -1,6 +1,6 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { withTranslation } from 'react-i18next';
-import { componentRender } from 'shared/config/tests';
+import { componentRender } from '@/shared/config/tests';
 import Sidebar from './Sidebar';
 
 describe('Sidebar', () => {

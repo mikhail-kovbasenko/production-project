@@ -1,17 +1,17 @@
 import { Fragment, memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import CalendarIcon from 'shared/assets/icons/calendar.svg';
-import EyeIcon from 'shared/assets/icons/eye.svg';
-import { classNames } from 'shared/lib/classNames';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components';
-import { useAppDispatch } from 'shared/lib/hooks';
-import { Avatar } from 'shared/ui/Avatar';
-import { Icon } from 'shared/ui/Icon';
-import { Skeleton } from 'shared/ui/Skeleton';
+import CalendarIcon from '@/shared/assets/icons/calendar.svg';
+import EyeIcon from '@/shared/assets/icons/eye.svg';
+import { classNames } from '@/shared/lib/classNames';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components';
+import { useAppDispatch } from '@/shared/lib/hooks';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Icon } from '@/shared/ui/Icon';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import {
   Text, TextAlign, TextSize, TextTheme,
-} from 'shared/ui/Text';
-import { HorizontalStack, VerticalStack } from 'shared/ui/Stack';
+} from '@/shared/ui/Text';
+import { HorizontalStack, VerticalStack } from '@/shared/ui/Stack';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
