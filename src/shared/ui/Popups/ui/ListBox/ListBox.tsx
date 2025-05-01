@@ -48,7 +48,7 @@ function ListBox(props: ListBoxProps) {
         as="div"
         className={classNames(styles.ListBox, {}, [className, popupStyles.popup])}
       >
-        <HListBox.Button className={popupStyles.trigger}>
+        <HListBox.Button className={popupStyles.trigger} as="div">
           <Button disabled={readonly}>
             {value ?? defaultValue}
           </Button>

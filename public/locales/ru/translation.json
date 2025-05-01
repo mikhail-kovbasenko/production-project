@@ -25,5 +25,7 @@
   "create article": "Создать статью",
   "UserProfile": "Профиль пользователя",
   "Admin": "Админка",
-  "Not available": "У вас нет прав"
+  "Not available": "У вас нет прав",
+  "your review": "Ваш отзыв",
+  "close": "Закрыть"
 }

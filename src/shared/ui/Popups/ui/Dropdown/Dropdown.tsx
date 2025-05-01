@@ -29,7 +29,10 @@ function Dropdown(props: DropdownProps) {
   const menuClasses = [mapDirectionClass[direction]];
 
   return (
-    <Menu as="div" className={classNames(styles.Dropdown, {}, [className, popupStyles.popup])}>
+    <Menu
+      as="div"
+      className={classNames(styles.Dropdown, {}, [className, popupStyles.popup])}
+    >
       <Menu.Button className={popupStyles.trigger}>
         {trigger}
       </Menu.Button>
@@ -44,6 +47,8 @@ function Dropdown(props: DropdownProps) {
                 className={classNames(styles.menuItem, {
                   [popupStyles.active]: active,
                 })}
+                // eslint-disable-next-line react/no-array-index-key
+                key={`dropdown-key-${index}`}
               >
                 {item.content}
               </button>

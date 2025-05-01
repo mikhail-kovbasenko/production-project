@@ -1,18 +1,18 @@
 import {
-  DetailedHTMLProps, HTMLAttributes, memo, ReactNode,
+  HTMLAttributes, memo, ReactNode,
 } from 'react';
 import { classNames } from '@/shared/lib/classNames';
-import styles from './Flex.module.scss';
 import {
   alignClasses,
-  justifyClasses,
   directionClasses,
   FlexAlign,
   FlexDirection,
-  FlexJustify,
   FlexGap,
+  FlexJustify,
   gapClasses,
+  justifyClasses,
 } from '../model/types/types';
+import styles from './Flex.module.scss';
 
 type DivProps = HTMLAttributes<HTMLDivElement>;
 

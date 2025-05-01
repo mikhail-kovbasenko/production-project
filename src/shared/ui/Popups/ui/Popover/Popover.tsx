@@ -25,7 +25,7 @@ function Popover(props: PopoverProps) {
 
   return (
     <UiPopover className={classNames(styles.Popover, {}, [className, popupStyles.popup])}>
-      <UiPopover.Button className={popupStyles.trigger}>
+      <UiPopover.Button className={popupStyles.trigger} as="div">
         {trigger}
       </UiPopover.Button>
 
