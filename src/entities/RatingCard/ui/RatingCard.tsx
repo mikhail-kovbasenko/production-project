@@ -4,14 +4,14 @@ import styles from './RatingCard.module.scss';
 import { classNames } from '@/shared/lib/classNames';
 import { Card } from '@/shared/ui/Card';
 import { HorizontalStack, VerticalStack } from '@/shared/ui/Stack';
-import { Text } from '../../../shared/ui/Text';
-import { StarRating } from '../../../shared/ui/StarRating';
-import { Modal } from '../../../shared/ui/Modal';
-import { Input } from '../../../shared/ui/Input';
-import { Button, ButtonTheme } from '../../../shared/ui/Button';
+import { Text } from '@/shared/ui/Text';
+import { StarRating } from '@/shared/ui/StarRating';
+import { Modal } from '@/shared/ui/Modal';
+import { Input } from '@/shared/ui/Input';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { useDevice } from '@/shared/lib/hooks';
-import { Drawer } from '../../../shared/ui/Drawer';
-import { ButtonSize } from '../../../shared/ui/Button/ui/Button';
+import { Drawer } from '@/shared/ui/Drawer';
+import { ButtonSize } from '@/shared/ui/Button/ui/Button';
 
 interface RatingCardProps {
   className?: string;
@@ -20,6 +20,7 @@ interface RatingCardProps {
   hasFeedback?: boolean;
   onCancel?: (starsCount: number) => void;
   onAccept?: (starsCount: number, feedBack?: string) => void;
+  rate?: number;
 }
 
 function RatingCard(props: RatingCardProps) {
@@ -30,10 +31,11 @@ function RatingCard(props: RatingCardProps) {
     hasFeedback,
     onCancel,
     onAccept,
+    rate,
   } = props;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [starsCount, setStarsCount] = useState<number>(0);
+  const [starsCount, setStarsCount] = useState<number>(rate || 0);
   const [feedback, setFeedback] = useState<string>('');
 
   const isMobile = useDevice();
@@ -68,10 +70,10 @@ function RatingCard(props: RatingCardProps) {
   );
 
   return (
-    <Card className={classNames(styles.RatingCard, {}, [className])}>
-      <VerticalStack align="center" gap="8">
-        <Text title={title} />
-        <StarRating size={40} onSelect={onSelectStars} />
+    <Card className={classNames(styles.RatingCard, {}, [className])} fullWidth>
+      <VerticalStack align="center" gap="8" fullWidth>
+        <Text title={starsCount ? t('Thank you for review') : title} />
+        <StarRating size={40} onSelect={onSelectStars} selectedStars={starsCount} />
       </VerticalStack>
       {
         isMobile ? (

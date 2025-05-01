@@ -12,6 +12,7 @@ import { articleDetailsPageReducer } from '../model/slice';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 import styles from './ArticleDetailsPage.module.scss';
 import ArticleDetailsPageHeader from './ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { ArticleRating } from '../../../features/ArticleRating';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -46,6 +47,7 @@ function ArticleDetailsPage(props: ArticleDetailsPageProps) {
         <VerticalStack gap="16" fullWidth>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
+          <ArticleRating articleId={id} />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VerticalStack>
