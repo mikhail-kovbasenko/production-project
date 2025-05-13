@@ -8,7 +8,6 @@ function MainPage() {
   return (
     <Page>
       {t('main page')}
-      <RatingCard title="Как вам статья?" feedBackTitle="Оставьте ваш отзыв" hasFeedback />
     </Page>
   );
 }

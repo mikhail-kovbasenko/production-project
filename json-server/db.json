@@ -1708,5 +1708,21 @@
       "feedback": "а",
       "id": "Jce4JKr"
     }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good profile!",
+      "userId": "1",
+      "profileId": "3"
+    },
+    {
+      "userId": "1",
+      "profileId": "2",
+      "rate": 5,
+      "feedback": "",
+      "id": "XRIa3Tc"
+    }
   ]
 }

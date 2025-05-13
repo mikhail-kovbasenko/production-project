@@ -16,5 +16,6 @@
   "age error": "Incorrect age",
   "contry error": "Incorrect country",
   "data error": "No data",
-  "userdata error": "Incorrect firsname or lastname"
+  "userdata error": "Incorrect firsname or lastname",
+  "review profile": "Review Profile"
 }
