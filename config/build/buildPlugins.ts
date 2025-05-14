@@ -35,10 +35,10 @@ export function buildPlugins({
         { from: paths.locales, to: paths.buildLocales },
       ],
     }),
-    new CircularDependencyPlugin({
-      exclude: /node_modules/,
-      failOnError: true,
-    }),
+    // new CircularDependencyPlugin({
+    //   exclude: /node_modules/,
+    //   failOnError: true,
+    // }),
     new ForkTsCheckerWebpackPlugin({
       typescript: {
         diagnosticOptions: {
