@@ -6,13 +6,12 @@ import { Input } from '@/shared/ui/Input';
 import { Loader } from '@/shared/ui/Loader';
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
 
-import { Country } from '@/entities/Country/model/types/types';
-
 import { HorizontalStack, VerticalStack } from '@/shared/ui/Stack';
 import { CountrySelect } from '../../../Country';
 import { CurrencySelect, CurrencyType } from '../../../Currency';
 import { Profile } from '../../model/types/types';
 import styles from './ProfileCard.module.scss';
+import { Country } from '../../../Country/model/types/types';
 
 interface ProfileCardProps {
     className?: string;

@@ -7,8 +7,8 @@ import {
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { getScrollPositionByPath } from '@/features/ScrollPositionSave';
-import { scrollPositionSaveActions } from '@/features/ScrollPositionSave/model/slice/scrollPositionSaveSlice';
+import { getScrollPositionByPath, scrollPositionSaveActions } from '@/features/ScrollPositionSave';
+
 import { classNames } from '@/shared/lib/classNames';
 import { useAppDispatch, useInfiniteScroll, useInitialEffect } from '@/shared/lib/hooks';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';

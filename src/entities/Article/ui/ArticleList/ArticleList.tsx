@@ -6,7 +6,7 @@ import {
 import { classNames } from '@/shared/lib/classNames';
 import { Text, TextSize } from '@/shared/ui/Text';
 
-import { PAGE_ID } from '@/widgets/Page/ui/Page';
+import { PAGE_ID } from '@/widgets/Page';
 import { Article, ArticleView } from '../../model/types/types';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
 import ArticleListItemSkeleton from '../ArticleListItem/ArticleListItemSkeleton';

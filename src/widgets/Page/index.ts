@@ -1,3 +1,3 @@
-import Page from './ui/Page';
+import Page, { PAGE_ID } from './ui/Page';
 
-export { Page };
+export { Page, PAGE_ID };

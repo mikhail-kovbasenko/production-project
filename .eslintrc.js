@@ -70,6 +70,7 @@ module.exports = {
     'no-undef': 'off',
     'implicit-arrow-linebreak': 'warn',
     'ulbi-tv-plugin/path-checker': ['error', { alias: '@' }],
+    'ulbi-tv-plugin/public-api-imports': ['error', { alias: '@' }],
   },
   globals: {
     IS_DEV: true,
