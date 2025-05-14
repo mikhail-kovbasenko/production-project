@@ -1,9 +1,9 @@
 name: linting, testing, building
 on: 
   push:
-    branches: ['master']
+    branches: ['master', 'develop']
   pull_request: 
-    branches: ['master']
+    branches: ['master', 'develop']
 jobs:
   Pipeline-Production-Project:
     runs-on: ubuntu-latest
