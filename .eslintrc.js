@@ -69,7 +69,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'no-undef': 'off',
     'implicit-arrow-linebreak': 'warn',
-    'ulbi-tv-plugin/path-checker': 'error',
+    'ulbi-tv-plugin/path-checker': ['error', { alias: '@' }],
   },
   globals: {
     IS_DEV: true,
