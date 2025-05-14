@@ -8,9 +8,9 @@ import ArticleList from './ui/ArticleList/ArticleList';
 import { articleDetailsReducer } from './model/slice/articleDetailsSlice';
 import { ArticleTypeTabs } from './ui/ArticleTypeTabs';
 
-export type { ArticleDetailsSchema } from './model/types/schema';
+import type { Article } from './model/types/types';
 
-export type { Article } from './model/types/types';
+import type { ArticleDetailsSchema } from './model/types/schema';
 
 export {
   ArticleDetails,
@@ -22,4 +22,6 @@ export {
   articleDetailsReducer,
   ArticleTypeTabs,
   ArticleBlockType,
+  Article,
+  ArticleDetailsSchema,
 };
