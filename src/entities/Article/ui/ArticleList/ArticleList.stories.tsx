@@ -94,6 +94,8 @@ ListSmall.args = {
     id: String(index),
   })),
   view: ArticleView.SMALL,
+  isLoading: false,
+  virtualized: false,
 };
 
 export const ListBig = Template.bind({});
@@ -103,6 +105,7 @@ ListBig.args = {
     id: String(index),
   })),
   view: ArticleView.BIG,
+  virtualized: false,
 };
 
 export const isLoadingBig = Template.bind({});

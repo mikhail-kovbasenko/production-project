@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import AdminPanelPage from './AdminPanelPage';
+import { StoreDecorator } from '../../../shared/config/storybook';
 
 export default {
   title: 'pages/AdminPanelPage',
@@ -15,3 +16,4 @@ export const Normal = Template.bind({});
 Normal.args = {
 
 };
+Normal.decorators = [StoreDecorator({})];
