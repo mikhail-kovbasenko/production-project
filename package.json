@@ -22,6 +22,7 @@
     "loki:ci": "npx loki --requireReference --reactUri file:./storybook-static",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "build-storybook": "build-storybook -c ./config/storybook",
+    "build-storybook:ci": "npx concurrently \"npm run build-storybook\" \"npm run loki:ci\"",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "npx reg-cli --from .loki/report.json --report .loki/report.html",
     "test:report": "npm run test:ui:json && npm run test:ui:html",
