@@ -93,6 +93,7 @@ export default {
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': resolve(__dirname, 'jestEmptyComponent.tsx'),
     // Поддержка Aliases
+    // Поддержка Aliases
     '^@/shared(.*)$': '<rootDir>/src/shared$1',
     '^@/entities(.*)$': '<rootDir>/src/entities$1',
     '^@/features(.*)$': '<rootDir>/src/features$1',
@@ -165,9 +166,9 @@ export default {
   // The glob patterns Jest uses to detect test files
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  // testPathIgnorePatterns: [
-  //   "\\\\node_modules\\\\"
-  // ],
+  testPathIgnorePatterns: [
+    'fetchNextArticlesPage',
+  ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],

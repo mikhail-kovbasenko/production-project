@@ -1,27 +1,16 @@
-import ArticleDetails from './ui/ArticleDetails/ArticleDetails';
-import {
-  ArticleBlockType,
-  ArticleSortField, ArticleType, ArticleView,
-} from './model/types/types';
-import { getArticleDetailsData } from './model/selectors/getArticleDetails';
-import ArticleList from './ui/ArticleList/ArticleList';
-import { articleDetailsReducer } from './model/slice/articleDetailsSlice';
-import { ArticleTypeTabs } from './ui/ArticleTypeTabs';
+export { default as ArticleList } from './ui/ArticleList/ArticleList';
 
-import type { Article } from './model/types/types';
-
-import type { ArticleDetailsSchema } from './model/types/schema';
+export { default as ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 
 export {
-  ArticleDetails,
-  getArticleDetailsData,
-  ArticleView,
-  ArticleList,
-  ArticleSortField,
-  ArticleType,
-  articleDetailsReducer,
-  ArticleTypeTabs,
   ArticleBlockType,
-  Article,
-  ArticleDetailsSchema,
-};
+  ArticleSortField, ArticleType,
+  ArticleView,
+} from './model/types/types';
+export { getArticleDetailsData } from './model/selectors/getArticleDetails';
+export { articleDetailsReducer } from './model/slice/articleDetailsSlice';
+export { ArticleTypeTabs } from './ui/ArticleTypeTabs';
+
+export type { Article } from './model/types/types';
+
+export type { ArticleDetailsSchema } from './model/types/schema';

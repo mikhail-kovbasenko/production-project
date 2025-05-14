@@ -31,6 +31,7 @@
   "Send": "Send",
   "SignIn": "SignIn",
   "Sort": "Sort",
+  "Thank you for review": "Thank you for review",
   "Throw Error": "Throw Error",
   "UserP": "UserP",
   "UserProfile": "UserProfile",
@@ -45,6 +46,7 @@
   "asc": "asc",
   "by": "by",
   "cancel": "cancel",
+  "close": "close",
   "contry error": "contry error",
   "country": "country",
   "create article": "create article",
@@ -71,6 +73,7 @@
   "science": "science",
   "search": "search",
   "search ": "search ",
+  "send": "send",
   "server error": "server error",
   "test translate": "test translate",
   "title": "title",
@@ -84,6 +87,7 @@
   "your city": "your city",
   "your firstname": "your firstname",
   "your lastname": "your lastname",
+  "your review": "your review",
   "your username": "your username",
   "Вы ввели неверный логин или пароль!": "Вы ввели неверный логин или пароль!"
 }

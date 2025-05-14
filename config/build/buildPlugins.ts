@@ -6,7 +6,7 @@ import {
   ProgressPlugin, WebpackPluginInstance, DefinePlugin, HotModuleReplacementPlugin,
 } from 'webpack';
 import CopyPlugin from 'copy-webpack-plugin';
-import CircularDependencyPlugin from 'circular-dependency-plugin';
+// import CircularDependencyPlugin from 'circular-dependency-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { BuildOptions } from './types/config';
 
@@ -35,10 +35,10 @@ export function buildPlugins({
         { from: paths.locales, to: paths.buildLocales },
       ],
     }),
-    new CircularDependencyPlugin({
-      exclude: /node_modules/,
-      failOnError: true,
-    }),
+    // new CircularDependencyPlugin({
+    //   exclude: /node_modules/,
+    //   failOnError: true,
+    // }),
     new ForkTsCheckerWebpackPlugin({
       typescript: {
         diagnosticOptions: {
