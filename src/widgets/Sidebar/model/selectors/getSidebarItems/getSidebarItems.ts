@@ -4,8 +4,8 @@ import AboutPageIcon from '@/shared/assets/icons/about.svg';
 import MainPageIcon from '@/shared/assets/icons/home.svg';
 import ProfilePageIcon from '@/shared/assets/icons/profile.svg';
 import ArticlePageIcon from '@/shared/assets/icons/article.svg';
-import { RoutePath } from '@/shared/config/router/config';
 import { SidebarItemType } from '../../types/types';
+import { RoutePath } from '@/shared/const/router';
 
 export const getSidebarItems = createSelector(
   getUserAuthData,

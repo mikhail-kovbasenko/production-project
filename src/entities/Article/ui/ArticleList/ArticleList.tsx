@@ -26,7 +26,7 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL
     <ArticleListItemSkeleton
       view={view}
       // eslint-disable-next-line react/no-array-index-key
-      key={index}
+      key={`skeleton${index}`}
       className={styles.card}
     />
   ));
@@ -67,7 +67,7 @@ function ArticleList(props: ArticleListProps) {
         view={view}
         className={styles.card}
         target={target}
-        key={articles[index].id}
+        key={`article-list-item${articles[index].id}`}
       />);
     }
     return (
@@ -108,7 +108,7 @@ function ArticleList(props: ArticleListProps) {
                   article={article}
                   view={view}
                   target={target}
-                  key={article.id}
+                  key={`article-list-item${article.id}`}
                   className={styles.card}
                 />
               ))

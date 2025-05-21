@@ -3,9 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 
 import { PageLoader } from '@/widgets/PageLoader';
 
-import { AppRoutesProps, routeConfig } from '@/shared/config/router/config';
 import RequireAuth from './RequireAuth';
 import RequireRoles from './RequireRoles';
+import { AppRoutesProps } from '@/shared/types/router';
+import { routeConfig } from '../config/config';
 
 const renderWithWrapper = (route: AppRoutesProps) => {
   const element = (

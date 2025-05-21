@@ -3,22 +3,20 @@ import {
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { LoginModal } from '@/features/AuthByUsername';
 import {
   getUserAuthData,
 } from '@/entities/User';
-import { RoutePath } from '@/shared/config/router/config';
+import { LoginModal } from '@/features/AuthByUsername';
 import { classNames } from '@/shared/lib/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Text, TextTheme } from '@/shared/ui/Text';
 
 import { NotificationButton } from '@/features/NotificationButton';
+import { RoutePath } from '@/shared/const/router';
 import { HorizontalStack } from '@/shared/ui/Stack';
-import { AvatarDropdown } from '../../../features/AvatarDropdown';
+import { AvatarDropdown } from '@/features/AvatarDropdown';
 import styles from './Navbar.module.scss';
-import { Drawer } from '../../../shared/ui/Drawer';
-import { NotificationList } from '../../../entities/Notification';
 
 interface NavbarProps {
   className?: string;
