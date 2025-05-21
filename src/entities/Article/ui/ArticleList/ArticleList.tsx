@@ -5,12 +5,11 @@ import {
 } from 'react-virtualized';
 import { classNames } from '@/shared/lib/classNames';
 import { Text, TextSize } from '@/shared/ui/Text';
-
-import { PAGE_ID } from '@/widgets/Page';
 import { Article, ArticleView } from '../../model/types/types';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
 import ArticleListItemSkeleton from '../ArticleListItem/ArticleListItemSkeleton';
 import styles from './ArticleList.module.scss';
+import { PAGE_ID } from '@/shared/const/page';
 
 interface ArticleListProps {
   className?: string;

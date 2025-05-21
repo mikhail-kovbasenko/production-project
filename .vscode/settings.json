@@ -6,5 +6,7 @@
  },
  "files.associations": {
     "**/.fttemplates/**": "plaintext",
-  }
+  },
+  "javascript.validate.enable": true,
+  "javascript.suggestionActions.enabled": false
 }

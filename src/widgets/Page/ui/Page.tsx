@@ -13,14 +13,13 @@ import { classNames } from '@/shared/lib/classNames';
 import { useAppDispatch, useInfiniteScroll, useInitialEffect } from '@/shared/lib/hooks';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import styles from './Page.module.scss';
+import { PAGE_ID } from '@/shared/const/page';
 
 interface PageProps {
   className?: string;
   children: ReactNode;
   onScrollEnd?: () => void;
 }
-
-export const PAGE_ID = 'PAGE_ID';
 
 function Page(props: PageProps) {
   const {

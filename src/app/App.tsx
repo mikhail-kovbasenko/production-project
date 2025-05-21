@@ -1,26 +1,13 @@
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useTheme } from '@/app/providers/ThemeProvider';
-import { AppRouter } from '@/app/providers/router';
-import '@/app/styles/index.scss';
+import './styles/index.scss';
 import { classNames } from '@/shared/lib/classNames';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 
 import { getUserInited, userActions } from '@/entities/User';
-
-// function Component() {
-//   const { t, i18n } = useTranslation();
-//   const toggleLanguage = () => i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
-//   const dispatch = useDispatch();
-
-//   return (
-//     <>
-//       <button type="button" onClick={toggleLanguage}>{t('translate')}</button>
-//       <div style={{ color: 'red' }}>{t('test translate')}</div>
-//     </>
-//   );
-// }
+import { useTheme } from './providers/ThemeProvider';
+import { AppRouter } from './providers/router';
 
 function App() {
   const { theme } = useTheme();

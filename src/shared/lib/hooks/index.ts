@@ -5,6 +5,7 @@ import { useInfiniteScroll } from './useInfiniteScroll/useInfiniteScroll';
 import { useDebounce } from './useDebounce/useDebounce';
 import { useDevice } from './useDevice/useDevice';
 import { useModal } from './useModal/useModal';
+import { useTheme } from './useTheme/useTheme';
 
 export {
   useAppDispatch,
@@ -14,4 +15,5 @@ export {
   useDebounce,
   useDevice,
   useModal,
+  useTheme,
 };

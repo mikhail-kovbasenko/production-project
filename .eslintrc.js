@@ -18,7 +18,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'ulbi-tv-plugin', 'eslint-plugin-html'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'eslint-plugin-html', 'ulbi-tv-plugin'],
   rules: {
     'import/no-unresolved': 'off',
     'no-use-before-define': 'off',
@@ -76,6 +76,13 @@ module.exports = {
         alias: '@',
         testFilesPatterns: ['**/*.test.*', '**/*.storeis.*', '**/StoreDecorator.tsx'],
       }],
+    'ulbi-tv-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
+    ],
   },
   globals: {
     IS_DEV: true,

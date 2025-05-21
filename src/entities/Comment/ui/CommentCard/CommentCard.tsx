@@ -5,7 +5,7 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Comment } from '../../model/types/types';
 import styles from './CommentCard.module.scss';
-import { VerticalStack } from '../../../../shared/ui/Stack';
+import { VerticalStack } from '@/shared/ui/Stack';
 import { RoutePath } from '@/shared/const/router';
 
 interface CommentCardProps {
