@@ -2,11 +2,11 @@ import { classNames } from '@/shared/lib/classNames';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Text } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
-import { RoutePath } from '@/shared/config/router/config';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Comment } from '../../model/types/types';
 import styles from './CommentCard.module.scss';
 import { VerticalStack } from '../../../../shared/ui/Stack';
+import { RoutePath } from '@/shared/const/router';
 
 interface CommentCardProps {
     className?: string;
