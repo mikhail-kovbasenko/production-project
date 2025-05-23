@@ -2,8 +2,9 @@ import {
   ChangeEvent,
   useCallback, useMemo,
 } from 'react';
-import { classNames, Mods } from '../../../lib/classNames';
+
 import styles from './Select.module.scss';
+import { classNames, Mods } from '../../../lib/classNames';
 
 export interface SelectOption<T extends string> {
   value: T;

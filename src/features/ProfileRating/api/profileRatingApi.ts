@@ -1,5 +1,6 @@
-import { rtkApi } from '@/shared/api/rtk';
 import { RatingType } from '@/entities/RatingCard';
+import { rtkApi } from '@/shared/api/rtk';
+
 import { GetProfileRatingArg, RateProfileArg } from '../model/types/types';
 
 const profileRatingApi = rtkApi.injectEndpoints({

@@ -18,11 +18,45 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'eslint-plugin-html', 'ulbi-tv-plugin'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'i18next',
+    'react-hooks',
+    'eslint-plugin-html',
+    'ulbi-tv-plugin',
+    'unused-imports',
+    'eslint-plugin-import',
+  ],
   rules: {
     'import/no-unresolved': 'off',
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal'],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '@/**',
+            group: 'external',
+            position: 'after',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['react'],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
     'no-use-before-define': 'off',
     'react/jsx-indent': [2, 2],
+    'unused-imports/no-unused-imports': 'error',
     'react/jsx-indent-props': [2, 2],
     'react/jsx-filename-extension': ['warn', {
       extensions: ['.js', '.jsx', '.tsx', '.ts'],

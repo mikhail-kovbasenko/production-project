@@ -1,5 +1,7 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Fragment } from 'react';
+
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import Flex from './Flex';
 
 export default {

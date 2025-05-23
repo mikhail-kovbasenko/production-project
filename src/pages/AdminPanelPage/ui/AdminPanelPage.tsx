@@ -1,7 +1,10 @@
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
+
+import { useTranslation } from 'react-i18next';
+
 import { classNames } from '@/shared/lib/classNames';
 import { Page } from '@/widgets/Page';
+
 import styles from './AdminPanelPage.module.scss';
 
 interface AdminPanelPageProps {

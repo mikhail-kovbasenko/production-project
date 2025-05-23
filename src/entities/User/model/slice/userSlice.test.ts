@@ -1,5 +1,5 @@
-import { UserSchema } from '../types/user';
 import { userActions, userReducer } from './userSlice';
+import { UserSchema } from '../types/user';
 
 describe('userSlice', () => {
   test('test set auth data', () => {

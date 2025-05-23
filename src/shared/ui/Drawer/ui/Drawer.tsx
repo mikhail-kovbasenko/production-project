@@ -1,13 +1,14 @@
 import {
   ReactNode, useCallback, useEffect,
 } from 'react';
+
 import { classNames } from '@/shared/lib/classNames';
 
+import styles from './Drawer.module.scss';
 import AnimationProvider, { AnimationContextPayload, useAnimationLibs } from '../../../lib/components/AnimationProvider/AnimationProvider';
 import { useTheme } from '../../../lib/hooks';
 import { Overlay } from '../../Overlay';
 import { Portal } from '../../Portal';
-import styles from './Drawer.module.scss';
 // import { useModal } from '../../../lib/hooks';
 
 interface DrawerProps {

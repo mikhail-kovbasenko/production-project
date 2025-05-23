@@ -1,6 +1,7 @@
-import { TestAsyncThunk } from '@/shared/config/tests';
-import { CurrencyType } from '@/entities/Currency';
 import { CountryType } from '@/entities/Country';
+import { CurrencyType } from '@/entities/Currency';
+import { TestAsyncThunk } from '@/shared/config/tests';
+
 import { updateProfileData } from './updateProfileData';
 import { ValidateProfileError } from '../../consts/consts';
 

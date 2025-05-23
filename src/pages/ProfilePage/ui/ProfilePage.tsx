@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { classNames } from '@/shared/lib/classNames';
 
 import { EditableProfileCard } from '@/features/EditableProfileCard';
+import { classNames } from '@/shared/lib/classNames';
 import { VerticalStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
 import { Page } from '@/widgets/Page';
+
 import ProfileRating from '../../../features/ProfileRating/ui/ProfileRating';
 
 interface ProfilePageProps {

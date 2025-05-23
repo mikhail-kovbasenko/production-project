@@ -1,10 +1,13 @@
+import { useCallback } from 'react';
+
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useCallback } from 'react';
-import { getUserAuthData } from '@/entities/User';
-import { useGetProfileRatingQuery, useRateProfileMutation } from '../api/profileRatingApi';
-import { Skeleton } from '@/shared/ui/Skeleton';
+
 import { RatingCard } from '@/entities/RatingCard';
+import { getUserAuthData } from '@/entities/User';
+import { Skeleton } from '@/shared/ui/Skeleton';
+
+import { useGetProfileRatingQuery, useRateProfileMutation } from '../api/profileRatingApi';
 
 export interface ProfileRatingProps {
   className?: string;

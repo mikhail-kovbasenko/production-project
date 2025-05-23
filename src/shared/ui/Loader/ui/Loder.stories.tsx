@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { ThemeDecorator } from '@/shared/config/storybook';
 
 import Loader from './Loader';

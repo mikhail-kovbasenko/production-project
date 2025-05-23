@@ -1,9 +1,10 @@
 import { CountryType } from '@/entities/Country';
 import { CurrencyType } from '@/entities/Currency';
+
+import { profileActions, profileReducer } from './profileSlice';
+import { ValidateProfileError } from '../consts/consts';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 import { ProfileSchema } from '../types/types';
-import { ValidateProfileError } from '../consts/consts';
-import { profileActions, profileReducer } from './profileSlice';
 
 const data = {
   id: '1',

@@ -1,6 +1,9 @@
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
+
+import { useTranslation } from 'react-i18next';
+
 import { classNames } from '@/shared/lib/classNames';
+
 import styles from './ForbiddenPage.module.scss';
 
 interface ForbiddenPageProps {

@@ -1,10 +1,12 @@
 import { useTranslation } from 'react-i18next';
+
 import { ArticleList } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames';
 import { VerticalStack } from '@/shared/ui/Stack';
 import { Text, TextSize } from '@/shared/ui/Text';
-import { useGetArticleRecommendationsQuery } from '../api/articleRecommendationsApi';
+
 import styles from './ArticleRecommendationsList.module.scss';
+import { useGetArticleRecommendationsQuery } from '../api/articleRecommendationsApi';
 
 interface ArticleRecommendationsListProps {
   className?: string;

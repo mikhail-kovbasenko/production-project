@@ -1,5 +1,7 @@
-import { Popover as UiPopover } from '@headlessui/react';
 import { ReactNode } from 'react';
+
+import { Popover as UiPopover } from '@headlessui/react';
+
 import styles from './Popover.module.scss';
 import { classNames } from '../../../../lib/classNames';
 import { DropdownDirection } from '../../../../types/ui';

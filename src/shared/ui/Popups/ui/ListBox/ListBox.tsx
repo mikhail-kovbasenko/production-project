@@ -1,12 +1,14 @@
-import { Listbox as HListBox } from '@headlessui/react';
 import {
   Fragment, memo, ReactNode,
 } from 'react';
+
+import { Listbox as HListBox } from '@headlessui/react';
+
+import styles from './ListBox.module.scss';
 import { classNames } from '../../../../lib/classNames';
+import { DropdownDirection } from '../../../../types/ui';
 import { Button } from '../../../Button';
 import { HorizontalStack } from '../../../Stack';
-import styles from './ListBox.module.scss';
-import { DropdownDirection } from '../../../../types/ui';
 import { mapDirectionClass } from '../../styles/consts';
 import popupStyles from '../../styles/popup.module.scss';
 

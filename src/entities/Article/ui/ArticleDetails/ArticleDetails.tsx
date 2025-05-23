@@ -1,5 +1,7 @@
 import { Fragment, memo, useEffect } from 'react';
+
 import { useSelector } from 'react-redux';
+
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { classNames } from '@/shared/lib/classNames';
@@ -8,10 +10,12 @@ import { useAppDispatch } from '@/shared/lib/hooks';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Icon } from '@/shared/ui/Icon';
 import { Skeleton } from '@/shared/ui/Skeleton';
+import { HorizontalStack, VerticalStack } from '@/shared/ui/Stack';
 import {
   Text, TextAlign, TextSize, TextTheme,
 } from '@/shared/ui/Text';
-import { HorizontalStack, VerticalStack } from '@/shared/ui/Stack';
+
+import styles from './ArticleDetails.module.scss';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -23,7 +27,6 @@ import { ArticleBlock, ArticleBlockType } from '../../model/types/types';
 import ArticleCodeBlockComponent from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import ArticleImageBlockComponent from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import styles from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
     className?: string;

@@ -1,8 +1,9 @@
 import webpack from 'webpack';
-import { BuildOptions } from './types/config';
+
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 import { buildCssLoader } from './loaders/buildCssLoaders';
 import { buildSvgLoader } from './loaders/buildSvgLoader';
-import { buildBabelLoader } from './loaders/buildBabelLoader';
+import { BuildOptions } from './types/config';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const fileLoader = {

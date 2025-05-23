@@ -1,12 +1,14 @@
 import { Story } from '@storybook/react';
+
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { articleDetailsReducer } from '@/entities/Article/testing';
 import { addCommentFormReducer } from '@/features/AddCommentForm/testing';
 import { loginReducer } from '@/features/AuthByUsername/testing';
+import { profileReducer } from '@/features/EditableProfileCard/testing';
 import { scrollPositionSaveReducers } from '@/features/ScrollPositionSave/testing';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
 import { articlesPageReducers } from '@/pages/ArticlesPage/testing';
-import { profileReducer } from '@/features/EditableProfileCard/testing';
+
 import { ReducersList } from '../../../lib/components';
 
 const defaultAsyncReducers: ReducersList = {

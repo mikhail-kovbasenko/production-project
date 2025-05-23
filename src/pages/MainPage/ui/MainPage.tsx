@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { RatingCard } from '@/entities/RatingCard';
+
 import { Page } from '@/widgets/Page';
 
 function MainPage() {

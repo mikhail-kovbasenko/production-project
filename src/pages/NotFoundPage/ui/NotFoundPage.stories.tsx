@@ -1,7 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { StoreDecorator, ThemeDecorator } from '@/shared/config/storybook';
-import NotFoundPage from './NotFoundPage';
 import { Theme } from '@/shared/const/theme';
+
+import NotFoundPage from './NotFoundPage';
 
 export default {
   title: 'pages/NotFoundPage',

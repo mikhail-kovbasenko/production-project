@@ -1,5 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { ThemeDecorator } from '@/shared/config/storybook';
+
 import Modal from './Modal';
 import { Theme } from '../../../const/theme';
 

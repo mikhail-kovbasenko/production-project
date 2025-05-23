@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ThemeDecorator } from '@/shared/config/storybook';
+
 import Button, { ButtonSize, ButtonTheme } from './Button';
 import { Theme } from '../../../const/theme';
 

@@ -1,10 +1,12 @@
-import userEvent from '@testing-library/user-event';
 import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import { CountryType } from '@/entities/Country';
 import { CurrencyType } from '@/entities/Currency';
 import { Profile } from '@/entities/Profile';
-import { componentRender } from '@/shared/config/tests';
 import { $api } from '@/shared/api/api';
+import { componentRender } from '@/shared/config/tests';
+
 import EditableProfileCard from './EditableProfileCard';
 import { profileReducer } from '../../model/slice/profileSlice';
 

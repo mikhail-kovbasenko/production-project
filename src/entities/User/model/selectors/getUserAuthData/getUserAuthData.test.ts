@@ -1,5 +1,5 @@
-import { StateSchema } from '../../../../../app/providers/StoreProvider';
 import { getUserAuthData } from './getUserAuthData';
+import { StateSchema } from '../../../../../app/providers/StoreProvider';
 
 describe('getUserAuthData', () => {
   test('should return auth data', () => {

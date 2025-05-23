@@ -1,6 +1,8 @@
 import { useCallback, KeyboardEvent } from 'react';
+
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
 import { CountryType } from '@/entities/Country';
 import { CurrencyType } from '@/entities/Currency';
 import { ProfileCard } from '@/entities/Profile';
@@ -8,6 +10,7 @@ import { validKeyboardKeys } from '@/shared/const/commons';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components';
 import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks';
 import { Text, TextTheme } from '@/shared/ui/Text';
+
 import { ValidateProfileError } from '../../model/consts/consts';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';

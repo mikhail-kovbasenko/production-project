@@ -1,15 +1,18 @@
-import { useTranslation } from 'react-i18next';
 import { Fragment, memo, useCallback } from 'react';
+
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { TextSize, Text } from '@/shared/ui/Text';
-import { AddCommentForm } from '@/features/AddCommentForm';
+
 import { CommentList } from '@/entities/Comment';
+import { AddCommentForm } from '@/features/AddCommentForm';
 import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks';
-import styles from '../ArticleDetailsPage.module.scss';
-import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
-import { getArticleComments } from '../../model/slice/articleDetailsCommentSlice';
+import { TextSize, Text } from '@/shared/ui/Text';
+
 import { getArticleCommentsLoading } from '../../model/selectors/comments';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsArticleById } from '../../model/services/fetchCommentByArticleId/fetchCommentsByArticleId';
+import { getArticleComments } from '../../model/slice/articleDetailsCommentSlice';
+import styles from '../ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsCommentsProps {
   id: string;

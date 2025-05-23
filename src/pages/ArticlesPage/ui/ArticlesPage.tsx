@@ -1,10 +1,16 @@
 import { memo, useCallback } from 'react';
+
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
+
 import { classNames } from '@/shared/lib/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components';
 import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks';
 import { Page } from '@/widgets/Page';
+
+import ArticleInfiniteList from './ArticleInfiniteList/ArticleInfiniteList';
+import styles from './ArticlesPage.module.scss';
+import ArticlesPageFilter from './ArticlesPageFilter/ArticlesPageFilter';
 import {
   getArticlesPageLoading,
 } from '../model/selectors/articlesPageSelectors';
@@ -13,9 +19,6 @@ import { initArticlesPage } from '../model/services/initArticlesPage/initArticle
 import {
   articlesPageReducers,
 } from '../model/slice/articlesPageSlice';
-import ArticleInfiniteList from './ArticleInfiniteList/ArticleInfiniteList';
-import styles from './ArticlesPage.module.scss';
-import ArticlesPageFilter from './ArticlesPageFilter/ArticlesPageFilter';
 
 interface ArticlesPageProps {
   className?: string;

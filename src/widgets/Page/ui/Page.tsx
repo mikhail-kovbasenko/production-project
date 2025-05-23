@@ -4,16 +4,18 @@ import {
   UIEvent,
   useRef,
 } from 'react';
+
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { getScrollPositionByPath, scrollPositionSaveActions } from '@/features/ScrollPositionSave';
-
+import { PAGE_ID } from '@/shared/const/page';
 import { classNames } from '@/shared/lib/classNames';
 import { useAppDispatch, useInfiniteScroll, useInitialEffect } from '@/shared/lib/hooks';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
+
 import styles from './Page.module.scss';
-import { PAGE_ID } from '@/shared/const/page';
 
 interface PageProps {
   className?: string;
