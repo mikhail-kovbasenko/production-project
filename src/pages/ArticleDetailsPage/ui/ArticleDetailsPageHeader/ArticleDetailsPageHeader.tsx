@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { getArticleDetailsData } from '@/entities/Article';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HorizontalStack } from '@/shared/ui/Stack';
@@ -28,11 +28,12 @@ function ArticleDetailsPageHeader(props: ArticleDetailsPageHeaderProps) {
   const article = useSelector(getArticleDetailsData);
 
   const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles);
+    navigate(getRouteArticles());
   }, [navigate]);
 
   const onEditArticle = useCallback(() => {
-    navigate(`${RoutePath.articles}/${article?.id}/edit`);
+    navigate(getRouteArticleEdit(article?.id as string));
+    // navigate(`${RoutePath.articles}/${article?.id}/edit`);
   }, [navigate, article?.id]);
 
   return (
