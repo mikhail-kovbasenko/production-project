@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import {
   getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -42,7 +42,7 @@ function AvatarDropdown(props: AvatarDropdownProps) {
     const dropDownItems = [
       {
         content: t('UserProfile'),
-        href: RoutePath.profile + authData.id,
+        href: getRouteProfile(authData.id),
       },
       {
         content: t('Logout'),
@@ -53,7 +53,7 @@ function AvatarDropdown(props: AvatarDropdownProps) {
     if (isAdminPanelAvailable) {
       dropDownItems.unshift({
         content: t('Admin'),
-        href: RoutePath.admin_panel,
+        href: getRouteAdminPanel(),
       });
     }
 

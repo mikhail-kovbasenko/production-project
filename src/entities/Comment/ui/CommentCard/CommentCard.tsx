@@ -1,4 +1,4 @@
-import { RoutePath } from '@/shared/const/router';
+import { getRouteProfile } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -46,7 +46,7 @@ function CommentCard(props: CommentCardProps) {
 
   return (
     <VerticalStack className={classNames(styles.CommentCard, {}, [className])} fullWidth gap="8">
-      <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={styles.header}>
+      <AppLink to={getRouteProfile(comment.user.id)} className={styles.header}>
         {comment.user.avatar && <Avatar size={30} src={comment.user.avatar} /> }
         <Text title={comment.user.username} className={styles.username} />
       </AppLink>

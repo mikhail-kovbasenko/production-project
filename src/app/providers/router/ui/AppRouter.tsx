@@ -15,18 +15,15 @@ const renderWithWrapper = (route: AppRoutesProps) => {
       {route.element}
     </Suspense>
   );
-
   return (
     <Route
       key={route.path}
       path={route.path}
       element={route.authOnly
         ? (
-          <RequireAuth>
-            <RequireRoles roles={route.roles}>
-              {element}
-            </RequireRoles>
-          </RequireAuth>
+          <RequireRoles roles={route.roles}>
+            <RequireAuth>{element}</RequireAuth>
+          </RequireRoles>
         )
         : element}
     />

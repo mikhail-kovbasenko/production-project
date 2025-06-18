@@ -27,7 +27,7 @@ function ProfilePage(props: ProfilePageProps) {
   }
 
   return (
-    <Page className={classNames('', {}, [className])}>
+    <Page className={classNames('', {}, [className])} data-testid="ProfilePage">
       <VerticalStack gap="16" fullWidth>
         <EditableProfileCard id={id} />
         <ProfileRating profileId={id} />

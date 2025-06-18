@@ -14,13 +14,15 @@ import { PAGE_ID } from '@/shared/const/page';
 import { classNames } from '@/shared/lib/classNames';
 import { useAppDispatch, useInfiniteScroll, useInitialEffect } from '@/shared/lib/hooks';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
+import { TestProps } from '@/shared/types/tests';
 
 import styles from './Page.module.scss';
 
-interface PageProps {
+interface PageProps extends TestProps{
   className?: string;
   children: ReactNode;
   onScrollEnd?: () => void;
+  'data-testid'?: string;
 }
 
 function Page(props: PageProps) {
@@ -58,6 +60,7 @@ function Page(props: PageProps) {
       className={classNames(styles.Page, {}, [className])}
       onScroll={handleScroll}
       id={PAGE_ID}
+      data-testid={props['data-testid'] ?? 'Page'}
     >
       {children}
       {

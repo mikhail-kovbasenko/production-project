@@ -18,7 +18,10 @@ function ForbiddenPage(props: ForbiddenPageProps) {
   const { t } = useTranslation();
 
   return (
-    <div className={classNames(styles.ForbiddenPage, {}, [className])}>
+    <div
+      className={classNames(styles.ForbiddenPage, {}, [className])}
+      data-testid="ForbiddenPage"
+    >
       {t('Not available')}
     </div>
   );

@@ -3,7 +3,7 @@ import { Fragment, HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import EyeIcon from '@/shared/assets/icons/eye.svg';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames';
 import { AppImage } from '@/shared/ui/AppImage';
 import { AppLink } from '@/shared/ui/AppLink';
@@ -11,10 +11,10 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Card } from '@/shared/ui/Card';
 import { Icon } from '@/shared/ui/Icon';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { Text } from '@/shared/ui/Text';
 
 import styles from './ArticleListItem.module.scss';
-import { Skeleton } from '../../../../shared/ui/Skeleton';
 import { Article, ArticleBlockType, ArticleView } from '../../model/types/types';
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
@@ -33,11 +33,6 @@ function ArticleListItem(props: ArticleListItemProps) {
     target,
   } = props;
   const { t } = useTranslation('article');
-  // const navigate = useNavigate();
-
-  // const onOpenArticle = useCallback(() => {
-  //   navigate(RoutePath.article_details + article.id);
-  // }, [navigate, article.id]);
 
   const views = (
     <Fragment>
@@ -71,7 +66,7 @@ function ArticleListItem(props: ArticleListItemProps) {
           )}
           <div className={styles.footer}>
 
-            <AppLink to={RoutePath.article_details + article.id} target={target}>
+            <AppLink to={getRouteArticleDetails(article.id)} target={target}>
               <Button theme={ButtonTheme.OUTLINE}>
                 {t('read more')}
               </Button>
@@ -86,7 +81,7 @@ function ArticleListItem(props: ArticleListItemProps) {
   return (
     <AppLink
       className={classNames(styles.ArticleListItem, {}, [className, styles[view]])}
-      to={RoutePath.article_details + article.id}
+      to={getRouteArticleDetails(article.id)}
       target={target}
     >
       <Card className={styles.card}>

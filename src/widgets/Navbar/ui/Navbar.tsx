@@ -11,7 +11,7 @@ import {
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { NotificationButton } from '@/features/NotificationButton';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdminPanel } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
@@ -42,7 +42,7 @@ function Navbar({ className }: NavbarProps) {
       <header className={classNames(styles.Navbar, {}, [className])}>
         <Text className={styles.appName} title={t('appName')} theme={TextTheme.INVERTED} />
         <AppLink
-          to={`${RoutePath.article_create}`}
+          to={getRouteAdminPanel()}
           theme={AppLinkTheme.INVERTED}
           className={styles.createBtn}
         >
