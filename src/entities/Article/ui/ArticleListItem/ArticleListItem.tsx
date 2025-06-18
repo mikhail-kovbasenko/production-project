@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { RoutePath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames';
+import { AppImage } from '@/shared/ui/AppImage';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
@@ -13,6 +14,7 @@ import { Icon } from '@/shared/ui/Icon';
 import { Text } from '@/shared/ui/Text';
 
 import styles from './ArticleListItem.module.scss';
+import { Skeleton } from '../../../../shared/ui/Skeleton';
 import { Article, ArticleBlockType, ArticleView } from '../../model/types/types';
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
@@ -58,7 +60,12 @@ function ArticleListItem(props: ArticleListItemProps) {
           </div>
           <Text title={article.title} className={styles.title} />
           {types}
-          <img src={article.img} className={styles.img} alt={article.title} />
+          <AppImage
+            src={article.img}
+            className={styles.img}
+            alt={article.title}
+            fallback={<Skeleton width="100%" height={250} />}
+          />
           {textBlock && (
             <ArticleTextBlockComponent block={textBlock} className={styles.textBlock} />
           )}
@@ -84,7 +91,12 @@ function ArticleListItem(props: ArticleListItemProps) {
     >
       <Card className={styles.card}>
         <div className={styles.imageWrapper}>
-          <img src={article.img} className={styles.img} alt={article.title} />
+          <AppImage
+            src={article.img}
+            className={styles.img}
+            alt={article.title}
+            fallback={<Skeleton width={200} height={200} />}
+          />
           <Text text={article.createdAt} className={styles.date} />
         </div>
         <div className={styles.infoWrapper}>

@@ -61,7 +61,7 @@ function AvatarDropdown(props: AvatarDropdownProps) {
       <Dropdown
         direction="bottom left"
         items={dropDownItems}
-        trigger={<Avatar size={30} src={authData.avatar} />}
+        trigger={<Avatar size={30} src={authData.avatar} fallbackInverted />}
         className={classNames(styles.AvatarDropdown, {}, [className])}
       />
 
