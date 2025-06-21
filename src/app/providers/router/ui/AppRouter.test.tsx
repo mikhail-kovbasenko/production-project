@@ -1,4 +1,4 @@
-import { screen, waitFor } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 
 import { UserRole } from '@/entities/User';
 import { componentRender } from '@/shared/config/tests';
@@ -45,10 +45,10 @@ describe('AppRouter', () => {
       },
     });
 
-    await waitFor(() => expect(screen.getByTestId('ProfilePage')).toBeInTheDocument());
-    // const page = await screen.findByTestId('ProfilePage');
+    // await waitFor(() => expect(screen.getByTestId('ProfilePage')).toBeInTheDocument());
+    const page = await screen.findByTestId('ProfilePage');
 
-    // expect(page).toBeInTheDocument();
+    expect(page).toBeInTheDocument();
   });
   test('Доступ запрещен (отсутствует роль)', async () => {
     componentRender(<AppRouter />, {
