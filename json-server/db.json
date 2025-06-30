@@ -48,6 +48,15 @@
         "MANAGER"
       ],
       "avatar": "https://sun9-56.userapi.com/s/v1/if2/g2Vp1KS5ElTWNARB7V58ZeIjgv5HxH_utCMgdGeTSkQopXlEOXoQPXSUR8Mid3l7VPYk4tahhOe8bI8niK1whB3L.jpg?quality=96&as=32x18,48x27,72x40,108x60,160x89,240x133,360x200,480x267,540x300,604x336&from=bu&u=otIwtHv8rc10DNAoH3hvD2YwSOejJ7BcwT4Klyr2cQQ&cs=320x213"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "333",
+      "roles": [
+        "MANAGER"
+      ],
+      "avatar": "https://sun9-56.userapi.com/s/v1/if2/g2Vp1KS5ElTWNARB7V58ZeIjgv5HxH_utCMgdGeTSkQopXlEOXoQPXSUR8Mid3l7VPYk4tahhOe8bI8niK1whB3L.jpg?quality=96&as=32x18,48x27,72x40,108x60,160x89,240x133,360x200,480x267,540x300,604x336&from=bu&u=otIwtHv8rc10DNAoH3hvD2YwSOejJ7BcwT4Klyr2cQQ&cs=320x213"
     }
   ],
   "profile": [
