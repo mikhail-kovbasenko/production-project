@@ -78,7 +78,12 @@ function ProfileCard(props: ProfileCardProps) {
   };
 
   return (
-    <VerticalStack className={classNames(styles.ProfileCard, mods, [className])} gap="16" fullWidth>
+    <VerticalStack
+      className={classNames(styles.ProfileCard, mods, [className])}
+      gap="16"
+      fullWidth
+      data-testid="ProfileCard"
+    >
       { data?.avatar && (
         <HorizontalStack justify="center" fullWidth className={styles.avatarWrapper}>
           <Avatar src={data?.avatar} alt="" />

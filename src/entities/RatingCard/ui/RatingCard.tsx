@@ -68,12 +68,21 @@ function RatingCard(props: RatingCardProps) {
   const modalContent = (
     <Fragment>
       <Text title={feedBackTitle} />
-      <Input placeholder={t('your review')} value={feedback} onChange={setFeedback} />
+      <Input
+        placeholder={t('your review')}
+        value={feedback}
+        onChange={setFeedback}
+        data-testid="RatingCard.Input"
+      />
     </Fragment>
   );
 
   return (
-    <Card className={classNames(styles.RatingCard, {}, [className])} fullWidth>
+    <Card
+      className={classNames(styles.RatingCard, {}, [className])}
+      fullWidth
+      data-testid="RatingCard"
+    >
       <VerticalStack align="center" gap="8" fullWidth>
         <Text title={starsCount ? t('Thank you for review') : title} />
         <StarRating size={40} onSelect={onSelectStars} selectedStars={starsCount} />
@@ -96,10 +105,14 @@ function RatingCard(props: RatingCardProps) {
               <VerticalStack gap="32" fullWidth>
                 {modalContent}
                 <HorizontalStack fullWidth gap="16" justify="end">
-                  <Button theme={ButtonTheme.OUTLINE_RED} onClick={cancelHandle}>
+                  <Button
+                    theme={ButtonTheme.OUTLINE_RED}
+                    date-testid="RatingCard.CloseButton"
+                    onClick={cancelHandle}
+                  >
                     {t('close')}
                   </Button>
-                  <Button onClick={acceptHandle}>
+                  <Button onClick={acceptHandle} data-testid="RatingCard.SendButton">
                     {t('send')}
                   </Button>
                 </HorizontalStack>

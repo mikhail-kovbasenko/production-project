@@ -53,6 +53,7 @@ function Flex(props: FlexProps) {
       className={classNames(styles.Flex, {
         [styles.fullWidth]: fullWidth,
       }, classes)}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...otherProps}
     >
       {children}

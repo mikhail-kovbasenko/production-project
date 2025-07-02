@@ -26,7 +26,11 @@ function ArticleRecommendationsList(props: ArticleRecommendationsListProps) {
   }
 
   return (
-    <VerticalStack className={classNames('', {}, [className])} gap="8">
+    <VerticalStack
+      className={classNames('', {}, [className])}
+      gap="8"
+      data-testid="ArticleRecommendationsList"
+    >
       <Text
         size={TextSize.L}
         title={t('recommendations')}

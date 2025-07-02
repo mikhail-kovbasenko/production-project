@@ -49,14 +49,26 @@ function AddCommentForm(props: AddCommentFormProps) {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <HorizontalStack className={classNames(styles.AddCommentForm, {}, [className])} justify="between" fullWidth>
+      <HorizontalStack
+        data-testid="AddCommentForm"
+        className={classNames(styles.AddCommentForm, {}, [className])}
+        justify="between"
+        fullWidth
+      >
         <Input
           placeholder={t('Enter text')}
           value={text}
           onChange={handleTextChange}
           className={styles.input}
+          data-testid="AddCommentForm.Input"
+
         />
-        <Button onClick={onSendHandler}>{t('Send')}</Button>
+        <Button
+          onClick={onSendHandler}
+          data-testid="AddCommentForm.Button"
+        >
+          {t('Send')}
+        </Button>
       </HorizontalStack>
     </DynamicModuleLoader>
   );

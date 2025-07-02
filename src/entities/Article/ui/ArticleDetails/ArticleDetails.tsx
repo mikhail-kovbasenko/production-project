@@ -110,7 +110,7 @@ function ArticleDetails(props: ArticleDetailsProps) {
         <HorizontalStack justify="center" fullWidth>
           <Avatar size={200} src={article?.img} className={styles.avatar} />
         </HorizontalStack>
-        <VerticalStack gap="4" fullWidth>
+        <VerticalStack gap="4" fullWidth data-testid="ArticleDetails.Info">
           <Text
             title={article?.title}
             text={article?.subtitle}

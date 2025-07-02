@@ -46,7 +46,10 @@ function ArticleListItem(props: ArticleListItemProps) {
     const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT);
 
     return (
-      <div className={classNames(styles.ArticleListItem, {}, [className, styles[view]])}>
+      <div
+        className={classNames(styles.ArticleListItem, {}, [className, styles[view]])}
+        data-testid="ArticleListItem"
+      >
         <Card className={styles.card}>
           <div className={styles.header}>
             <Avatar size={30} src={article.user.avatar} />
@@ -83,6 +86,7 @@ function ArticleListItem(props: ArticleListItemProps) {
       className={classNames(styles.ArticleListItem, {}, [className, styles[view]])}
       to={getRouteArticleDetails(article.id)}
       target={target}
+      data-testid="ArticleListItem"
     >
       <Card className={styles.card}>
         <div className={styles.imageWrapper}>

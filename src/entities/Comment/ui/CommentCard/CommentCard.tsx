@@ -26,6 +26,7 @@ function CommentCard(props: CommentCardProps) {
     return (
       <VerticalStack
         fullWidth
+        data-testid="CommendCard.Loading"
         gap="8"
         className={classNames(styles.CommentCard, {}, [className,
           styles.loading,
@@ -45,7 +46,12 @@ function CommentCard(props: CommentCardProps) {
   }
 
   return (
-    <VerticalStack className={classNames(styles.CommentCard, {}, [className])} fullWidth gap="8">
+    <VerticalStack
+      data-testid="CommentCard.Content"
+      className={classNames(styles.CommentCard, {}, [className])}
+      fullWidth
+      gap="8"
+    >
       <AppLink to={getRouteProfile(comment.user.id)} className={styles.header}>
         {comment.user.avatar && <Avatar size={30} src={comment.user.avatar} /> }
         <Text title={comment.user.username} className={styles.username} />

@@ -90,6 +90,7 @@ function ArticleList(props: ArticleListProps) {
         <div
           className={classNames(styles.ArticleList, {}, [className, styles[view]])}
           ref={registerChild}
+          data-testid="ArticleList"
         >
           {
             virtualized
